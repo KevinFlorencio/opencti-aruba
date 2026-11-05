@@ -274,7 +274,8 @@ def collect_misp() -> tuple[str, list[dict], int]:
     feeds: list[dict] = []
     try:
         raw = misp_get(url, key, "/feeds/index", verify=verify, timeout=40)
-        for feed in raw if isinstance(raw, list) else []:
+        for item in raw if isinstance(raw, list) else []:
+            feed = item.get("Feed", item) if isinstance(item, dict) else {}
             if not feed.get("enabled"):
                 continue
             feeds.append(
