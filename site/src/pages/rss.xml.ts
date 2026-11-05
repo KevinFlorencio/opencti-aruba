@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
   return rss({
     title: 'Aruba Threat Radar — Briefings',
     description:
-      'Threat intelligence and incident analysis for Aruba, Curaçao, Bonaire and Sint Maarten.',
+      'Threat intelligence and incident analysis for Aruba, Bonaire and Curaçao.',
     site: context.site ?? 'https://radar.arubati.org',
     items: posts.map((post) => ({
       title: post.data.title,

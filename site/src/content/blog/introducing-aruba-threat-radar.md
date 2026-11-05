@@ -16,7 +16,7 @@ sources:
     url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
 ---
 
-There is no shortage of global threat intelligence. There is a shortage of **local** threat intelligence: a consistent, structured, public record of what is happening to Aruba, Curaçao, Bonaire and Sint Maarten, written by someone who lives here and can tell the difference between a global feed and a local incident.
+There is no shortage of global threat intelligence. There is a shortage of **local** threat intelligence: a consistent, structured, public record of what is happening to Aruba, Bonaire and Curaçao, written by someone who lives here and can tell the difference between a global feed and a local incident.
 
 The Aruba Threat Radar is that record. It is an OpenCTI instance running on a Proxmox host in the lab, fed by MISP and public CTI sources, with a static public dashboard and this blog in front of it. This post explains the design, the boundaries and what to expect.
 

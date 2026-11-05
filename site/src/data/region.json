@@ -1,0 +1,18 @@
+{
+  "id": "abc",
+  "name": "ABC islands",
+  "label": "Aruba · Bonaire · Curaçao",
+  "countries": ["AW", "CW", "BQ"],
+  "watchlist_terms": [
+    "aruba",
+    "curacao",
+    "curaçao",
+    "bonaire",
+    "oranjestad",
+    "willemstad",
+    "kralendijk"
+  ],
+  "map_bounds": [[11.85, -70.35], [12.85, -67.85]],
+  "map_center": [12.25, -69.1],
+  "zoom": 8
+}

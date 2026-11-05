@@ -2,7 +2,7 @@
 
 ## Goals
 
-1. Give Aruba and the Dutch Caribbean a **structured, public** threat picture.
+1. Give Aruba, Bonaire and Curaçao a **structured, public** threat picture.
 2. Keep the intelligence platform **off the public internet**.
 3. Make the deployment **reproducible** on a single Proxmox guest.
 4. Publish **only** TLP:CLEAR material, with a documented field allow-list.

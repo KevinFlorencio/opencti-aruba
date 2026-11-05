@@ -22,6 +22,8 @@ For a region of roughly 300,000 people, the last week of July 2025 was a compres
 
 This briefing reconstructs the public timeline, separates what is known from what is not, and draws out the lessons that apply to every organisation on the islands — not just government.
 
+> **Scope note (November 2026).** The radar's current focus is Aruba, Bonaire and Curaçao. This briefing keeps the wider Dutch Caribbean context because the July–August wave crossed it; Sint Maarten is not a separate coverage area right now.
+
 ## The timeline
 
 | Date (2025) | Event | What was publicly reported |
@@ -52,7 +54,7 @@ Small islands have a structural intelligence problem: each institution sees only
 The shared exposure is real:
 
 - **Common service providers.** Courts, tax offices and ministries across the kingdom often depend on the same vendors, the same Microsoft tenancies and the same remote-access appliances.
-- **Shared language and lures.** Phishing in Papiamento, Dutch and English can be reused across Aruba, Curaçao and Sint Maarten with minimal effort. The same email works on all three islands.
+- **Shared language and lures.** Phishing in Papiamento, Dutch and English can be reused across Aruba, Curaçao and Bonaire with minimal effort. The same email works on all three islands.
 - **Thin defensive depth.** A handful of IT staff cannot cover identity, endpoint, network and incident response at once. Detection engineering and threat hunting are usually the first capabilities to go when headcount is limited.
 - **Tourism-shaped economies.** Hospitality, retail and government interact constantly. A compromised hotel mailbox is a supply-chain foothold into tour operators, airlines and public services.
 

@@ -1,8 +1,8 @@
 # Aruba Threat Radar
 
-**A public threat-intelligence desk for Aruba and the Dutch Caribbean.**
+**A public threat-intelligence desk for Aruba, Bonaire and Curaçao.**
 
-OpenCTI + MISP running on Proxmox, a Python collector, and a static dashboard/blog that can be published anywhere. Built because there was no consistent, structured, public picture of the threats hitting Aruba, Curaçao, Bonaire and Sint Maarten.
+OpenCTI + MISP running on Proxmox, a Python collector, and a static dashboard/blog that can be published anywhere. Built because there was no consistent, structured, public picture of the threats hitting the ABC islands.
 
 ![Aruba Threat Radar — public dashboard](docs/images/radar.png)
 

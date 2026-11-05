@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import incidents from '../data/incidents.json';
 import attack from '../data/attack.json';
 import sources from '../data/sources.json';
+import region from '../data/region.json';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const u = (p: string) => base + p.replace(/^\//, '');
@@ -14,11 +15,11 @@ const u = (p: string) => base + p.replace(/^\//, '');
       <div class="hero-grid">
         <div>
           <span class="eyebrow"><span class="pulse-dot" style="color:var(--teal)"></span> Live intelligence · TLP:CLEAR</span>
-          <h1>The Caribbean threat picture, in one place.</h1>
+          <h1>The ABC threat picture, in one place.</h1>
           <p class="lede">
-            A public, OpenCTI-backed threat radar for Aruba, Curaçao, Bonaire and Sint Maarten.
+            A public, OpenCTI-backed threat radar for Aruba, Bonaire and Curaçao.
             Regional incidents, live indicators and the techniques that actually show up in
-            Dutch Caribbean inboxes — without the vendor noise.
+            ABC inboxes — without the vendor noise.
           </p>
           <div class="hero-meta">
             <span>PLATFORM <b id="meta-platform">initialising</b></span>
@@ -60,7 +61,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
         <div class="kpi violet"><div class="kpi-label">Observables</div><div class="kpi-value" data-count="observables">0</div><div class="kpi-sub">raw STIX objects</div></div>
         <div class="kpi amber"><div class="kpi-label">Campaigns</div><div class="kpi-value" data-count="campaigns">0</div><div class="kpi-sub">tracked campaigns</div></div>
         <div class="kpi red"><div class="kpi-label">KEV vulns</div><div class="kpi-value" data-count="vulnerabilities">0</div><div class="kpi-sub">known exploited</div></div>
-        <div class="kpi green"><div class="kpi-label">Watchlist hits</div><div class="kpi-value" data-count="watchlist_hits">0</div><div class="kpi-sub">Aruba / .aw mentions</div></div>
+        <div class="kpi green"><div class="kpi-label">Watchlist hits</div><div class="kpi-value" data-count="watchlist_hits">0</div><div class="kpi-sub">Aruba / Bonaire / Curaçao mentions</div></div>
       </div>
     </div>
   </section>
@@ -230,7 +231,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
       <div class="blog-grid">
         <a class="card post-card reveal" href={u('/blog/dutch-caribbean-cyber-wave/')}>
           <span class="post-date">31 Jul 2025 · Incident analysis</span>
-          <h3>The week the Dutch Caribbean woke up</h3>
+          <h3>The week the ABC islands woke up</h3>
           <p>Courts, tax offices and Parliament hit within days. What the July 2025 wave reveals about shared exposure — and what to fix first.</p>
           <span class="post-more">Read briefing →</span>
         </a>
@@ -345,7 +346,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
           <a href="${inc.source}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;color:#22d3ee;font-size:9.5px">source ↗</a>
         </div>`);
     }
-    if (points.length) map.fitBounds(L.latLngBounds([[11.4, -70.9], [18.7, -62.4]]), { padding: [8, 8] });
+    if (points.length) map.fitBounds(L.latLngBounds(region.map_bounds), { padding: [8, 8] });
     else map.setView([14.5, -67.5], 6);
     setTimeout(() => map.invalidateSize(), 300);
 

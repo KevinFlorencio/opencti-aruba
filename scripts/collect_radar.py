@@ -34,7 +34,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "site" / "public" / "data" / "latest.json"
 
-WATCHLIST_TERMS = ["aruba", "curacao", "curaçao", "bonaire", "sint maarten", "oranjestad"]
+# The public focus is a data file, not a hardcoded list: change region.json to
+# widen or narrow the watchlist without touching the collector.
+try:
+    REGION = json.loads((ROOT / "site" / "src" / "data" / "region.json").read_text())
+    WATCHLIST_TERMS = [str(t).lower() for t in REGION["watchlist_terms"]]
+except (OSError, KeyError, ValueError):
+    WATCHLIST_TERMS = ["aruba", "curacao", "curaçao", "bonaire", "oranjestad"]
 
 
 def log(msg: str) -> None:
