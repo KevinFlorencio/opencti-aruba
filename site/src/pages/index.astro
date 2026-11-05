@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import incidents from '../data/incidents.json';
 import attack from '../data/attack.json';
 import sources from '../data/sources.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const u = (p: string) => base + p.replace(/^\//, '');
 ---
 
 <Layout active="radar">
@@ -181,7 +184,7 @@ import sources from '../data/sources.json';
               </div>
             ))}
           </div>
-          <a class="section-link" href="/sources/" style="display:inline-block;margin-top:14px">Full source catalogue →</a>
+          <a class="section-link" href={u('/sources/')} style="display:inline-block;margin-top:14px">Full source catalogue →</a>
         </div>
 
         <div class="card span-7 reveal">
@@ -222,22 +225,22 @@ import sources from '../data/sources.json';
           <h2>Analysis, not alarm</h2>
           <p>Long-form context for the incidents on the radar, plus the weekly brief.</p>
         </div>
-        <a class="section-link" href="/blog/">All briefings →</a>
+        <a class="section-link" href={u('/blog/')}>All briefings →</a>
       </div>
       <div class="blog-grid">
-        <a class="card post-card reveal" href="/blog/dutch-caribbean-cyber-wave/">
+        <a class="card post-card reveal" href={u('/blog/dutch-caribbean-cyber-wave/')}>
           <span class="post-date">31 Jul 2025 · Incident analysis</span>
           <h3>The week the Dutch Caribbean woke up</h3>
           <p>Courts, tax offices and Parliament hit within days. What the July 2025 wave reveals about shared exposure — and what to fix first.</p>
           <span class="post-more">Read briefing →</span>
         </a>
-        <a class="card post-card reveal" href="/blog/mfa-is-not-a-wall/">
+        <a class="card post-card reveal" href={u('/blog/mfa-is-not-a-wall/')}>
           <span class="post-date">13 Aug 2025 · Tradecraft</span>
           <h3>MFA is not a wall</h3>
           <p>Aruba's national warning described phishing that bypasses Microsoft Authenticator. Here is the adversary-in-the-middle machinery behind it.</p>
           <span class="post-more">Read briefing →</span>
         </a>
-        <a class="card post-card reveal" href="/blog/introducing-aruba-threat-radar/">
+        <a class="card post-card reveal" href={u('/blog/introducing-aruba-threat-radar/')}>
           <span class="post-date">05 Nov 2026 · Project</span>
           <h3>Introducing the Aruba Threat Radar</h3>
           <p>Why the island needs its own intelligence desk, how the OpenCTI + MISP pipeline works, and what we will publish every week.</p>
@@ -486,7 +489,8 @@ import sources from '../data/sources.json';
 
     async function load() {
       try {
-        const res = await fetch('/data/latest.json?ts=' + Date.now(), { cache: 'no-store' });
+        const dataUrl = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'data/latest.json';
+        const res = await fetch(dataUrl + '?ts=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) throw new Error('snapshot HTTP ' + res.status);
         snapshot = await res.json();
       } catch (err) {

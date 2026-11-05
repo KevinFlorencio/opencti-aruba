@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const u = (p: string) => base + p.replace(/^\//, '');
 ---
 
 <Layout title="Signal lost — Aruba Threat Radar" description="Page not found.">
@@ -8,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="eyebrow" style="color:var(--red);border-color:rgba(251,113,133,.25)">404 · signal lost</div>
       <h1 style="margin:18px auto 12px;max-width:20ch">This track is not on the radar.</h1>
       <p class="lede" style="margin:0 auto 24px">The page you were looking for does not exist, moved, or was never published.</p>
-      <a class="section-link" href="/">← Return to the radar</a>
+      <a class="section-link" href={u('/')}>← Return to the radar</a>
     </div>
   </section>
 </Layout>

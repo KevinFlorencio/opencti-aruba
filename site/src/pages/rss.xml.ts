@@ -3,6 +3,7 @@ import type { APIContext } from 'astro';
 import { getCollection } from 'astro:content';
 
 export async function GET(context: APIContext) {
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
   );
@@ -16,7 +17,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.published,
-      link: `/blog/${post.id}/`,
+      link: `${base}blog/${post.id}/`,
       categories: post.data.tags,
     })),
     customData: '<language>en</language>',

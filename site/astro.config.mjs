@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 // Pages, Netlify or any static host without exposing OpenCTI itself.
 export default defineConfig({
   site: process.env.SITE_URL || 'https://radar.arubati.org',
+  base: process.env.BASE_PATH || '/',
   output: 'static',
   build: {
     inlineStylesheets: 'auto',

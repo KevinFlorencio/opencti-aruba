@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const u = (p: string) => base + p.replace(/^\//, '');
 ---
 
 <Layout title="About — Aruba Threat Radar" description="Why this initiative exists, how the intelligence is produced, and the standards it holds itself to." active="about">
@@ -86,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
       <h2>Licence</h2>
       <p>
         Written content is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
-        Code is MIT. Feed data remains under the licence of its origin, listed on the <a href="/sources/">sources page</a>.
+        Code is MIT. Feed data remains under the licence of its origin, listed on the <a href={u('/sources/')}>sources page</a>.
       </p>
 
       <h2>Built with</h2>

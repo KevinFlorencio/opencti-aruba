@@ -11,6 +11,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const date = post.data.published.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const u = (p: string) => base + p.replace(/^\//, '');
 ---
 
 <Layout title={`${post.data.title} — Aruba Threat Radar`} description={post.data.description} active="blog">
@@ -42,6 +44,6 @@ const date = post.data.published.toLocaleDateString('en-GB', { day: '2-digit', m
       </aside>
     )}
 
-    <p style="margin-top:34px"><a href="/blog/">← All briefings</a></p>
+    <p style="margin-top:34px"><a href={u('/blog/')}>← All briefings</a></p>
   </article>
 </Layout>

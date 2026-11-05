@@ -14,6 +14,8 @@ const {
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://radar.arubati.org');
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const u = (p: string) => base + p.replace(/^\//, '');
 const canonical = new URL(Astro.url.pathname, site).toString();
 const nav = [
   { href: '/', label: 'Radar', key: 'radar' },
@@ -41,8 +43,8 @@ const nav = [
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" type="application/rss+xml" title="Aruba Threat Radar — Briefings" href="/rss.xml" />
+    <link rel="icon" href={u('/favicon.svg')} type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Aruba Threat Radar — Briefings" href={u('/rss.xml')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -58,7 +60,7 @@ const nav = [
   <body>
     <header class="nav">
       <div class="wrap nav-inner">
-        <a class="brand" href="/">
+        <a class="brand" href={u('/')}>
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
               <circle cx="12" cy="12" r="9" opacity=".35"></circle>
@@ -75,7 +77,7 @@ const nav = [
         </a>
         <nav class="nav-links" aria-label="Primary">
           {nav.map((item) => (
-            <a href={item.href} aria-current={active === item.key ? 'page' : undefined} class={item.key === 'sources' ? 'hide-sm' : ''}>{item.label}</a>
+            <a href={u(item.href)} aria-current={active === item.key ? 'page' : undefined} class={item.key === 'sources' ? 'hide-sm' : ''}>{item.label}</a>
           ))}
           <span class="live-pill"><span class="pulse-dot"></span> LIVE</span>
         </nav>
@@ -94,16 +96,16 @@ const nav = [
           </div>
           <div class="foot-col">
             <h4>Platform</h4>
-            <a href="/">Threat radar</a>
-            <a href="/blog/">Briefings</a>
-            <a href="/sources/">Source catalogue</a>
-            <a href="/about/">Methodology</a>
+            <a href={u('/')}>Threat radar</a>
+            <a href={u('/blog/')}>Briefings</a>
+            <a href={u('/sources/')}>Source catalogue</a>
+            <a href={u('/about/')}>Methodology</a>
           </div>
           <div class="foot-col">
             <h4>Project</h4>
             <a href="https://github.com/KevinFlorencio/opencti-aruba" rel="noopener">GitHub repository</a>
-            <a href="/rss.xml">RSS feed</a>
-            <a href="/about/#contact">Contact &amp; corrections</a>
+            <a href={u('/rss.xml')}>RSS feed</a>
+            <a href={u('/about/#contact')}>Contact &amp; corrections</a>
           </div>
         </div>
         <div class="foot-bottom">
