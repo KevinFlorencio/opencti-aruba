@@ -128,14 +128,15 @@ OPENCTI_TOKEN="$OPENCTI_ADMIN_TOKEN" MISP_KEY="$MISP_API_KEY" \
 - [x] OpenCTI 7 on Proxmox with persistent volumes
 - [x] MISP with public feeds (CIRCL, Botvrij, Feodo, OpenPhish, ET) and OpenCTI connector
 - [x] MITRE ATT&CK, ATLAS, CISA KEV, Phishunt, RansomLook and reference datasets
-- [x] Public radar (map, KPIs, reports, 400+ indicators, ATT&CK view, source health)
-- [x] Blog with four sourced briefings, including the first weekly brief
-- [x] Collector + refresh timer + backup script
+- [x] Public radar (map, KPIs, reports, 1,800+ indicators, ATT&CK view, source health)
+- [x] Blog with four sourced briefings, Dutch/Papiamento summaries, and the weekly cadence
+- [x] Collector + refresh timer + weekly brief timer + Elasticsearch snapshot policy
 - [x] MISP deployment notes for the healthcheck, session and auth traps
-- [ ] OpenCTI analyst dashboards (in-platform)
+- [x] OpenCTI analyst dashboards (Aruba Watchlist, KEV Exposure, Ingestion Pulse)
+- [x] MISP galaxies/object templates and MITRE ATT&CK malware/actor import
+- [ ] OTX and AbuseIPDB keys (connectors wired behind profiles)
 - [ ] STIX/TAXII public export
-- [ ] MISP galaxies/object templates so malware and actor context survives import
-- [ ] Papiamento and Dutch brief summaries
+- [ ] VM migration to NVMe (blocked: 100 GB disk vs 52 GB thin free; USB I/O resets)
 - [ ] Anonymous community reporting form
 
 ## Licence
