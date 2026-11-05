@@ -31,7 +31,8 @@ OpenCTI + MISP running on Proxmox, a Python collector, and a static dashboard/bl
 
 | | |
 |---|---|
-| Radar / blog | `http://192.168.0.180` |
+| Public mirror (blog + radar snapshot) | `https://kevinflorencio.github.io/opencti-aruba/` |
+| Radar / blog (LAN) | `http://192.168.0.180` |
 | OpenCTI UI | `https://192.168.0.180:8443` |
 | MISP | `https://192.168.0.180:9443` |
 | Proxmox VM | `124` · `opencti-aruba` · 8 vCPU / 20 GB / 100 GB |

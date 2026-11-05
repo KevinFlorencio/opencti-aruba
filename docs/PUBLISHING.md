@@ -43,26 +43,22 @@ If the site is behind Cloudflare, set SSL/TLS to **Full (strict)** and keep the 
 
 The site has no server dependency. The only runtime data is `site/public/data/latest.json`, which is committed to the repository.
 
-### GitHub Pages
+A live mirror is deployed at **https://kevinflorencio.github.io/opencti-aruba/**. It uses the project-site subpath, so the build runs with `BASE_PATH=/opencti-aruba` and every internal link is prefixed through the `u()` helper. The workflow is `.github/workflows/pages.yml`; Pages is set to `build_type: workflow`.
 
-`.github/workflows/pages.yml` builds `site/` and deploys `site/dist`. Enable Pages → Source: GitHub Actions. Every push to `main` publishes the blog and the last committed snapshot.
-
-The radar will show the snapshot's `generated_at`, so readers can see when it was last refreshed. To update it, commit a fresh `latest.json`:
+The mirror's radar data is the last committed snapshot, not the live OpenCTI graph. Its `generated_at` makes that visible. To refresh it from the VM:
 
 ```bash
-# on the VM after a collector run
-cp ~/aruba-ti/site/public/data/latest.json /path/to/repo/site/public/data/latest.json
-git add site/public/data/latest.json && git commit -m "data: refresh $(date -I)" && git push
+scp ~/aruba-ti/site/public/data/latest.json /path/to/repo/site/public/data/latest.json
+cd /path/to/repo && git add site/public/data/latest.json \
+  && git commit -m "data: refresh $(date -I)" && git push
 ```
 
-If you want this automatic, add a deploy key with write access and a cron job on the VM:
+### GitHub Pages from scratch
 
-```bash
-# /etc/cron.d/aruba-radar-publish
-17 */6 * * * styx cd /home/styx/aruba-ti && git add site/public/data/latest.json && git commit -m "data: refresh $(date -I\%H:\%M)" && git push
-```
-
-Review the repository's commit noise tolerance before enabling that.
+1. Push the repository to GitHub.
+2. `gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow`
+3. Set repository variables `SITE_URL=https://<owner>.github.io` and `BASE_PATH=/<repo>` (Settings → Secrets and variables → Actions → Variables).
+4. Push to `main`; the workflow builds `site/` and deploys `site/dist`.
 
 ### Cloudflare Pages
 
