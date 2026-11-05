@@ -71,7 +71,8 @@ On a fresh Debian 13 host with Docker:
 ```bash
 git clone https://github.com/KevinFlorencio/opencti-aruba.git
 cd opencti-aruba
-cp .env.example .env          # or run scripts/gen-env.sh to generate secrets
+./scripts/gen-env.sh          # generates .env and caddy/certs (recommended)
+# or: cp .env.example .env and create caddy/certs yourself
 # edit .env: OPENCTI_BASE_URL, passwords, tokens
 docker compose up -d
 
