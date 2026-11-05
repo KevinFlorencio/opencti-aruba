@@ -358,6 +358,27 @@ code, pre, .mono { font-family: var(--mono); }
 .article-head { padding: 54px 0 26px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
 .article-head h1 { font-size: clamp(2rem, 4.6vw, 3.2rem); margin: 12px 0 14px; }
 .article-head .lede { color: var(--muted); font-size: 1.02rem; }
+
+.brief-summaries { display: grid; gap: 8px; margin-top: 18px; }
+.brief-summary {
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(126, 231, 220, 0.1);
+  border-left: 2px solid rgba(45, 212, 191, 0.55);
+  border-radius: 8px;
+  background: rgba(45, 212, 191, 0.035);
+  color: #b7cddd;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.brief-summary .lang {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: var(--teal);
+  margin-right: 8px;
+}
+
 .article-meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--mono); font-size: 10px; color: var(--dim); letter-spacing: 0.08em; margin-top: 16px; }
 .prose { color: #c8d8e8; font-size: 1.02rem; line-height: 1.8; }
 .prose h2 { font-size: 1.55rem; margin: 2.2em 0 0.7em; color: var(--txt); }

@@ -24,7 +24,8 @@ OpenCTI + MISP running on Proxmox, a Python collector, and a static dashboard/bl
 - **Ingests** public CTI: CIRCL OSINT, Feodo Tracker, Botvrij, OpenPhish through MISP; MITRE ATT&CK, MITRE ATLAS, CISA KEV and OpenCTI reference data through connectors.
 - **Structures** it in OpenCTI as a STIX 2.1 graph — reports, indicators, malware, actors, campaigns, vulnerabilities, sectors and locations.
 - **Publishes** a TLP:CLEAR snapshot: live counts, latest reports, defanged indicators, feed health, a curated regional incident map and an ATT&CK coverage view.
-- **Explains** it in long-form briefings with sources on every claim.
+- **Explains** it in long-form briefings with sources on every claim, with Dutch and Papiamento summaries.
+- **Operates** three analyst dashboards inside OpenCTI (Aruba Watchlist, KEV Exposure, Ingestion Pulse) and a Monday brief-draft timer.
 - **Documents** the whole stack so another island (or another analyst) can copy it.
 
 ## Live deployment
@@ -106,7 +107,8 @@ OPENCTI_TOKEN="$OPENCTI_ADMIN_TOKEN" MISP_KEY="$MISP_API_KEY" \
 |---|---|
 | [Architecture](docs/ARCHITECTURE.md) | Components, data flow, sizing, design decisions |
 | [Deployment](docs/DEPLOYMENT.md) | Proxmox VM, cloud-init, Docker, MISP, DNS/TLS |
-| [Runbook](docs/RUNBOOK.md) | Health checks, restarts, backups, upgrades, failure modes |
+| [Runbook](docs/RUNBOOK.md) | Health checks, restarts, upgrades, failure modes |
+| [Backup](docs/BACKUP.md) | Elasticsearch snapshots, restore, Proxmox VM backup |
 | [Security](docs/SECURITY.md) | Exposure model, tokens, TLP handling, hardening checklist |
 | [Sources](docs/SOURCES.md) | Every feed, licence, cadence and how to add one |
 | [Dashboard](docs/DASHBOARD.md) | Snapshot contract, collector behaviour, site build |

@@ -3,6 +3,8 @@ title: "MFA is not a wall"
 description: "Aruba's national phishing warning said the attackers could bypass Microsoft Authenticator. That is not a bug in MFA — it is the signature of adversary-in-the-middle phishing. Here is how the machinery works, and what actually stops it."
 published: 2025-08-13
 tags: ["tradecraft", "phishing", "AiTM", "identity"]
+summary_nl: "De nationale waarschuwing van 13 augustus 2025 zei dat de phishing Microsoft Authenticator kon omzeilen. Dat is geen fout in MFA, maar adversary-in-the-middle-phishing. Deze briefing legt de techniek uit en welke maatregelen echt helpen: passkeys, tokenbinding, sessie-intrekking en jacht op inboxregels."
+summary_pap: "E alarma nashonal di 13 di ougùstùs 2025 a bisa cu e phishing por a pasa Microsoft Authenticator. Esaki no ta un fayo den MFA, sino phishing adversary-in-the-middle. E análisis aki ta splika e téknika y kua medidanan ta yuda realmente: passkeys, token binding, retirá sesionnan y buscadera di reglanan di inbox."
 sources:
   - label: "Government of Aruba — Nationale waarschuwing: gevaarlijke phishing e-mails in omloop op Aruba (13 Aug 2025)"
     url: "https://www.gobierno.aw/nl/nationale-waarschuwing-gevaarlijke-phishing-e-mails-in-omloop-op-aruba"

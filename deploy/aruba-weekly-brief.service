@@ -1,0 +1,12 @@
+[Unit]
+Description=Aruba Threat Radar weekly snapshot and brief draft
+Wants=docker.service
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+User=styx
+WorkingDirectory=/home/styx/aruba-ti
+ExecStart=/bin/bash /home/styx/aruba-ti/scripts/refresh.sh
+ExecStart=/usr/bin/python3 /home/styx/aruba-ti/scripts/weekly_brief.py
+Nice=10

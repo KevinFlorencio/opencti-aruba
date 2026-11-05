@@ -226,3 +226,27 @@ cd ~/aruba-ti && docker compose stop
 ```
 
 A database that keeps running on a failing USB bridge is how you turn a recoverable outage into a corrupt index.
+
+## Weekly cadence
+
+`aruba-weekly-brief.timer` runs every Monday at 07:00 AST (11:00 UTC). It calls
+`scripts/refresh.sh` to collect a fresh snapshot, then
+`scripts/weekly_brief.py`, which writes a draft to `drafts/weekly-brief-<ISO
+week>.md` and stores a dated snapshot in `data/history/`.
+
+```bash
+systemctl list-timers aruba-weekly-brief.timer
+sudo -S -p '' systemctl start aruba-weekly-brief.service   # run now
+journalctl -u aruba-weekly-brief.service -n 30
+```
+
+The draft is intentionally not auto-published. Review the numbers, replace the
+analyst notes, then either move it into `site/src/content/blog/` and rebuild, or
+run `python3 scripts/weekly_brief.py --publish` after editing the draft. The VM
+cannot build the Astro site (dependencies are installed on the workstation), so
+publishing remains a two-step: generate on the VM, build locally, sync
+`site/dist` back.
+
+If the timer fires while Docker is down, the collector fails and the unit exits
+non-zero; `Persistent=true` means it runs once the machine is back, not that it
+retries forever. Check the journal before assuming a quiet week.

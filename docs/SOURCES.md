@@ -71,6 +71,23 @@ Feed selection criteria:
 5. `docker compose up -d connector-example`, then watch its logs for the first run.
 6. Add it to `site/src/data/sources.json` and `docs/SOURCES.md`.
 
+## Key-gated sources (optional)
+
+Two connectors are wired but disabled by default because they require a free account. They are isolated behind Compose profiles so the core stack never fails on a missing key.
+
+| Source | What it adds | Key | Scope |
+| --- | --- | --- | --- |
+| AlienVault OTX | Recent pulses, indicators, malware guesses and CVE links | `ALIENVAULT_API_KEY` | Global, last 30 days by default |
+| AbuseIPDB | High-confidence hostile IPs | `ABUSEIPDB_API_KEY` | `ABUSEIPDB_ONLY_COUNTRY=AW,CW,BQ` |
+
+Get a key at [otx.alienvault.com](https://otx.alienvault.com/) (Settings → API key) and [abuseipdb.com/register](https://www.abuseipdb.com/register). Put them in `.env`, create a connector token in OpenCTI (Settings → Security → API access), then:
+
+```bash
+docker compose --profile otx --profile abuseipdb up -d
+```
+
+AbuseIPDB's free tier is rate-limited and the country filter is applied to the blacklist response, not by the API itself; keep `ABUSEIPDB_LIMIT` modest. OTX is global by nature — it has no country filter, so treat its pulses as context, not as an Aruba feed.
+
 ## Licensing notes
 
 - **CC0 / public domain** — republish freely.

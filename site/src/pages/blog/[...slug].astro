@@ -21,6 +21,12 @@ const u = (p: string) => base + p.replace(/^\//, '');
       <span class="eyebrow">{post.data.tags[0] ?? 'Briefing'}</span>
       <h1>{post.data.title}</h1>
       <p class="lede">{post.data.description}</p>
+      {(post.data.summary_nl || post.data.summary_pap) && (
+        <div class="brief-summaries">
+          {post.data.summary_nl && <p class="brief-summary"><span class="lang">NL</span>{post.data.summary_nl}</p>}
+          {post.data.summary_pap && <p class="brief-summary"><span class="lang">PAP</span>{post.data.summary_pap}</p>}
+        </div>
+      )}
       <div class="article-meta">
         <span>{date}</span>
         <span>Kevin Florencio</span>

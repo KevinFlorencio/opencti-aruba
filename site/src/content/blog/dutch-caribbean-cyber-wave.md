@@ -3,6 +3,8 @@ title: "The week the Dutch Caribbean woke up"
 description: "Between 22 and 31 July 2025, a court, a tax administration and a parliament across the Dutch Caribbean were hit in quick succession. What the wave reveals about shared exposure — and what to fix first."
 published: 2025-07-31
 tags: ["incident analysis", "Dutch Caribbean", "ransomware", "phishing"]
+summary_nl: "Tussen 22 en 31 juli 2025 werden een rechtbank, de belastingdienst van Curaçao en het parlement van Aruba binnen tien dagen getroffen. Deze briefing reconstrueert de publieke tijdlijn, scheidt wat bekend is van wat niet bekend is, en legt uit welke vijf maatregelen organisaties deze week moeten nemen."
+summary_pap: "Entre 22 y 31 di juli 2025, un corte, e departamento di impuesto di Kòrsou y e parlamento di Aruba a ser gherá den dies dia. E análisis aki ta rekonstruí e timeline públiko, separá loke nos sa di loke nos no sa, y ta splika kua sinku medidanan organisacionnan mester tuma e siman aki."
 sources:
   - label: "The Record — Dutch Caribbean islands respond to cyberattacks on courts, tax departments (Aug 2025)"
     url: "https://therecord.media/aruba-curacao-governments-cyberattacks"

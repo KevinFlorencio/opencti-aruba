@@ -22,8 +22,10 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.19.21
     restart: always
+    command: ["elasticsearch", "-Epath.repo=/usr/share/elasticsearch/backups"]
     volumes:
       - esdata:/usr/share/elasticsearch/data
+      - ./backups/es:/usr/share/elasticsearch/backups
     environment:
       - discovery.type=single-node
       - xpack.ml.enabled=false
@@ -192,7 +194,7 @@ services:
       <<: *opencti-common
       CONNECTOR_ID: 07806e0b-d990-4883-9501-b5a4f0c4b81f
       CONNECTOR_NAME: MITRE ATT&CK
-      CONNECTOR_SCOPE: mitre
+      CONNECTOR_SCOPE: attack-pattern,campaign,course-of-action,identity,intrusion-set,malware,marking-definition,tool,report,x-mitre-collection,x-mitre-data-component,x-mitre-data-source,x-mitre-matrix,x-mitre-tactic
       CONNECTOR_AUTO_CREATE_SERVICE_ACCOUNT: "true"
       CONNECTOR_AUTO_CREATE_SERVICE_ACCOUNT_CONFIDENCE_LEVEL: "75"
     depends_on:
@@ -206,7 +208,7 @@ services:
       <<: *opencti-common
       CONNECTOR_ID: 68e115b9-1e0e-44cf-8138-33e0cafc641f
       CONNECTOR_NAME: MITRE ATLAS
-      CONNECTOR_SCOPE: mitre-atlas
+      CONNECTOR_SCOPE: attack-pattern,course-of-action,identity,intrusion-set,malware,marking-definition,tool,report,x-mitre-collection,x-mitre-data-component,x-mitre-data-source,x-mitre-matrix,x-mitre-tactic
       CONNECTOR_DURATION_PERIOD: PT24H
     depends_on:
       opencti:
@@ -270,6 +272,7 @@ services:
       MISP_CREATE_OBSERVABLES: "true"
       MISP_CREATE_OBJECT_OBSERVABLES: "true"
       MISP_CREATE_TAGS_AS_LABELS: "true"
+      MISP_GUESS_THREATS_FROM_TAGS: "true"
       MISP_REPORT_TYPE: misp-event
       MISP_IMPORT_FROM_DATE: "2025-06-01"
       MISP_IMPORT_DISTRIBUTION_LEVELS: "0,1,2,3"
@@ -278,6 +281,53 @@ services:
       MISP_ENFORCE_WARNING_LIST: "true"
       MISP_THREAT_LEVEL_SCORE_MAPPING: "1:90;2:60;3:30;4:50"
       MISP_IMPORT_UNSUPPORTED_OBSERVABLES_AS_TEXT: "true"
+    depends_on:
+      opencti:
+        condition: service_healthy
+
+  # ── Optional, key-gated sources ──────────────────────────────
+  # Enable with: docker compose --profile otx --profile abuseipdb up -d
+  connector-otx:
+    image: opencti/connector-alienvault:latest
+    restart: always
+    profiles: ["otx"]
+    environment:
+      <<: *opencti-common
+      OPENCTI_TOKEN: ${CONNECTOR_OTX_TOKEN}
+      CONNECTOR_ID: 58a6a4e5-6cef-4cf3-aa65-67d359ece9c7
+      CONNECTOR_NAME: AlienVault OTX
+      CONNECTOR_SCOPE: report,indicator,malware,identity,vulnerability,attack-pattern
+      CONNECTOR_DURATION_PERIOD: PT6H
+      ALIENVAULT_API_KEY: ${ALIENVAULT_API_KEY}
+      ALIENVAULT_PULSE_START_TIMESTAMP: ${ALIENVAULT_PULSE_START_TIMESTAMP:-2026-10-01T00:00:00Z}
+      ALIENVAULT_TLP: clear
+      ALIENVAULT_CREATE_OBSERVABLES: "true"
+      ALIENVAULT_CREATE_INDICATORS: "true"
+      ALIENVAULT_GUESS_MALWARE: "true"
+      ALIENVAULT_GUESS_CVE: "true"
+      ALIENVAULT_FILTER_INDICATORS: "true"
+    depends_on:
+      opencti:
+        condition: service_healthy
+
+  connector-abuseipdb:
+    image: opencti/connector-abuseipdb-ipblacklist:latest
+    restart: always
+    profiles: ["abuseipdb"]
+    environment:
+      <<: *opencti-common
+      OPENCTI_TOKEN: ${CONNECTOR_ABUSEIPDB_TOKEN}
+      CONNECTOR_ID: e3b5476e-76d8-4ac3-85bc-8a60039005e9
+      CONNECTOR_NAME: AbuseIPDB Caribbean Blacklist
+      CONNECTOR_SCOPE: indicator,ipv4-addr
+      CONNECTOR_DURATION_PERIOD: PT12H
+      ABUSEIPDB_API_KEY: ${ABUSEIPDB_API_KEY}
+      ABUSEIPDB_SCORE: "${ABUSEIPDB_SCORE:-75}"
+      ABUSEIPDB_LIMIT: "10000"
+      ABUSEIPDB_ONLY_COUNTRY: "${ABUSEIPDB_ONLY_COUNTRY:-AW,CW,BQ}"
+      ABUSEIPDB_CREATE_INDICATOR: "true"
+      ABUSEIPDB_TLP_LEVEL: clear
+      ABUSEIPDB_IPVERSION: mixed
     depends_on:
       opencti:
         condition: service_healthy

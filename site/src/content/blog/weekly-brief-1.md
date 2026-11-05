@@ -3,6 +3,8 @@ title: "Weekly Brief #1 — the radar goes live"
 description: "What the platform ingested in its first cycle, why the indicator mix is URL-heavy, and the three things an Aruban organisation should do this week."
 published: 2026-11-05
 tags: ["weekly brief", "Aruba", "CTI"]
+summary_nl: "Het eerste weekoverzicht: wat het platform in de eerste cyclus binnenhaalde, waarom de indicatorverdeling URL-zwaar is, en drie dingen die een Arubaanse organisatie deze week moet doen."
+summary_pap: "E promé resúmen semanal: kiko e plataforma a drenta den su promé ciclo, dicon e indicadornan ta mayormente URL, y tres cosnan cu un organisacion Arubano mester haci e siman aki."
 sources:
   - label: "Aruba Threat Radar — live snapshot"
     url: "https://github.com/KevinFlorencio/opencti-aruba"

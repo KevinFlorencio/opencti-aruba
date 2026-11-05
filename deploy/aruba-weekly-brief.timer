@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the Aruba Threat Radar weekly brief every Monday
+
+[Timer]
+# 11:00 UTC = 07:00 AST (Aruba does not observe DST)
+OnCalendar=Mon *-*-* 11:00:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

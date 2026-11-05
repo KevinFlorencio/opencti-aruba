@@ -3,6 +3,8 @@ title: "Introducing the Aruba Threat Radar"
 description: "Why the island needs its own intelligence desk, how the OpenCTI + MISP pipeline is built, and exactly what will be published every week."
 published: 2026-11-05
 tags: ["project", "OpenCTI", "MISP", "architecture"]
+summary_nl: "Waarom het eiland een eigen inlichtingendesk nodig heeft, hoe de OpenCTI + MISP-pijplijn is gebouwd, en wat er elke week wordt gepubliceerd — met de grenzen: alleen TLP:CLEAR, geen slachtofferidentiteiten, geen attributie zonder bewijs."
+summary_pap: "Dicon e isla mester tin su propio mesa di inteligencia, con e pipeline OpenCTI + MISP ta traha, y kiko ta ser publiká tur siman — cu su límites: solamente TLP:CLEAR, ningun identidad di víctima, ningun atribucion sin evidencia."
 sources:
   - label: "OpenCTI — open-source threat intelligence platform"
     url: "https://github.com/OpenCTI-Platform/opencti"

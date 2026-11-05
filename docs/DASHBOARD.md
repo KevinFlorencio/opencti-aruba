@@ -147,3 +147,23 @@ Caddy serves `site/dist`. The build is deterministic and can run in CI; the only
 - Charts have titles and the underlying numbers appear in KPI cards and tables.
 - Focus styles use the browser default; do not remove outlines.
 - `prefers-reduced-motion` disables ticker, pulse and reveal animations.
+
+## Analyst dashboards inside OpenCTI
+
+The public radar is the publishable view. The analyst view lives in OpenCTI
+itself, under **Dashboards → Custom dashboards**:
+
+| Dashboard | Question it answers |
+| --- | --- |
+| Aruba Watchlist | Reports, indicators, observables, ATT&CK techniques, malware and intrusion sets in one screen |
+| KEV Exposure | Known-exploited vulnerabilities vs the full vulnerability baseline |
+| Ingestion Pulse (24h) | Whether the collectors delivered anything in the last day |
+
+They are dashboards, not reports: every widget is a live count over the graph,
+with the dashboard date range applied. They are LAN-only because OpenCTI is
+LAN-only. The public page never queries them.
+
+The manifests are generated from a small Python snippet and imported with the
+`workspaceConfigurationImport` GraphQL mutation. To back one up, use the UI's
+export (it writes `[YYYYMMDD]_octi_dashboard_[name].json`) and keep the JSON in
+`site/src/data/` only if it contains no sensitive filters.

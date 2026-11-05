@@ -17,9 +17,11 @@ export OPENCTI_PUBLIC_URL="${OPENCTI_BASE_URL}"
 echo "[refresh] collecting $(date -Is)"
 python3 scripts/collect_radar.py
 
-if command -v npm >/dev/null 2>&1; then
+if [ -x site/node_modules/.bin/astro ]; then
   echo "[refresh] building site"
   (cd site && npm run build --silent)
+elif command -v npm >/dev/null 2>&1; then
+  echo "[refresh] npm present but site dependencies are not installed — updating the served snapshot only" >&2
 else
   echo "[refresh] npm not found — updating the served snapshot only" >&2
 fi

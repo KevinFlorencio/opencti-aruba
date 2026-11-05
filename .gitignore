@@ -18,8 +18,11 @@ __pycache__/
 # local data
 *.tmp
 *.log
-backups/
+backups/*
+!backups/es/
+!backups/es/.gitkeep
 .DS_Store
 
 # local TLS
 caddy/certs/
+!backups/es/.gitkeep
