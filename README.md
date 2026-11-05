@@ -21,7 +21,7 @@ OpenCTI + MISP running on Proxmox, a Python collector, and a static dashboard/bl
 
 ## What it does
 
-- **Ingests** public CTI: CIRCL OSINT, URLhaus, Feodo Tracker, Botvrij, OpenPhish through MISP; MITRE ATT&CK, MITRE ATLAS, CISA KEV and OpenCTI reference data through connectors.
+- **Ingests** public CTI: CIRCL OSINT, Feodo Tracker, Botvrij, OpenPhish through MISP; MITRE ATT&CK, MITRE ATLAS, CISA KEV and OpenCTI reference data through connectors.
 - **Structures** it in OpenCTI as a STIX 2.1 graph — reports, indicators, malware, actors, campaigns, vulnerabilities, sectors and locations.
 - **Publishes** a TLP:CLEAR snapshot: live counts, latest reports, defanged indicators, feed health, a curated regional incident map and an ATT&CK coverage view.
 - **Explains** it in long-form briefings with sources on every claim.
@@ -124,8 +124,8 @@ OPENCTI_TOKEN="$OPENCTI_ADMIN_TOKEN" MISP_KEY="$MISP_API_KEY" \
 ## Status
 
 - [x] OpenCTI 7 on Proxmox with persistent volumes
-- [x] MISP with public feeds (CIRCL, Botvrij, URLhaus, Feodo, OpenPhish, ET) and OpenCTI connector
-- [x] MITRE ATT&CK, ATLAS, CISA KEV, reference datasets
+- [x] MISP with public feeds (CIRCL, Botvrij, Feodo, OpenPhish, ET) and OpenCTI connector
+- [x] MITRE ATT&CK, ATLAS, CISA KEV, Phishunt, RansomLook and reference datasets
 - [x] Public radar (map, KPIs, reports, 400+ indicators, ATT&CK view, source health)
 - [x] Blog with four sourced briefings, including the first weekly brief
 - [x] Collector + refresh timer + backup script

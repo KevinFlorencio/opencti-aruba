@@ -18,15 +18,6 @@
     "status": "online"
   },
   {
-    "name": "abuse.ch URLhaus",
-    "type": "MISP feed",
-    "url": "https://urlhaus.abuse.ch/",
-    "license": "CC0",
-    "cadence": "Hourly",
-    "desc": "URLs distributing malware, with payload hashes and tags. Strong signal for phishing and initial-access lures.",
-    "status": "online"
-  },
-  {
     "name": "abuse.ch Feodo Tracker",
     "type": "MISP feed",
     "url": "https://feodotracker.abuse.ch/",
@@ -50,7 +41,25 @@
     "url": "https://openphish.com/",
     "license": "Free community feed",
     "cadence": "Hourly",
-    "desc": "Community phishing URL feed. Complements URLhaus for credential-harvesting pages.",
+    "desc": "Community phishing URL feed. Complements Phishunt for credential-harvesting pages.",
+    "status": "online"
+  },
+  {
+    "name": "Phishunt",
+    "type": "OpenCTI connector",
+    "url": "https://phishunt.io/",
+    "license": "Free / keyless",
+    "cadence": "Every 6 hours",
+    "desc": "Active phishing URLs from a keyless public feed. The closest match to the credential-harvesting lures that dominate local inboxes.",
+    "status": "online"
+  },
+  {
+    "name": "RansomLook",
+    "type": "OpenCTI connector",
+    "url": "https://www.ransomlook.io/",
+    "license": "Free / keyless",
+    "cadence": "Every 6 hours",
+    "desc": "Ransomware leak-site claims with victim and group context. Free substitute for the paid Ransomware.live API.",
     "status": "online"
   },
   {

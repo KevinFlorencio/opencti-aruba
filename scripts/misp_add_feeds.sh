@@ -33,7 +33,6 @@ add_feed() {
     "$BASE/feeds/add" >/dev/null
 }
 
-add_feed "abuse.ch URLhaus" "abuse.ch" "https://urlhaus.abuse.ch/downloads/csv_recent/" "csv"
 add_feed "abuse.ch Feodo Tracker" "abuse.ch" "https://feodotracker.abuse.ch/downloads/ipblocklist.csv" "csv"
 add_feed "OpenPhish" "OpenPhish" "https://openphish.com/feed.txt" "freetext"
 add_feed "ET Compromised IPs" "Emerging Threats" "https://rules.emergingthreats.net/blockrules/compromised-ips.txt" "freetext"

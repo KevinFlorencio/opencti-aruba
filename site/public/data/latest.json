@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T21:14:01.900052Z",
+  "generated_at": "2026-11-05T21:21:53.893185Z",
   "platform": {
     "status": "online",
     "version": "7.261103.0",
@@ -8,26 +8,26 @@
   },
   "kpis": {
     "reports": 4,
-    "indicators": 709,
+    "indicators": 886,
     "malware": 0,
     "actors": 0,
     "campaigns": 1,
-    "vulnerabilities": 1040,
-    "observables": 1194,
+    "vulnerabilities": 1154,
+    "observables": 1512,
     "watchlist_hits": 19
   },
   "counts_by_type": [
     {
       "name": "Observables",
-      "count": 1194
+      "count": 1512
     },
     {
       "name": "Indicators",
-      "count": 709
+      "count": 886
     },
     {
       "name": "Vulnerabilities",
-      "count": 1040
+      "count": 1154
     },
     {
       "name": "Malware",
@@ -98,444 +98,564 @@
   ],
   "indicators": [
     {
-      "id": "55bad47e-4b5d-4e04-b214-b7e53b62441e",
-      "name": "35.210.240.68",
-      "value": "35.210.240.68",
+      "id": "7ae2002e-dc15-4987-b439-18eae28ba05d",
+      "name": "https://accounts.binanceuz.co/ru/login/password",
+      "value": "https://accounts.binanceuz.co/ru/login/password",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:14:01.161Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.278Z",
+      "created_at": "2026-11-05T21:21:52.522Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "1874b736-bd8d-458d-8089-fa03c00e917d",
-      "name": "35.210.239.143",
-      "value": "35.210.239.143",
+      "id": "b52cb8f5-cf1b-480c-bb35-cf5e33e9cffc",
+      "name": "https://onedrive.at-us.therelayservice.com/matpwp#/main?type=onedrive&locale=en&token=klb1x-bsfowhfwldwy5w5kex8sqynzrdesvfmnxmjl0tdf7uku8us441ssdv8qxwab7r07sx8d2tcaaxbilw7jrzwi1bt5g3m5qzpqncstyknfwj-yqfe_r7n9a3fu-ucws29093snwgphbneuqsxk8mdo1puqplqq_lyyy-z2vqt0erqcmg8tcawlfl4sskggccbqduptoyfosujteijqvlgjpzlcwk0wzrnqxxdxcdnwju5qyv2u4bj3idzgs8v6qa5yn4seek0heypiiacbhbz-jsqmkneijig233aier9rnsfanl5bt7eowf4952rktiz7odbtltsmxsfazcm3ga1xvespeobe4utzckdaigmdsculmol47bkalfeo3zqnkpb9hw-0acrojr0rpyclysnuwlrdsj3cwj5fljekfatvnxgqf6t6guofe50es9j4ljrt51cmwecxfrx7gnrdtg4vqsf_loqemh0n9qs_6pgwf78nhmzq2uzw-h3syvcvq9ymx-socacp8xhredrbz2z64w4xkxwty3fqjcnrfittqfgpdtnzmyg77ykywog3xcnqzclem2_oylu4f8ynj210a8hcdlwhk_kfpo-l-rvhhjwr8rvlblvvkztoo5nswd6zvqyiyh6c14wlbgmps9-4hbixryj-niycq2ngj7cha9mbmdeuln-4mx3i54",
+      "value": "onedrive&locale=en&token=klb1x-bsfowhfwldwy5w5kex8sqynzrdesvfmnxmjl0tdf7uku8us441ssdv8qxwab7r07sx8d2tcaaxbilw7jrzwi1bt5g3m5qzpqncstyknfwj-yqfe_r7n9a3fu-ucws29093snwgphbneuqsxk8mdo1puqplqq_lyyy-z2vqt0erqcmg8tcawlfl4sskggccbqduptoyfosujteijqvlgjpzlcwk0wzrnqxxdxcdnwju5qyv2u4bj3idzgs8v6qa5yn4seek0heypiiacbhbz-jsqmkneijig233aier9rnsfanl5bt7eowf4952rktiz7odbtltsmxsfazcm3ga1xvespeobe4utzckdaigmdsculmol47bkalfeo3zqnkpb9hw-0acrojr0rpyclysnuwlrdsj3cwj5fljekfatvnxgqf6t6guofe50es9j4ljrt51cmwecxfrx7gnrdtg4vqsf_loqemh0n9qs_6pgwf78nhmzq2uzw-h3syvcvq9ymx-socacp8xhredrbz2z64w4xkxwty3fqjcnrfittqfgpdtnzmyg77ykywog3xcnqzclem2_oylu4f8ynj210a8hcdlwhk_kfpo-l-rvhhjwr8rvlblvvkztoo5nswd6zvqyiyh6c14wlbgmps9-4hbixryj-niycq2ngj7cha9mbmdeuln-4mx3i54",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:59.757Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.276Z",
+      "created_at": "2026-11-05T21:21:48.843Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "96cf5a44-5c2f-4c33-adab-e769da0de560",
-      "name": "35.210.237.56",
-      "value": "35.210.237.56",
+      "id": "3b7710bd-aefb-4869-97de-f9497c2058c5",
+      "name": "https://outlook.verifytoken.com/s/63bzgfsvbwsfcdx7y9/584dd8/90eab167-7429-489f-99f6-ce86e8d0d81a",
+      "value": "https://outlook.verifytoken.com/s/63bzgfsvbwsfcdx7y9/584dd8/90eab167-7429-489f-99f6-ce86e8d0d81a",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:58.705Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.275Z",
+      "created_at": "2026-11-05T21:21:46.722Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "54489ff9-6831-4be7-a987-ebf42f744604",
-      "name": "35.210.237.238",
-      "value": "35.210.237.238",
+      "id": "37d9d87a-a121-4114-b5db-54ddfbf9a840",
+      "name": "https://microsoftjk.eu.org",
+      "value": "https://microsoftjk.eu.org",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:57.872Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.273Z",
+      "created_at": "2026-11-05T21:21:44.301Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "d3bbd163-a349-424e-b544-a1a172484e0b",
-      "name": "35.210.229.50",
-      "value": "35.210.229.50",
+      "id": "2607cdd5-5b8d-4ff9-a91a-5ce9f5d11950",
+      "name": "https://correosprepago.bnext.es/pwd?token=xbe6vb2chqe6tn2gpvdq5dmogw",
+      "value": "xbe6vb2chqe6tn2gpvdq5dmogw",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:56.325Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.272Z",
+      "created_at": "2026-11-05T21:21:40.571Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "0019d2a4-9032-4848-abb0-9bb773c692f4",
-      "name": "35.210.222.181",
-      "value": "35.210.222.181",
+      "id": "c00af60c-70e9-4ba8-ae40-05bc8ac40f07",
+      "name": "http://iniciamazon.com.br",
+      "value": "http://iniciamazon.com.br",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:55.228Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.270Z",
+      "created_at": "2026-11-05T21:21:38.396Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "dc4d9396-8f6d-4e68-b91d-194bd0307703",
-      "name": "35.210.213.124",
-      "value": "35.210.213.124",
+      "id": "4ca4ffdd-4e7b-41ff-8fd7-e9df710aa040",
+      "name": "http://googleplaydown.com",
+      "value": "http://googleplaydown.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:54.451Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.269Z",
+      "created_at": "2026-11-05T21:21:35.069Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "3f5efd4c-b2da-45d5-bdf0-f87931881150",
-      "name": "35.210.205.101",
-      "value": "35.210.205.101",
+      "id": "02abaafd-89eb-49d7-af20-81101b45cfaa",
+      "name": "https://facebook-login-page-kappa.vercel.app",
+      "value": "https://facebook-login-page-kappa.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:53.148Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.268Z",
+      "created_at": "2026-11-05T21:21:33.183Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "cb4ad5a0-0331-42d3-856e-d97499549e38",
-      "name": "35.210.200.154",
-      "value": "35.210.200.154",
+      "id": "1f0bfec7-6cba-45e4-94cd-6024a2600dbf",
+      "name": "https://office365.rricrosoft-offices.org/i/df3667320560f4a8a9918ef9f3f4c4383",
+      "value": "https://office365.rricrosoft-offices.org/i/df3667320560f4a8a9918ef9f3f4c4383",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:52.144Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.266Z",
+      "created_at": "2026-11-05T21:21:29.762Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "4066dcd7-aa74-4813-9f66-83089ce17882",
-      "name": "35.210.191.203",
-      "value": "35.210.191.203",
+      "id": "4f53977c-0852-4469-9012-d036acab9a6f",
+      "name": "https://chatgpt0005.eu.org/blog",
+      "value": "https://chatgpt0005.eu.org/blog",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:50.871Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.265Z",
+      "created_at": "2026-11-05T21:21:26.356Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "f60db890-962d-45ee-8a0c-8bdf842fc1aa",
-      "name": "35.210.188.215",
-      "value": "35.210.188.215",
+      "id": "9e712578-7a94-47a6-a303-9019d2c404c0",
+      "name": "https://ruddycruzc.github.io/clon-spotify",
+      "value": "https://ruddycruzc.github.io/clon-spotify",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:49.641Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.263Z",
+      "created_at": "2026-11-05T21:21:23.073Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "f72ec0ca-f06b-4b96-bdb3-f99796b62a11",
-      "name": "35.210.173.86",
-      "value": "35.210.173.86",
+      "id": "ebb9ad85-0c88-49f0-b06b-5c367ddfb302",
+      "name": "http://facebook-profile-login.blogspot.com",
+      "value": "http://facebook-profile-login.blogspot.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:48.757Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.262Z",
+      "created_at": "2026-11-05T21:21:21.979Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "b03069f7-4dbc-4181-a074-53808229bbc2",
-      "name": "35.210.149.174",
-      "value": "35.210.149.174",
+      "id": "e4e81337-396e-4737-b0df-fd6d7a51cf39",
+      "name": "https://profil-facebook-saya.blogspot.com",
+      "value": "https://profil-facebook-saya.blogspot.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:47.439Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.260Z",
+      "created_at": "2026-11-05T21:21:16.806Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "fc1651c0-8719-426f-8245-fa15518d5cef",
-      "name": "35.210.140.20",
-      "value": "35.210.140.20",
+      "id": "2949206e-afe8-49d7-bfba-155d8f2f99a8",
+      "name": "http://a2zapk.co/1368404-spotify-music-and-podcasts-9-0-30-242-ab-experimental-cloned-armeabi-v7a-arm64-v8a-a2z.html",
+      "value": "http://a2zapk.co/1368404-spotify-music-and-podcasts-9-0-30-242-ab-experimental-cloned-armeabi-v7a-arm64-v8a-a2z.html",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:46.049Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.259Z",
+      "created_at": "2026-11-05T21:21:13.706Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "b421244f-13da-4cd0-ad31-66a2310b0c03",
-      "name": "35.210.13.61",
-      "value": "35.210.13.61",
+      "id": "6377aff3-1c81-4bbd-876b-04929a9b6ded",
+      "name": "http://instagram-login-page-two.vercel.app",
+      "value": "http://instagram-login-page-two.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:45.007Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.258Z",
+      "created_at": "2026-11-05T21:21:11.293Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "b7d8e293-8bf8-47d1-9307-d6c6599aeae4",
-      "name": "35.210.125.90",
-      "value": "35.210.125.90",
+      "id": "9e81559e-0743-4b36-bd95-56c931d20525",
+      "name": "https://binancelivetrade.blogspot.com",
+      "value": "https://binancelivetrade.blogspot.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:44.242Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.256Z",
+      "created_at": "2026-11-05T21:21:09.261Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "0577da16-679e-4255-ab6f-55dbb4b00d29",
-      "name": "35.210.123.92",
-      "value": "35.210.123.92",
+      "id": "5ab0f0d5-f73a-4c66-9286-6a7a29268367",
+      "name": "https://hsbc-sec.com",
+      "value": "https://hsbc-sec.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:37.000Z",
-      "created_at": "2026-11-05T21:13:43.279Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.255Z",
+      "created_at": "2026-11-05T21:21:06.960Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "7952ff70-f48e-42d6-a462-aa5bf1eb1f52",
-      "name": "35.210.122.25",
-      "value": "35.210.122.25",
+      "id": "8bd8e0fd-a513-464d-bdf8-3c4db1bb587b",
+      "name": "http://samplel-ks6yxvur5-instagramm.vercel.app",
+      "value": "http://samplel-ks6yxvur5-instagramm.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:42.424Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.253Z",
+      "created_at": "2026-11-05T21:21:04.760Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "be34cb93-0b1e-47a1-98d1-3643ccd428dd",
-      "name": "35.210.122.110",
-      "value": "35.210.122.110",
+      "id": "5e9b05d9-18ff-4354-a650-5bea27ee5d1b",
+      "name": "https://instagram-cyber.github.io/instagram",
+      "value": "https://instagram-cyber.github.io/instagram",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:41.348Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.252Z",
+      "created_at": "2026-11-05T21:21:02.154Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "57a4bc6e-58f8-4d03-a0b0-1762b4161b19",
-      "name": "35.210.12.136",
-      "value": "35.210.12.136",
+      "id": "0f7a5355-943d-4e6f-a7c3-3c2b0e9d64e5",
+      "name": "http://netflixy-bixy.vercel.app",
+      "value": "http://netflixy-bixy.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:39.704Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.250Z",
+      "created_at": "2026-11-05T21:21:00.893Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "158dc575-aca5-4ca3-8ba5-78ec58d30b6c",
-      "name": "35.210.114.22",
-      "value": "35.210.114.22",
+      "id": "7abc7894-5f79-4bc5-a1a5-9f926a64fd1a",
+      "name": "http://amazon-harshdeep.vercel.app",
+      "value": "http://amazon-harshdeep.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:38.902Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.248Z",
+      "created_at": "2026-11-05T21:20:57.880Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "50d3fe3a-e99d-43d8-9a25-e94178e407dd",
-      "name": "35.210.11.30",
-      "value": "35.210.11.30",
+      "id": "adc01716-c9a5-4153-a808-64818aa363b9",
+      "name": "http://instagram-login-page-theta.vercel.app",
+      "value": "http://instagram-login-page-theta.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:38.255Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.247Z",
+      "created_at": "2026-11-05T21:20:54.511Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "4b7c2758-761b-40cf-8c1b-9f39837323e8",
-      "name": "35.210.107.114",
-      "value": "35.210.107.114",
+      "id": "8e655a4a-a8e7-4ac7-a3ad-67096272adae",
+      "name": "http://instagram-inky.vercel.app",
+      "value": "http://instagram-inky.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:37.174Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.246Z",
+      "created_at": "2026-11-05T21:20:52.343Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "2f35ff74-32af-4f76-b0d0-a0fb20f8e4d3",
-      "name": "35.206.183.188",
-      "value": "35.206.183.188",
+      "id": "bb85e930-3caa-4504-ae7d-1958c641ff33",
+      "name": "http://spotify-client-beta.vercel.app",
+      "value": "http://spotify-client-beta.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:36.423Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.244Z",
+      "created_at": "2026-11-05T21:20:49.146Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "60cd461d-b6ff-44ba-898e-4dda521da384",
-      "name": "35.206.181.209",
-      "value": "35.206.181.209",
+      "id": "92f5b677-c102-4de0-b99c-c5a73196331b",
+      "name": "https://instagram-cam.vercel.app",
+      "value": "https://instagram-cam.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:35.817Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.243Z",
+      "created_at": "2026-11-05T21:20:46.246Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "3f1af9ae-1291-4703-b3f1-6a724fc2f73d",
-      "name": "35.206.158.12",
-      "value": "35.206.158.12",
+      "id": "374cf259-b461-4084-86c9-f26a0f3f6cbc",
+      "name": "https://binancenn.com",
+      "value": "https://binancenn.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:34.505Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.241Z",
+      "created_at": "2026-11-05T21:20:44.691Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "a9968d4f-a117-4f8e-820a-e60281007832",
-      "name": "35.206.153.174",
-      "value": "35.206.153.174",
+      "id": "6cbd8943-290b-4622-9fb5-8c1518fd4f25",
+      "name": "https://binanceii.com",
+      "value": "https://binanceii.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:33.147Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.240Z",
+      "created_at": "2026-11-05T21:20:42.791Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "33529bcc-40ef-47f7-9f2f-a4093044e23a",
-      "name": "35.206.151.215",
-      "value": "35.206.151.215",
+      "id": "478e9546-e7c9-401b-822f-30c57229748c",
+      "name": "https://meet-googlee46347975696.pages.dev",
+      "value": "https://meet-googlee46347975696.pages.dev",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:31.374Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.238Z",
+      "created_at": "2026-11-05T21:20:40.717Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "18423f4d-5054-4839-afb3-85d285cbd935",
-      "name": "35.206.150.39",
-      "value": "35.206.150.39",
+      "id": "d502bb5a-4b0c-410c-a33e-d82393d5129f",
+      "name": "http://meet-googlee7563454656.pages.dev",
+      "value": "http://meet-googlee7563454656.pages.dev",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:30.295Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.237Z",
+      "created_at": "2026-11-05T21:20:39.733Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "deb6aa3d-3e8a-4360-aa71-58fac6d2a9e3",
-      "name": "35.206.133.147",
-      "value": "35.206.133.147",
+      "id": "fa6cd6d1-d5a6-4c46-bb18-f05598b3e38d",
+      "name": "https://meet-googlee7823629056.pages.dev",
+      "value": "https://meet-googlee7823629056.pages.dev",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:28.088Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.235Z",
+      "created_at": "2026-11-05T21:20:37.422Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "60451740-1723-45bd-ac80-59b632dd51b9",
-      "name": "35.205.73.209",
-      "value": "35.205.73.209",
+      "id": "3293a0cc-3a61-4e56-8226-c12e99b8f88c",
+      "name": "https://netflixvoid.org",
+      "value": "https://netflixvoid.org",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:26.519Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.234Z",
+      "created_at": "2026-11-05T21:20:34.542Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "8fcd186b-c9ca-48b5-abfc-36d2f5218d68",
-      "name": "35.205.59.95",
-      "value": "35.205.59.95",
+      "id": "a4c98278-1a31-4d7c-8d62-e54224388c83",
+      "name": "https://admin.santandercitas.com",
+      "value": "https://admin.santandercitas.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:24.716Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.232Z",
+      "created_at": "2026-11-05T21:20:32.273Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "e651eb4a-1a91-43fd-b237-80b716209825",
-      "name": "35.205.52.133",
-      "value": "35.205.52.133",
+      "id": "a95a24a2-00ce-44d8-b4e2-61e02e56f30c",
+      "name": "https://facebookpagemanagement.com",
+      "value": "https://facebookpagemanagement.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:23.003Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.231Z",
+      "created_at": "2026-11-05T21:20:28.490Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "0bd4baa1-1605-4207-b11f-9255088053a4",
-      "name": "35.205.235.226",
-      "value": "35.205.235.226",
+      "id": "e52a85c4-a118-4190-8bb8-1c2a34f92036",
+      "name": "http://metamask-launchpad.vercel.app",
+      "value": "http://metamask-launchpad.vercel.app",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:21.569Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.230Z",
+      "created_at": "2026-11-05T21:20:26.502Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "de252f1d-dbc8-44d4-a6a9-f9572c39df90",
-      "name": "35.205.228.238",
-      "value": "35.205.228.238",
+      "id": "81abd1a9-3f21-437a-9ae3-40304f5220d5",
+      "name": "https://outlook.webaccess-alert.com/s/63bzgfsvbwsfcdx7y9/584dd8/90eab167-7429-489f-99f6-ce86e8d0d81a",
+      "value": "https://outlook.webaccess-alert.com/s/63bzgfsvbwsfcdx7y9/584dd8/90eab167-7429-489f-99f6-ce86e8d0d81a",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:20.583Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.228Z",
+      "created_at": "2026-11-05T21:20:24.181Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "581c8490-15c0-4e42-965f-914cde225c22",
-      "name": "35.205.210.70",
-      "value": "35.205.210.70",
+      "id": "aa0677fd-a80b-4520-bf1c-d1971623146a",
+      "name": "https://hot-binance.com.cn",
+      "value": "https://hot-binance.com.cn",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:19.445Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.227Z",
+      "created_at": "2026-11-05T21:20:22.057Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "ae44150e-6e6b-4e91-b5eb-f9ae6449b56e",
-      "name": "35.205.193.65",
-      "value": "35.205.193.65",
+      "id": "69a7ff12-aba8-4f3c-a414-896a843ec0ec",
+      "name": "http://paypal-logiin.blogspot.com/2021/02?m=1",
+      "value": "1",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:18.106Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.226Z",
+      "created_at": "2026-11-05T21:20:19.594Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "c09d0436-13e2-40bb-a23b-3bf30252a0f4",
-      "name": "35.205.187.128",
-      "value": "35.205.187.128",
+      "id": "25fc628b-26ae-4f9b-a123-96c618afcf3e",
+      "name": "https://googlelogos.com",
+      "value": "https://googlelogos.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:16.652Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.224Z",
+      "created_at": "2026-11-05T21:20:16.062Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "91dc2471-98a6-4f65-9801-1cbcc2dfcd1e",
-      "name": "35.205.182.224",
-      "value": "35.205.182.224",
+      "id": "b60efd26-c704-4553-b20c-872aa39ddfab",
+      "name": "https://netflixquebec.blogspot.com",
+      "value": "https://netflixquebec.blogspot.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:16.099Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.223Z",
+      "created_at": "2026-11-05T21:20:13.375Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     },
     {
-      "id": "8edb5d35-2dc1-4b57-aaba-b6bc868de4c4",
-      "name": "35.205.144.81",
-      "value": "35.205.144.81",
+      "id": "77862eff-9171-45e5-bc78-d3632fea7b98",
+      "name": "https://mirror-google.com",
+      "value": "https://mirror-google.com",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
-      "valid_from": "2026-11-05T20:47:36.000Z",
-      "created_at": "2026-11-05T21:13:14.487Z",
-      "labels": []
+      "valid_from": "2026-11-05T21:18:20.221Z",
+      "created_at": "2026-11-05T21:20:11.239Z",
+      "labels": [
+        "osint",
+        "phishing"
+      ]
     }
   ],
   "series": [
@@ -597,17 +717,17 @@
     },
     {
       "date": "2026-11-05",
-      "count": 713
+      "count": 890
     }
   ],
   "indicator_mix": [
     {
       "label": "Ipv4-Addr",
-      "count": 409
+      "count": 519
     },
     {
       "label": "Url",
-      "count": 300
+      "count": 367
     }
   ],
   "sources": [
@@ -648,6 +768,18 @@
       "detail": "EXTERNAL_IMPORT"
     },
     {
+      "name": "Phishunt",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
+    },
+    {
+      "name": "Criminal IP C2 Daily",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
+    },
+    {
       "name": "CISA KEV",
       "type": "external_import",
       "status": "online",
@@ -658,12 +790,18 @@
       "type": "external_import",
       "status": "online",
       "detail": "EXTERNAL_IMPORT"
+    },
+    {
+      "name": "RansomLook",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
     }
   ],
   "brief": {
     "number": 1,
     "window": "29 Oct – 05 Nov 2026",
     "headline": "OpenPhish feed",
-    "summary": "4 reports, 709 indicators and 0 malware families in the graph. 0 public MISP feeds enabled."
+    "summary": "4 reports, 886 indicators and 0 malware families in the graph. 0 public MISP feeds enabled."
   }
 }

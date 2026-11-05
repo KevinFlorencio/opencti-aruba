@@ -37,7 +37,7 @@ A threat intelligence platform fixes the structure. OpenCTI stores entities and 
                          │  VM 124 · opencti-aruba · 8 vCPU / 20 GB    │
                          │                                            │
   MISP public feeds ───► │  ┌──────────┐    ┌───────────────────────┐  │
-  CIRCL, URLhaus,        │  │  MISP    │    │  OpenCTI 7            │  │
+  CIRCL, Phishunt,        │  │  MISP    │    │  OpenCTI 7            │  │
   Feodo, Botvrij,        │  │  MariaDB │───►│  GraphQL API :8080    │  │
   OpenPhish              │  │  Redis   │    │  Elasticsearch        │  │
                          │  └──────────┘    │  Redis / RabbitMQ     │  │
@@ -91,7 +91,7 @@ The whole thing fits in one VM because the data volume is deliberately modest: a
 
 ## The feeds, and why these
 
-**MISP** is the ingestion workhorse. It consumes public OSINT feeds — CIRCL, URLhaus, Feodo Tracker, Botvrij, OpenPhish — and normalises them into events with attributes, tags and galaxies. The official OpenCTI MISP connector then pulls published events into the graph as reports, indicators and observables.
+**MISP** is the ingestion workhorse. It consumes public OSINT feeds — CIRCL, Phishunt, Feodo Tracker, Botvrij, OpenPhish — and normalises them into events with attributes, tags and galaxies. The official OpenCTI MISP connector then pulls published events into the graph as reports, indicators and observables.
 
 **MITRE ATT&CK** gives every technique a stable ID and a tactic. Without it, "phishing" is a word; with it, `T1566.002` is a node that can be counted, mapped and compared across incidents.
 

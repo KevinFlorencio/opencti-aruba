@@ -226,6 +226,33 @@ services:
       opencti:
         condition: service_healthy
 
+  connector-ransomlook:
+    image: opencti/connector-ransomlook:latest
+    restart: always
+    environment:
+      <<: *opencti-common
+      CONNECTOR_ID: 44f661bf-56f0-4330-b778-8d23e872feaa
+      CONNECTOR_NAME: RansomLook
+      CONNECTOR_SCOPE: ransomlook
+      CONNECTOR_DURATION_PERIOD: PT6H
+    depends_on:
+      opencti:
+        condition: service_healthy
+
+  connector-phishunt:
+    image: opencti/connector-phishunt:latest
+    restart: always
+    environment:
+      <<: *opencti-common
+      CONNECTOR_ID: 840f3baa-f977-4bd5-b605-a3ba9ca2f191
+      CONNECTOR_NAME: Phishunt
+      CONNECTOR_SCOPE: phishunt
+      CONNECTOR_DURATION_PERIOD: PT6H
+      PHISHUNT_CREATE_INDICATORS: "true"
+    depends_on:
+      opencti:
+        condition: service_healthy
+
   connector-misp:
     image: opencti/connector-misp:latest
     restart: always

@@ -33,7 +33,7 @@
 Public feeds                  MISP                      OpenCTI
 ────────────                  ────                      ───────
 CIRCL OSINT ──┐
-URLhaus ──────┤   fetch/cache   ┌─────────┐   connector  ┌──────────┐
+Phishunt ─────┤   fetch/cache   ┌─────────┐   connector  ┌──────────┐
 Feodo ────────┼───────────────► │  events │ ───────────► │ reports  │
 Botvrij ──────┤                 │attributes│             │indicators│
 OpenPhish ────┘                 └─────────┘              │ malware  │

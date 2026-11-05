@@ -117,14 +117,14 @@ MISP UI: `https://<VM_IP>:9443` — `admin@aruba-ti.local` and the password prin
 
 ### Enable public feeds
 
-MISP ships two feeds, both disabled, and neither is URLhaus/Feodo/OpenPhish. Run the helper:
+MISP ships two feeds, both disabled, and neither is Feodo/OpenPhish. Run the helper:
 
 ```bash
 cd ~/aruba-ti
 ./scripts/misp_add_feeds.sh
 ```
 
-It enables CIRCL and Botvrij, adds URLhaus, Feodo Tracker, OpenPhish and ET Compromised IPs, then queues a fetch and cache for every scope. The first cache is the heaviest operation in the whole stack. Run it off-hours and watch disk:
+It enables CIRCL and Botvrij, adds Feodo Tracker, OpenPhish and ET Compromised IPs, then queues a fetch and cache for every scope. (URLhaus bulk CSV is retired upstream and returns 410, so it is deliberately not added.) The first cache is the heaviest operation in the whole stack. Run it off-hours and watch disk:
 
 ```bash
 watch -n5 'df -h /; docker stats --no-stream'

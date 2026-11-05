@@ -68,7 +68,6 @@ The first cache is heavy. Watch disk and MISP jobs (`Administration → Jobs`). 
 Recommended set:
 
 - CIRCL OSINT
-- abuse.ch URLhaus
 - abuse.ch Feodo Tracker
 - Botvrij.eu
 - OpenPhish
@@ -129,7 +128,7 @@ Most teams do not need bidirectional sync on day one. Import is where the value 
 
 These bit us on the first build (MISP 2.5.51, single `misp-core` container). They are documented so the next deployment does not lose an evening to them.
 
-**Only two feeds ship with the image.** CIRCL OSINT and Botvrij are present but disabled; URLhaus, Feodo, OpenPhish and ET must be added through `POST /feeds/add`. The working payload is in the deployment notes of `docs/DEPLOYMENT.md` and in the `add_feed` helper used to build this instance.
+**Only two feeds ship with the image.** CIRCL OSINT and Botvrij are present but disabled; Feodo, OpenPhish and ET must be added through `POST /feeds/add`. URLhaus bulk CSV is retired upstream (HTTP 410) and must not be added. The working payload is in the deployment notes of `docs/DEPLOYMENT.md` and in the `add_feed` helper used to build this instance.
 
 **nginx never starts if the healthcheck probes IPv4.** The image's healthcheck runs `echo > /dev/tcp/127.0.0.1/9002`, but php-fpm listens on `[::]:9002`. The check fails forever and `misp-nginx` waits on `service_healthy`. The compose file in this repository replaces the probe with a php-fpm process check. If you use the upstream compose unchanged, start nginx manually once (`docker start misp-misp-nginx-1`) or patch the healthcheck.
 

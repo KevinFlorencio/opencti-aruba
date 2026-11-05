@@ -8,10 +8,11 @@ Every feed in the platform, why it is there, its licence and how often it update
 |---|---|---|---|---|
 | MISP (local) | Platform | AGPL-3.0 | continuous | Normalisation, deduplication, warning lists, feed management |
 | CIRCL OSINT | MISP feed | Public / TLP:CLEAR | hourly | Broad, well-curated OSINT events |
-| abuse.ch URLhaus | MISP feed | CC0 | hourly | Malware distribution URLs |
 | abuse.ch Feodo Tracker | MISP feed | CC0 | hourly | Botnet C2 IPs (Emotet, Dridex, QakBot) |
 | Botvrij.eu | MISP feed | CC0 | daily | Dutch-curated OSINT |
 | OpenPhish | MISP feed | Free community feed | hourly | Phishing URLs |
+| Phishunt | OpenCTI connector | Free / keyless | 6 h | Active phishing URLs, closest to local lures |
+| RansomLook | OpenCTI connector | Free / keyless | 6 h | Ransomware leak-site claims |
 | MITRE ATT&CK | OpenCTI connector | Apache-2.0 / CC BY 4.0 | daily | TTP vocabulary and mappings |
 | MITRE ATLAS | OpenCTI connector | Apache-2.0 | daily | AI-system adversary techniques |
 | CISA KEV | OpenCTI connector | Public domain | 6 h | Exploited-in-the-wild vulnerability prioritisation |
