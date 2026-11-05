@@ -24,16 +24,16 @@ At the time of writing, after the first feed cycle:
 
 | Metric | Value |
 |---|---|
-| MISP events | 75 |
-| MISP attributes | 6,577 |
-| OpenCTI reports | 3 |
-| OpenCTI indicators | 284 |
-| Observables | 706 |
-| Known-exploited vulnerabilities (CISA KEV) | 844 |
+| MISP events | 160 |
+| MISP attributes | 12,639 |
+| OpenCTI reports | 4 |
+| OpenCTI indicators | 438 |
+| Observables | 804 |
+| Known-exploited vulnerabilities (CISA KEV) | 950 |
 | Campaigns | 1 (the Jul–Aug 2025 Dutch Caribbean wave) |
 | Enabled feeds | 6 |
 
-The indicator mix is **279 URLs and 5 IPv4 addresses**. That is not a coincidence: the feed set enabled on day one — URLhaus, OpenPhish, Feodo, CIRCL, Botvrij, ET — is URL- and IP-centric. It reflects what those feeds collect, not what is targeting Aruba.
+The indicator mix is **over 400 URLs and a handful of IPv4 addresses**. That is not a coincidence: the feed set enabled on day one — URLhaus, OpenPhish, Feodo, CIRCL, Botvrij, ET — is URL- and IP-centric. It reflects what those feeds collect, not what is targeting Aruba.
 
 **Read this as a starting line, not a threat level.** A radar that only sees URLs will miss malware hashes, TLS certificates, e-mail sender infrastructure and the identity-layer signals that mattered in the 2025 incidents. Adding MISP galaxies, malware feeds and a certificate-transparency source is the next coverage job.
 

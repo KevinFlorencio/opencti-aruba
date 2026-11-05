@@ -125,7 +125,7 @@ OPENCTI_TOKEN="$OPENCTI_ADMIN_TOKEN" MISP_KEY="$MISP_API_KEY" \
 - [x] OpenCTI 7 on Proxmox with persistent volumes
 - [x] MISP with public feeds (CIRCL, Botvrij, URLhaus, Feodo, OpenPhish, ET) and OpenCTI connector
 - [x] MITRE ATT&CK, ATLAS, CISA KEV, reference datasets
-- [x] Public radar (map, KPIs, reports, 280+ indicators, ATT&CK view, source health)
+- [x] Public radar (map, KPIs, reports, 400+ indicators, ATT&CK view, source health)
 - [x] Blog with four sourced briefings, including the first weekly brief
 - [x] Collector + refresh timer + backup script
 - [x] MISP deployment notes for the healthcheck, session and auth traps
