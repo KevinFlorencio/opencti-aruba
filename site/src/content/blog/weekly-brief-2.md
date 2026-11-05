@@ -1,7 +1,7 @@
 ---
 title: "Weekly brief 2: the graph grew a memory"
 description: "The week the platform stopped counting only indicators: 746 malware families, 185 intrusion sets, 58 campaigns, and 1,768 known-exploited vulnerabilities in the Aruba radar."
-date: 2026-11-05
+published: 2026-11-05
 tags: [CTI, Aruba, Weekly Brief]
 summary_nl: "Deze week kreeg het platform context: 746 malwarefamilies, 185 intrusiesets en 58 campagnes uit MITRE ATT&CK, naast 1.853 indicatoren en 1.768 kwetsbaarheden. De nadruk ligt nu op wat lokale organisaties deze week moeten patchen en waarom MFA alleen niet genoeg is."
 summary_pap: "E siman aki e plataforma a haña konteksto: 746 famia di malware, 185 intrusionset y 58 campaña for di MITRE ATT&CK, huntu cu 1.853 indicador y 1.768 vulnerabilidad. E foco awor ta riba kiko organisacionnan lokal mester patch e siman aki y dicon MFA so no ta suficiente."
