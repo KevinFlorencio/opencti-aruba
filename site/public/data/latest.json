@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T21:05:21.944440Z",
+  "generated_at": "2026-11-05T21:08:09.403387Z",
   "platform": {
     "status": "online",
     "version": "7.261103.0",
@@ -8,26 +8,26 @@
   },
   "kpis": {
     "reports": 4,
-    "indicators": 357,
+    "indicators": 451,
     "malware": 0,
     "actors": 0,
     "campaigns": 1,
-    "vulnerabilities": 925,
-    "observables": 804,
+    "vulnerabilities": 955,
+    "observables": 909,
     "watchlist_hits": 19
   },
   "counts_by_type": [
     {
       "name": "Observables",
-      "count": 804
+      "count": 909
     },
     {
       "name": "Indicators",
-      "count": 357
+      "count": 451
     },
     {
       "name": "Vulnerabilities",
-      "count": 925
+      "count": 955
     },
     {
       "name": "Malware",
@@ -98,443 +98,443 @@
   ],
   "indicators": [
     {
-      "id": "b9fb6e66-4438-4286-b4b8-94a08070cb57",
-      "name": "116.110.1.213",
-      "value": "116.110.1.213",
+      "id": "e1250f25-dddc-4bc0-8e9c-1a24511d4718",
+      "name": "165.232.38.37",
+      "value": "165.232.38.37",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:08:08.558Z",
+      "labels": []
+    },
+    {
+      "id": "096bbbaf-87e9-4d91-990f-b988829d5750",
+      "name": "165.232.108.129",
+      "value": "165.232.108.129",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:08:05.748Z",
+      "labels": []
+    },
+    {
+      "id": "8824bd55-207f-44f4-80a4-3ad3df168169",
+      "name": "165.227.56.128",
+      "value": "165.227.56.128",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:08:04.428Z",
+      "labels": []
+    },
+    {
+      "id": "6c8ba1f5-652c-40a6-9aab-2e7a93573a56",
+      "name": "165.227.28.164",
+      "value": "165.227.28.164",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:08:01.516Z",
+      "labels": []
+    },
+    {
+      "id": "488139ae-bbf1-4abf-b838-7194a217742f",
+      "name": "165.227.16.50",
+      "value": "165.227.16.50",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:59.864Z",
+      "labels": []
+    },
+    {
+      "id": "19de1ea2-054a-4684-b587-464f63960b29",
+      "name": "165.22.148.135",
+      "value": "165.22.148.135",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:58.693Z",
+      "labels": []
+    },
+    {
+      "id": "ee792249-aabf-41ae-a659-b3e2c8a20b09",
+      "name": "165.22.121.203",
+      "value": "165.22.121.203",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:57.150Z",
+      "labels": []
+    },
+    {
+      "id": "2e6131f0-f856-4cc1-ab03-ec4d5a76626e",
+      "name": "165.154.243.154",
+      "value": "165.154.243.154",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:53.142Z",
+      "labels": []
+    },
+    {
+      "id": "2a145246-9bea-439c-a5ae-ad4d7c77a3a7",
+      "name": "165.154.11.64",
+      "value": "165.154.11.64",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:50.264Z",
+      "labels": []
+    },
+    {
+      "id": "e1322312-80a7-4062-8905-cfac4b611853",
+      "name": "164.30.17.82",
+      "value": "164.30.17.82",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:48.614Z",
+      "labels": []
+    },
+    {
+      "id": "0d134fa1-919c-4384-94fa-296c5e915df9",
+      "name": "163.192.12.237",
+      "value": "163.192.12.237",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:47.416Z",
+      "labels": []
+    },
+    {
+      "id": "f6bc48f1-2fd5-4038-aec7-b46c59830d63",
+      "name": "162.243.63.33",
+      "value": "162.243.63.33",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:45.960Z",
+      "labels": []
+    },
+    {
+      "id": "46049fc3-5a66-4a74-975f-2d3ecc389270",
+      "name": "162.243.58.235",
+      "value": "162.243.58.235",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:44.421Z",
+      "labels": []
+    },
+    {
+      "id": "4e435697-3f3b-4528-97db-4a53def1abb2",
+      "name": "162.243.51.139",
+      "value": "162.243.51.139",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:42.841Z",
+      "labels": []
+    },
+    {
+      "id": "3f9f3354-4168-430a-bde6-a615e0fcea0f",
+      "name": "161.35.45.196",
+      "value": "161.35.45.196",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:41.713Z",
+      "labels": []
+    },
+    {
+      "id": "05e2ab3b-4a74-4947-8566-22aa98d26911",
+      "name": "161.35.170.233",
+      "value": "161.35.170.233",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:39.868Z",
+      "labels": []
+    },
+    {
+      "id": "685a7e56-ae41-4710-a2af-0aa1789c6b57",
+      "name": "161.248.147.22",
+      "value": "161.248.147.22",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:37.957Z",
+      "labels": []
+    },
+    {
+      "id": "e6f5368e-da7b-48ec-be50-0728dc6067b8",
+      "name": "160.250.180.18",
+      "value": "160.250.180.18",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:36.699Z",
+      "labels": []
+    },
+    {
+      "id": "c284925b-b45d-4c81-bf72-b5c6b2e1710b",
+      "name": "160.250.132.238",
+      "value": "160.250.132.238",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:35.329Z",
+      "labels": []
+    },
+    {
+      "id": "90db3f5a-1e95-4a97-801f-2aa9d9fc5f1e",
+      "name": "159.65.60.217",
+      "value": "159.65.60.217",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:33.173Z",
+      "labels": []
+    },
+    {
+      "id": "0b9cb483-5287-4850-a7ed-eb88849c9749",
+      "name": "159.65.19.55",
+      "value": "159.65.19.55",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:31.783Z",
+      "labels": []
+    },
+    {
+      "id": "614c642c-0cb2-4559-8ad9-f4af7a6b8d01",
+      "name": "158.69.197.98",
+      "value": "158.69.197.98",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:29.022Z",
+      "labels": []
+    },
+    {
+      "id": "a83a8d11-3ca9-4e53-b284-a97b8cf15ac7",
+      "name": "158.51.96.38",
+      "value": "158.51.96.38",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:26.875Z",
+      "labels": []
+    },
+    {
+      "id": "42b32ef4-cd29-4b04-a45c-1650fd0a77fc",
+      "name": "158.173.89.136",
+      "value": "158.173.89.136",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:25.675Z",
+      "labels": []
+    },
+    {
+      "id": "01925e64-95ee-4cef-8f14-1b51a2c59a5c",
+      "name": "157.245.84.42",
+      "value": "157.245.84.42",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:23.792Z",
+      "labels": []
+    },
+    {
+      "id": "42a2ed1d-4c39-4402-9e6e-b8260ed1a295",
+      "name": "155.103.71.239",
+      "value": "155.103.71.239",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:22.073Z",
+      "labels": []
+    },
+    {
+      "id": "17108e33-a8ca-47f8-a678-2521ec1b1306",
+      "name": "155.103.71.222",
+      "value": "155.103.71.222",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:20.665Z",
+      "labels": []
+    },
+    {
+      "id": "5291855d-0cc8-4946-b1cd-f4de44efa157",
+      "name": "155.103.71.188",
+      "value": "155.103.71.188",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:18.497Z",
+      "labels": []
+    },
+    {
+      "id": "de7807df-bbcb-4e90-b157-68a95b1b7fbb",
+      "name": "155.103.69.111",
+      "value": "155.103.69.111",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:16.345Z",
+      "labels": []
+    },
+    {
+      "id": "b33ad0ac-7e1d-494d-8065-f174d6b40072",
+      "name": "154.83.186.146",
+      "value": "154.83.186.146",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:14.772Z",
+      "labels": []
+    },
+    {
+      "id": "a87aa8cc-0a32-47f0-8ac2-815f4f262a00",
+      "name": "152.32.236.102",
+      "value": "152.32.236.102",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T21:07:12.905Z",
+      "labels": []
+    },
+    {
+      "id": "b2d85df5-a46d-435a-b828-2684d61d6aa7",
+      "name": "152.32.225.117",
+      "value": "152.32.225.117",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:20.967Z",
+      "created_at": "2026-11-05T21:07:10.901Z",
       "labels": []
     },
     {
-      "id": "6849909e-35a6-4cc9-ae9e-75da1ebc5d46",
-      "name": "116.110.1.113",
-      "value": "116.110.1.113",
+      "id": "1184b23c-c283-408e-8144-68fd7d04ce36",
+      "name": "148.72.64.140",
+      "value": "148.72.64.140",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:19.213Z",
+      "created_at": "2026-11-05T21:07:08.617Z",
       "labels": []
     },
     {
-      "id": "74e16798-98ac-4c3d-a8d3-0f6dc83fd5ac",
-      "name": "115.227.26.40",
-      "value": "115.227.26.40",
+      "id": "1e07a04a-6ba2-4502-9996-faef661ce966",
+      "name": "147.135.200.242",
+      "value": "147.135.200.242",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:17.968Z",
+      "created_at": "2026-11-05T21:07:07.048Z",
       "labels": []
     },
     {
-      "id": "386a637d-14de-4d35-be67-702389b2884f",
-      "name": "115.160.97.208",
-      "value": "115.160.97.208",
+      "id": "5a0fb67e-669f-4403-9fdf-d7054e63a4b2",
+      "name": "146.148.23.152",
+      "value": "146.148.23.152",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:16.653Z",
+      "created_at": "2026-11-05T21:07:05.291Z",
       "labels": []
     },
     {
-      "id": "ea88ac2b-6099-4d84-8adf-403895b13196",
-      "name": "114.130.253.3",
-      "value": "114.130.253.3",
+      "id": "c1b6f69b-1e69-4c97-ae0b-06aa76b5c475",
+      "name": "144.225.8.54",
+      "value": "144.225.8.54",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:15.123Z",
+      "created_at": "2026-11-05T21:07:03.777Z",
       "labels": []
     },
     {
-      "id": "7c011859-e899-4d90-9642-c70bf884c99b",
-      "name": "113.98.254.50",
-      "value": "113.98.254.50",
+      "id": "3aeac09f-3f35-48c1-bf99-652ac72a482d",
+      "name": "144.225.6.184",
+      "value": "144.225.6.184",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:13.290Z",
+      "created_at": "2026-11-05T21:07:02.446Z",
       "labels": []
     },
     {
-      "id": "0a959126-649e-405b-90b6-93bd4b70df8d",
-      "name": "110.142.146.188",
-      "value": "110.142.146.188",
+      "id": "6a5905fd-51ad-4f0d-8529-0df29cb4fe15",
+      "name": "144.225.6.182",
+      "value": "144.225.6.182",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:11.277Z",
+      "created_at": "2026-11-05T21:07:00.438Z",
       "labels": []
     },
     {
-      "id": "8d156bec-5eec-4b56-9fb3-e004455d3245",
-      "name": "110.10.176.164",
-      "value": "110.10.176.164",
+      "id": "ad1d75cd-dc65-45d5-a107-099a8d119c15",
+      "name": "14.34.249.175",
+      "value": "14.34.249.175",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:08.588Z",
+      "created_at": "2026-11-05T21:06:58.396Z",
       "labels": []
     },
     {
-      "id": "2d65392a-03d9-4e13-9e15-b51556102064",
-      "name": "108.28.86.172",
-      "value": "108.28.86.172",
+      "id": "f276eb83-ee67-4ccb-b926-2e32e3d64715",
+      "name": "142.93.8.65",
+      "value": "142.93.8.65",
       "pattern_type": "stix",
       "type": "OTHER",
       "score": 50,
       "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:05.424Z",
-      "labels": []
-    },
-    {
-      "id": "1738c8f4-a4bc-41d7-ba0f-efd0423720f3",
-      "name": "107.172.23.112",
-      "value": "107.172.23.112",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:03.841Z",
-      "labels": []
-    },
-    {
-      "id": "b53637ee-686a-4b9f-bdff-249679953135",
-      "name": "107.170.19.20",
-      "value": "107.170.19.20",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:32.000Z",
-      "created_at": "2026-11-05T21:05:02.078Z",
-      "labels": []
-    },
-    {
-      "id": "4d735fc4-462f-4329-a1ad-2a88316c4719",
-      "name": "107.150.123.48",
-      "value": "107.150.123.48",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:05:00.337Z",
-      "labels": []
-    },
-    {
-      "id": "7826d472-cea9-4da6-8345-4d1a6a089cac",
-      "name": "106.13.120.65",
-      "value": "106.13.120.65",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:58.142Z",
-      "labels": []
-    },
-    {
-      "id": "ab866ae8-4e22-4cbd-b6b2-082dd120275d",
-      "name": "104.248.167.164",
-      "value": "104.248.167.164",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:56.559Z",
-      "labels": []
-    },
-    {
-      "id": "a4d76714-881c-4646-8f04-da367e8b1687",
-      "name": "104.199.86.173",
-      "value": "104.199.86.173",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:53.786Z",
-      "labels": []
-    },
-    {
-      "id": "9d2c2b6d-ff28-4a11-8767-e9ee7a32f3de",
-      "name": "104.199.68.22",
-      "value": "104.199.68.22",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:51.887Z",
-      "labels": []
-    },
-    {
-      "id": "29e980ce-ca44-4f71-8453-bcec40c36578",
-      "name": "104.199.53.45",
-      "value": "104.199.53.45",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:50.334Z",
-      "labels": []
-    },
-    {
-      "id": "051e5197-0d71-47e1-8b52-06825bc851d3",
-      "name": "104.199.27.11",
-      "value": "104.199.27.11",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:48.875Z",
-      "labels": []
-    },
-    {
-      "id": "87c230f8-2ed2-45ba-b6da-e44926e952f7",
-      "name": "104.199.18.55",
-      "value": "104.199.18.55",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:45.555Z",
-      "labels": []
-    },
-    {
-      "id": "d2b4f4f7-542f-4b87-96b9-f1b6b91d3929",
-      "name": "104.155.92.149",
-      "value": "104.155.92.149",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:43.715Z",
-      "labels": []
-    },
-    {
-      "id": "be4b7263-2090-4c2a-8518-5e61487537dd",
-      "name": "104.155.84.46",
-      "value": "104.155.84.46",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:42.165Z",
-      "labels": []
-    },
-    {
-      "id": "016b41c9-7aae-4ab3-8b30-3a6975b49f63",
-      "name": "104.155.17.130",
-      "value": "104.155.17.130",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:40.377Z",
-      "labels": []
-    },
-    {
-      "id": "cf319e1a-729c-4f43-a850-e4598d9ebfe3",
-      "name": "104.155.100.236",
-      "value": "104.155.100.236",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:39.093Z",
-      "labels": []
-    },
-    {
-      "id": "49c30c1d-33d7-434c-bc3b-a2540595e427",
-      "name": "103.85.85.159",
-      "value": "103.85.85.159",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:37.327Z",
-      "labels": []
-    },
-    {
-      "id": "5f63533f-cde5-4980-9b97-e0b677d1cda1",
-      "name": "103.83.87.37",
-      "value": "103.83.87.37",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:35.979Z",
-      "labels": []
-    },
-    {
-      "id": "093b9af7-da5c-4ab6-b4a0-313f5da040e4",
-      "name": "103.83.87.34",
-      "value": "103.83.87.34",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:34.292Z",
-      "labels": []
-    },
-    {
-      "id": "d04e05da-3b85-4896-9e03-bad82dd0bc59",
-      "name": "103.83.87.203",
-      "value": "103.83.87.203",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:31.949Z",
-      "labels": []
-    },
-    {
-      "id": "6eb372ac-9279-4505-abb7-72facdcea5b0",
-      "name": "103.83.87.185",
-      "value": "103.83.87.185",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:29.802Z",
-      "labels": []
-    },
-    {
-      "id": "11252a2f-8636-4153-9304-dc4aa674b5fd",
-      "name": "103.83.87.15",
-      "value": "103.83.87.15",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:26.290Z",
-      "labels": []
-    },
-    {
-      "id": "cd2a598e-3c0c-445e-a4b6-9bbb8e5fcc04",
-      "name": "103.83.86.39",
-      "value": "103.83.86.39",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:23.833Z",
-      "labels": []
-    },
-    {
-      "id": "e0aff6e2-07c3-45f4-8148-7b4d0265c32e",
-      "name": "103.83.86.180",
-      "value": "103.83.86.180",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:22.782Z",
-      "labels": []
-    },
-    {
-      "id": "3c0f1f3b-fec8-4772-b92b-936ffbd0fd88",
-      "name": "103.77.172.146",
-      "value": "103.77.172.146",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:21.187Z",
-      "labels": []
-    },
-    {
-      "id": "29f7322b-fa44-4b6e-bbd0-bbb4f0dd6755",
-      "name": "103.39.213.200",
-      "value": "103.39.213.200",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:18.505Z",
-      "labels": []
-    },
-    {
-      "id": "120f8dda-555c-4cfb-bf35-26d5355ee7b0",
-      "name": "103.228.36.205",
-      "value": "103.228.36.205",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:16.892Z",
-      "labels": []
-    },
-    {
-      "id": "674925c0-6ba7-4c32-82ea-7b0f620d2211",
-      "name": "103.170.215.118",
-      "value": "103.170.215.118",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:15.862Z",
-      "labels": []
-    },
-    {
-      "id": "2f4714d7-8ac1-4d76-b92b-62346633396f",
-      "name": "103.160.5.123",
-      "value": "103.160.5.123",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:13.831Z",
-      "labels": []
-    },
-    {
-      "id": "8def91e2-dac1-45ed-8bf4-88390f0a6865",
-      "name": "103.159.2.113",
-      "value": "103.159.2.113",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:12.705Z",
-      "labels": []
-    },
-    {
-      "id": "d1b7b4de-eb82-4dc5-b416-9b6400f255e4",
-      "name": "103.140.54.101",
-      "value": "103.140.54.101",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:11.510Z",
-      "labels": []
-    },
-    {
-      "id": "999fb889-abd3-462c-a7e3-4981f72d9770",
-      "name": "103.132.1.231",
-      "value": "103.132.1.231",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:09.780Z",
-      "labels": []
-    },
-    {
-      "id": "c1225902-bfda-42df-92c7-f5272ba76282",
-      "name": "102.220.161.86",
-      "value": "102.220.161.86",
-      "pattern_type": "stix",
-      "type": "OTHER",
-      "score": 50,
-      "valid_from": "2026-11-05T20:47:31.000Z",
-      "created_at": "2026-11-05T21:04:07.804Z",
+      "created_at": "2026-11-05T21:06:57.454Z",
       "labels": []
     }
   ],
@@ -597,7 +597,7 @@
     },
     {
       "date": "2026-11-05",
-      "count": 361
+      "count": 455
     }
   ],
   "indicator_mix": [
@@ -607,7 +607,7 @@
     },
     {
       "label": "Ipv4-Addr",
-      "count": 57
+      "count": 151
     }
   ],
   "sources": [
@@ -664,6 +664,6 @@
     "number": 1,
     "window": "29 Oct – 05 Nov 2026",
     "headline": "OpenPhish feed",
-    "summary": "4 reports, 357 indicators and 0 malware families in the graph. 0 public MISP feeds enabled."
+    "summary": "4 reports, 451 indicators and 0 malware families in the graph. 0 public MISP feeds enabled."
   }
 }
