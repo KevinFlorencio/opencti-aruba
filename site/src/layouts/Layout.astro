@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+}
+
+const {
+  title = 'Aruba Threat Radar',
+  description = 'Live threat intelligence for Aruba and the Dutch Caribbean. OpenCTI-backed indicators, regional incident tracking, and defender guidance.',
+  active = '',
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://radar.arubati.org');
+const canonical = new URL(Astro.url.pathname, site).toString();
+const nav = [
+  { href: '/', label: 'Radar', key: 'radar' },
+  { href: '/blog/', label: 'Briefings', key: 'blog' },
+  { href: '/sources/', label: 'Sources', key: 'sources' },
+  { href: '/about/', label: 'About', key: 'about' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#04070d" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Aruba Threat Radar" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Aruba Threat Radar — Briefings" href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Aruba Threat Radar',
+      url: site.toString(),
+      description,
+      inLanguage: 'en',
+      publisher: { '@type': 'Organization', name: 'Aruba Threat Intelligence Initiative' },
+    })} />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="12" r="9" opacity=".35"></circle>
+              <circle cx="12" cy="12" r="5" opacity=".55"></circle>
+              <circle cx="12" cy="12" r="1.6" fill="#2dd4bf" stroke="none"></circle>
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3" opacity=".7"></path>
+              <path d="M12 12l6.2-6.2" stroke="#22d3ee" stroke-width="1.1"></path>
+            </svg>
+          </span>
+          <span>
+            <span class="brand-name">ARUBA THREAT RADAR</span>
+            <span class="brand-sub">Dutch Caribbean CTI</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={active === item.key ? 'page' : undefined} class={item.key === 'sources' ? 'hide-sm' : ''}>{item.label}</a>
+          ))}
+          <span class="live-pill"><span class="pulse-dot"></span> LIVE</span>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <strong style="color:var(--txt)">Aruba Threat Radar</strong> is an independent, non-commercial threat intelligence initiative for Aruba, Curaçao, Bonaire and Sint Maarten. Intelligence is collected and structured in OpenCTI, enriched with MISP and open feeds, and published here at <span class="mono" style="color:var(--teal)">TLP:CLEAR</span>.
+          </div>
+          <div class="foot-col">
+            <h4>Platform</h4>
+            <a href="/">Threat radar</a>
+            <a href="/blog/">Briefings</a>
+            <a href="/sources/">Source catalogue</a>
+            <a href="/about/">Methodology</a>
+          </div>
+          <div class="foot-col">
+            <h4>Project</h4>
+            <a href="https://github.com/KevinFlorencio/opencti-aruba" rel="noopener">GitHub repository</a>
+            <a href="/rss.xml">RSS feed</a>
+            <a href="/about/#contact">Contact &amp; corrections</a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© {new Date().getFullYear()} Kevin Florencio · Content CC BY 4.0</span>
+          <span>Built in Aruba · OpenCTI + MISP + Astro</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

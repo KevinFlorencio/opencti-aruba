@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Aruba Threat Radar" description="Why this initiative exists, how the intelligence is produced, and the standards it holds itself to." active="about">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">About</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);max-width:18ch;margin-top:18px">Local intelligence, published openly.</h1>
+      <p class="lede">
+        The Aruba Threat Radar is an independent, non-commercial initiative to give Aruba and the
+        Dutch Caribbean a consistent, structured and public picture of the threats that actually
+        affect them.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap article prose">
+      <h2>Why this exists</h2>
+      <p>
+        When a local company suffers a breach, the public and its clients are often not told. There is no
+        dedicated feed on the social platforms people actually use that explains, in plain language, what
+        is circulating on the island and what to do about it. The result is a gap that attackers exploit:
+        the same phishing email works on Aruba, Curaçao and Sint Maarten because nobody is connecting
+        the dots in public.
+      </p>
+      <p>
+        The July–August 2025 wave made the gap impossible to ignore. A court, a tax administration and a
+        parliament were hit within days. Reporting was fragmented across Dutch, Papiamento and English
+        outlets. There was no single place to see the timeline, the techniques and the indicators.
+      </p>
+
+      <h2>What this is</h2>
+      <ul>
+        <li><strong>A public threat radar.</strong> Live counts, latest reports, defanged indicators, feed health and a curated regional incident map.</li>
+        <li><strong>A briefing service.</strong> Incident analysis and a weekly brief, with sources on every claim.</li>
+        <li><strong>An open blueprint.</strong> The entire stack — compose files, connectors, collector, site, runbooks — is in the repository, so another island can copy it.</li>
+      </ul>
+
+      <h2>What this is not</h2>
+      <ul>
+        <li><strong>Not a CERT.</strong> It does not have incident-response authority, and it cannot act on behalf of victims.</li>
+        <li><strong>Not an attribution product.</strong> It will not name a group without public evidence. "Unknown" is an acceptable answer.</li>
+        <li><strong>Not a vendor feed.</strong> There is no paywall, no lead-gen and no sponsored threat level.</li>
+      </ul>
+
+      <h2>Methodology</h2>
+      <p>
+        Intelligence is structured in <strong>OpenCTI</strong> using STIX 2.1. Public OSINT feeds are
+        ingested through <strong>MISP</strong>; ATT&amp;CK, ATLAS, CISA KEV and reference data come in through
+        official connectors. A collector queries the GraphQL API, applies a field allow-list, and writes a
+        static JSON snapshot; the site renders that snapshot and never talks to the platform directly.
+      </p>
+      <p>
+        The regional layer — the incident timeline, ATT&amp;CK coverage and briefings — is curated by hand
+        from public reporting. Each entry links to its source. Where a report describes a technique but not
+        a tool, the entry says so. Where attribution is absent, it stays absent.
+      </p>
+
+      <h2>Standards</h2>
+      <table>
+        <thead><tr><th>Area</th><th>Rule</th></tr></thead>
+        <tbody>
+          <tr><td>Sourcing</td><td>Every factual claim in a briefing links to a public source. Corroboration is preferred over speed.</td></tr>
+          <tr><td>Attribution</td><td>No naming of actors or countries without public evidence. Assessments are labelled as assessments.</td></tr>
+          <tr><td>Victims</td><td>No victim identities or personal data. Organisations are named only when they have named themselves publicly.</td></tr>
+          <tr><td>Handling</td><td>Public output is TLP:CLEAR. Anything else stays in the platform.</td></tr>
+          <tr><td>Corrections</td><td>Errors are corrected in public with a dated note, not silently edited.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="contact">Contact and corrections</h2>
+      <p>
+        The project lives at <a href="https://github.com/KevinFlorencio/opencti-aruba" target="_blank" rel="noopener">github.com/KevinFlorencio/opencti-aruba</a>.
+        Open an issue for corrections, source suggestions or reuse questions. For sensitive reports —
+        a phishing sample, a local incident, a looked-over indicator — use the repository's private
+        security advisory channel rather than a public issue.
+      </p>
+      <p>
+        If you run an organisation on the island and want to contribute anonymised incident details, say so
+        in the advisory. Victim identities are never published, and the source of a report is not disclosed
+        without permission.
+      </p>
+
+      <h2>Licence</h2>
+      <p>
+        Written content is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+        Code is MIT. Feed data remains under the licence of its origin, listed on the <a href="/sources/">sources page</a>.
+      </p>
+
+      <h2>Built with</h2>
+      <p class="mono" style="font-size:.82rem;color:var(--muted)">
+        Proxmox VE · Debian 13 · Docker Compose · OpenCTI 7 · MISP · Elasticsearch · RabbitMQ · Redis ·
+        Python · Astro · ECharts · Leaflet · Caddy
+      </p>
+    </div>
+  </section>
+</Layout>

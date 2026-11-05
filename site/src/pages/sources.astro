@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import sources from '../data/sources.json';
+
+const groups = [
+  { key: 'Platform', label: 'Platform', desc: 'The systems that store and exchange intelligence.' },
+  { key: 'MISP feed', label: 'MISP feeds', desc: 'Public OSINT feeds consumed by the local MISP instance and pulled into OpenCTI.' },
+  { key: 'OpenCTI connector', label: 'OpenCTI connectors', desc: 'Structured knowledge and vulnerability sources imported directly into the graph.' },
+];
+---
+
+<Layout title="Sources — Aruba Threat Radar" description="Every feed, connector and licence behind the Aruba Threat Radar." active="sources">
+  <section class="hero" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="eyebrow">Source catalogue</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);max-width:18ch;margin-top:18px">Where the intelligence comes from.</h1>
+      <p class="lede">
+        No black boxes. Every source, its licence and its refresh cadence is listed here.
+        Optional sources are wired but disabled until a key is configured and owned.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {groups.map((g) => (
+        <div style="margin-bottom:38px">
+          <div class="section-head" style="margin-bottom:10px">
+            <div>
+              <div class="section-kicker">{g.label}</div>
+              <p style="margin:0">{g.desc}</p>
+            </div>
+          </div>
+          <div class="card">
+            {sources.filter((s) => s.type === g.key).map((s) => (
+              <div class="src-row" style="grid-template-columns:1.4fr .7fr .5fr .6fr">
+                <div>
+                  <div class="src-name"><span class:list={['status-dot', s.status === 'optional' ? 'off' : '']}></span>{s.name}</div>
+                  <div style="font-size:.78rem;color:var(--muted);margin-top:3px">{s.desc}</div>
+                </div>
+                <div class="src-type">{s.license}</div>
+                <div class="src-type">{s.cadence}</div>
+                <div class="src-type" style="text-align:right">
+                  <span class:list={['badge', s.status === 'optional' ? 'other' : 'domain']}>{s.status}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="card">
+        <div class="card-head"><span class="card-title">Handling rules</span><span class="card-note">TLP</span></div>
+        <div class="grid-2" style="gap:24px">
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:8px">What is eligible for publication</h3>
+            <p style="font-size:.86rem;color:var(--muted);margin:0">Only TLP:CLEAR material, and only after the collector's field allow-list. Personal data, victim identities and raw credentials are excluded by design. Indicators are defanged in the browser.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:8px">What stays in the platform</h3>
+            <p style="font-size:.86rem;color:var(--muted);margin:0">Connector metadata, internal notes, sensitive reports and any feed whose licence does not permit redistribution. OpenCTI is not exposed to the internet; the public site never receives an API token.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

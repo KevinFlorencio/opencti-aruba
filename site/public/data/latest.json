@@ -1,0 +1,659 @@
+{
+  "generated_at": "2026-11-05T20:58:10.654403Z",
+  "platform": {
+    "status": "online",
+    "version": "7.261103.0",
+    "url": "https://192.168.0.180:8443",
+    "misp_status": "online"
+  },
+  "kpis": {
+    "reports": 3,
+    "indicators": 284,
+    "malware": 0,
+    "actors": 0,
+    "campaigns": 1,
+    "vulnerabilities": 844,
+    "observables": 706,
+    "watchlist_hits": 19
+  },
+  "counts_by_type": [
+    {
+      "name": "Observables",
+      "count": 706
+    },
+    {
+      "name": "Indicators",
+      "count": 284
+    },
+    {
+      "name": "Vulnerabilities",
+      "count": 844
+    },
+    {
+      "name": "Malware",
+      "count": 0
+    },
+    {
+      "name": "Reports",
+      "count": 3
+    },
+    {
+      "name": "Actors",
+      "count": 0
+    }
+  ],
+  "reports": [
+    {
+      "id": "f40b1a6c-4d62-4e1f-bdd6-dbd066bb5f26",
+      "name": "abuse.ch Feodo Tracker feed",
+      "published": "2026-11-05T00:00:00.000Z",
+      "confidence": 100,
+      "types": [
+        "misp-event"
+      ],
+      "labels": []
+    },
+    {
+      "id": "58cff385-e05b-4621-94d6-192ed7f84729",
+      "name": "Aruba Parliament phishing compromise and national warning",
+      "published": "2025-08-13T00:00:00.000Z",
+      "confidence": 80,
+      "types": [
+        "threat-report"
+      ],
+      "labels": [
+        "aruba",
+        "government",
+        "mfa-bypass",
+        "phishing"
+      ]
+    },
+    {
+      "id": "0d99080b-be1b-4fbe-8d9f-c855110aa1b5",
+      "name": "The July-August 2025 Dutch Caribbean cyber wave",
+      "published": "2025-08-13T00:00:00.000Z",
+      "confidence": 75,
+      "types": [
+        "threat-report"
+      ],
+      "labels": [
+        "aitm",
+        "aruba",
+        "curaçao",
+        "dutch caribbean",
+        "phishing",
+        "ransomware"
+      ]
+    }
+  ],
+  "indicators": [
+    {
+      "id": "ef6ddfcb-f5cc-4964-a84b-68a853f3ac8f",
+      "name": "https://m-facebooks.vn/c7kvsecx5wb?sf",
+      "value": "https://m-facebooks.vn/c7kvsecx5wb?sf",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:58:09.118Z",
+      "labels": []
+    },
+    {
+      "id": "5bd022cf-6e86-4c3c-8300-c7e1486a649c",
+      "name": "https://sharemyhtml.com/p/752shOx8Cw#kelen8@00ab0f627eef000aa82cca1ab567dbd2bf45.org",
+      "value": "https://sharemyhtml.com/p/752shOx8Cw#kelen8@00ab0f627eef000aa82cca1ab567dbd2bf45.org",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:58:07.079Z",
+      "labels": []
+    },
+    {
+      "id": "6f4430d8-6d3e-4a8e-bab0-2066edc92a4a",
+      "name": "http://ledger-pwa-chi.vercel.app/",
+      "value": "http://ledger-pwa-chi.vercel.app/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:58:05.283Z",
+      "labels": []
+    },
+    {
+      "id": "e604ddf6-529d-46dd-bbbe-55022fae1570",
+      "name": "https://trustsenderbyfrt.vercel.app/",
+      "value": "https://trustsenderbyfrt.vercel.app/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:58:03.648Z",
+      "labels": []
+    },
+    {
+      "id": "309457bc-c79a-4077-b540-95e14e77dd17",
+      "name": "https://ditzzzweb.ezzzyy.de/",
+      "value": "https://ditzzzweb.ezzzyy.de/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:58:01.953Z",
+      "labels": []
+    },
+    {
+      "id": "4eb2e74c-f005-4278-aff6-3c8284e275ac",
+      "name": "https://17reseight.com/",
+      "value": "https://17reseight.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:58:00.975Z",
+      "labels": []
+    },
+    {
+      "id": "23fb524d-ead9-48d6-8f6a-498f21cacebf",
+      "name": "http://christianbased.org/owa.auth.logon.aspx",
+      "value": "http://christianbased.org/owa.auth.logon.aspx",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:59.886Z",
+      "labels": []
+    },
+    {
+      "id": "af7dc6d2-8b4a-443a-b90c-8729c955a9fb",
+      "name": "http://christianbased.org/owa.auth.logon.aspx/",
+      "value": "http://christianbased.org/owa.auth.logon.aspx/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:58.112Z",
+      "labels": []
+    },
+    {
+      "id": "cb17b846-ecf3-4d75-90b7-3201a3caad6e",
+      "name": "https://tdr52-81nhw-kxv81-lpw-7w6r4e-tdr52-24c.pages.dev/",
+      "value": "https://tdr52-81nhw-kxv81-lpw-7w6r4e-tdr52-24c.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:56.985Z",
+      "labels": []
+    },
+    {
+      "id": "7dcc9a6f-9145-48d5-b233-5239e2721cc1",
+      "name": "https://plip-droz-krum-169-glen-vzlantor-sip-652.pages.dev/",
+      "value": "https://plip-droz-krum-169-glen-vzlantor-sip-652.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:55.097Z",
+      "labels": []
+    },
+    {
+      "id": "481d67c4-c368-4068-9243-151a7c3ac472",
+      "name": "http://skor-flun-praz-419-klin-zervon-spat-603.pages.dev/",
+      "value": "http://skor-flun-praz-419-klin-zervon-spat-603.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:53.214Z",
+      "labels": []
+    },
+    {
+      "id": "d418a5ea-1b21-40fd-904b-c3afc8282164",
+      "name": "https://sp10ct11-davrelo-biz-korzavi.pages.dev/",
+      "value": "https://sp10ct11-davrelo-biz-korzavi.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:51.271Z",
+      "labels": []
+    },
+    {
+      "id": "c2c11d38-3fa5-4b94-a87a-830c29a81db1",
+      "name": "http://sp29ct-lavro-biz-zemak-nukti.pages.dev/",
+      "value": "http://sp29ct-lavro-biz-zemak-nukti.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:48.590Z",
+      "labels": []
+    },
+    {
+      "id": "7ed79867-63e6-4878-8a8f-6902ab0290e4",
+      "name": "http://wt3yk-upp-y3d7-x67le-07-09-2026-aa.pages.dev/",
+      "value": "http://wt3yk-upp-y3d7-x67le-07-09-2026-aa.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:46.597Z",
+      "labels": []
+    },
+    {
+      "id": "49301893-8104-4924-94a6-f2634fecd198",
+      "name": "https://sp10ct11-ravzelo-biz-nulvako.pages.dev/",
+      "value": "https://sp10ct11-ravzelo-biz-nulvako.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:45.353Z",
+      "labels": []
+    },
+    {
+      "id": "2478efac-a6cc-44aa-8ab3-0489aed1b9ad",
+      "name": "https://vnxkp16mjwr-tjrmlrel-8v1s9g-zp111a.pages.dev/",
+      "value": "https://vnxkp16mjwr-tjrmlrel-8v1s9g-zp111a.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:43.439Z",
+      "labels": []
+    },
+    {
+      "id": "393b7e8e-f5bf-4154-8063-658c3d2d08e9",
+      "name": "http://cont17ct-vunex-biz-radko-telvi.pages.dev/",
+      "value": "http://cont17ct-vunex-biz-radko-telvi.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:42.235Z",
+      "labels": []
+    },
+    {
+      "id": "a5fcafe1-fafe-4d71-92d7-16e3639b5835",
+      "name": "https://berluna-mpt-zelqavi-w4c8ra95.pages.dev/",
+      "value": "https://berluna-mpt-zelqavi-w4c8ra95.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:41.145Z",
+      "labels": []
+    },
+    {
+      "id": "6b363b38-13fb-4ca4-a7be-878ee32483b9",
+      "name": "http://9yu4k-8h5ohf-i29l-dk21vx.pages.dev/",
+      "value": "http://9yu4k-8h5ohf-i29l-dk21vx.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:38.395Z",
+      "labels": []
+    },
+    {
+      "id": "1b8c8b93-ae38-4994-b591-cc3f38a70f2b",
+      "name": "http://xjn39-126nh-bdf88-126lp-6b8c0d-xjn39-126c.pages.dev/",
+      "value": "http://xjn39-126nh-bdf88-126lp-6b8c0d-xjn39-126c.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:36.962Z",
+      "labels": []
+    },
+    {
+      "id": "33d1ec73-29f6-4883-b5fb-25ca4ee38c14",
+      "name": "https://7tz-hy6ug-sbj-u71z-a0gka.pages.dev/",
+      "value": "https://7tz-hy6ug-sbj-u71z-a0gka.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:34.400Z",
+      "labels": []
+    },
+    {
+      "id": "5dd31716-1854-48ac-85fe-73ee8f2afc1e",
+      "name": "http://911rx-81d-dzq6-4jx9b-07-09-2026-aa.pages.dev/",
+      "value": "http://911rx-81d-dzq6-4jx9b-07-09-2026-aa.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:32.952Z",
+      "labels": []
+    },
+    {
+      "id": "1db40f95-3ce0-4e7e-95d5-060bffa51676",
+      "name": "https://zemquro-kxt-farlavi-a6x1fq85.pages.dev/",
+      "value": "https://zemquro-kxt-farlavi-a6x1fq85.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:31.256Z",
+      "labels": []
+    },
+    {
+      "id": "101b9330-373e-413a-a837-c47442805b1e",
+      "name": "http://ie67q-26b-04ik-eda4s-07-09-2026-aa.pages.dev/",
+      "value": "http://ie67q-26b-04ik-eda4s-07-09-2026-aa.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:28.079Z",
+      "labels": []
+    },
+    {
+      "id": "1c8e39d2-bdbe-4f38-9d50-fc431a51dc75",
+      "name": "https://sp28ct-kunav-biz-qorem-vitek.pages.dev/",
+      "value": "https://sp28ct-kunav-biz-qorem-vitek.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:25.987Z",
+      "labels": []
+    },
+    {
+      "id": "6fe5226d-06b0-4de4-a5d9-9bebe2097e92",
+      "name": "http://krem-spug-drot-314-zlik-flaster-vaz-875.pages.dev/",
+      "value": "http://krem-spug-drot-314-zlik-flaster-vaz-875.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:24.858Z",
+      "labels": []
+    },
+    {
+      "id": "ebc23509-c8fc-40bc-b21e-4792301b70e9",
+      "name": "https://pzxqn8f13sk-lktvrwur-7x2v4d-ds944ag4gg.pages.dev/",
+      "value": "https://pzxqn8f13sk-lktvrwur-7x2v4d-ds944ag4gg.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:21.940Z",
+      "labels": []
+    },
+    {
+      "id": "6736c125-d483-4bb7-b169-3d0d9734fb37",
+      "name": "http://hpqmn93mjwy-wktvzren-6t5u7g-ny411a.pages.dev/",
+      "value": "http://hpqmn93mjwy-wktvzren-6t5u7g-ny411a.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:20.474Z",
+      "labels": []
+    },
+    {
+      "id": "be1955e7-8e79-49af-a234-852ac2492d4d",
+      "name": "https://bdf88-107cmv-lpr47-107lpr-8b2c0d-xjn39-107t.pages.dev/",
+      "value": "https://bdf88-107cmv-lpr47-107lpr-8b2c0d-xjn39-107t.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:17.225Z",
+      "labels": []
+    },
+    {
+      "id": "f72bc7c2-b031-4c0b-ac7c-8054a42aca40",
+      "name": "https://pjq49-975kf-tdr52-pdr-3z2r9c-kxv81-87n.pages.dev/",
+      "value": "https://pjq49-975kf-tdr52-pdr-3z2r9c-kxv81-87n.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:15.671Z",
+      "labels": []
+    },
+    {
+      "id": "59079a38-3daf-4c3f-83f0-5652ac03e1fa",
+      "name": "https://pjq49-57nhwu-tdr52-fyn-3y6x4g-kxv81-777a.pages.dev/",
+      "value": "https://pjq49-57nhwu-tdr52-fyn-3y6x4g-kxv81-777a.pages.dev/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:14.460Z",
+      "labels": []
+    },
+    {
+      "id": "e79b13fb-24c6-4550-a038-5ba52863d800",
+      "name": "https://nfacebook.vn/binhchon12a6ths?2w",
+      "value": "https://nfacebook.vn/binhchon12a6ths?2w",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:12.584Z",
+      "labels": []
+    },
+    {
+      "id": "b0049dd3-5c71-4e08-a6bd-588d08d9ec44",
+      "name": "http://reliable-mail.com/",
+      "value": "http://reliable-mail.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:10.730Z",
+      "labels": []
+    },
+    {
+      "id": "dc993337-4f0c-4814-82a9-a135dc135321",
+      "name": "http://rodux.pro/",
+      "value": "http://rodux.pro/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:09.429Z",
+      "labels": []
+    },
+    {
+      "id": "7f95264d-d70b-4305-9950-0484cc32ca9c",
+      "name": "http://accounts.login.adsbillinghub.com/",
+      "value": "http://accounts.login.adsbillinghub.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:06.906Z",
+      "labels": []
+    },
+    {
+      "id": "1b9efe62-b560-4ad5-9696-5b4a2b17a4d1",
+      "name": "https://accounts.login.adsbillinghub.com/v3/signin/identifier?continue=https://ads.google.com/aw/overview&gl=US&hl=en&prompt=select_account&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1328418016:1793843836504802",
+      "value": "https://ads.google.com/aw/overview&gl=US&hl=en&prompt=select_account&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1328418016:1793843836504802",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:05.181Z",
+      "labels": []
+    },
+    {
+      "id": "e62c271e-ad18-4047-9fe5-27dac7857097",
+      "name": "https://couriersplease.addliiz.com/",
+      "value": "https://couriersplease.addliiz.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:04.120Z",
+      "labels": []
+    },
+    {
+      "id": "2afdaa31-e854-4933-99fd-8609d2d8d169",
+      "name": "https://couriersplease.addliij.com/",
+      "value": "https://couriersplease.addliij.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:03.003Z",
+      "labels": []
+    },
+    {
+      "id": "0963615f-4d4d-46db-847d-d5d4c83c27f8",
+      "name": "https://couriersplease.addliit.com/",
+      "value": "https://couriersplease.addliit.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:57:00.584Z",
+      "labels": []
+    },
+    {
+      "id": "c362984b-91e7-47bd-9df6-8740a95338ed",
+      "name": "https://couriersplease.addliil.com/",
+      "value": "https://couriersplease.addliil.com/",
+      "pattern_type": "stix",
+      "type": "OTHER",
+      "score": 50,
+      "valid_from": "2026-11-05T20:47:33.000Z",
+      "created_at": "2026-11-05T20:56:58.865Z",
+      "labels": []
+    }
+  ],
+  "series": [
+    {
+      "date": "2026-10-22",
+      "count": 0
+    },
+    {
+      "date": "2026-10-23",
+      "count": 0
+    },
+    {
+      "date": "2026-10-24",
+      "count": 0
+    },
+    {
+      "date": "2026-10-25",
+      "count": 0
+    },
+    {
+      "date": "2026-10-26",
+      "count": 0
+    },
+    {
+      "date": "2026-10-27",
+      "count": 0
+    },
+    {
+      "date": "2026-10-28",
+      "count": 0
+    },
+    {
+      "date": "2026-10-29",
+      "count": 0
+    },
+    {
+      "date": "2026-10-30",
+      "count": 0
+    },
+    {
+      "date": "2026-10-31",
+      "count": 0
+    },
+    {
+      "date": "2026-11-01",
+      "count": 0
+    },
+    {
+      "date": "2026-11-02",
+      "count": 0
+    },
+    {
+      "date": "2026-11-03",
+      "count": 0
+    },
+    {
+      "date": "2026-11-04",
+      "count": 0
+    },
+    {
+      "date": "2026-11-05",
+      "count": 287
+    }
+  ],
+  "indicator_mix": [
+    {
+      "label": "Url",
+      "count": 279
+    },
+    {
+      "label": "Ipv4-Addr",
+      "count": 5
+    }
+  ],
+  "sources": [
+    {
+      "name": "OpenCTI",
+      "type": "Platform",
+      "status": "online",
+      "detail": "GraphQL API"
+    },
+    {
+      "name": "MISP",
+      "type": "Platform",
+      "status": "online",
+      "detail": "online (2.5.51)"
+    },
+    {
+      "name": "ExportFileStix2",
+      "type": "internal_export_file",
+      "status": "online",
+      "detail": "INTERNAL_EXPORT_FILE"
+    },
+    {
+      "name": "ImportDocument",
+      "type": "internal_import_file",
+      "status": "online",
+      "detail": "INTERNAL_IMPORT_FILE"
+    },
+    {
+      "name": "MITRE ATT&CK",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
+    },
+    {
+      "name": "MISP",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
+    },
+    {
+      "name": "CISA KEV",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
+    },
+    {
+      "name": "MITRE ATLAS",
+      "type": "external_import",
+      "status": "online",
+      "detail": "EXTERNAL_IMPORT"
+    }
+  ],
+  "brief": {
+    "number": 1,
+    "window": "29 Oct – 05 Nov 2026",
+    "headline": "abuse.ch Feodo Tracker feed",
+    "summary": "3 reports, 284 indicators and 0 malware families in the graph. 0 public MISP feeds enabled."
+  }
+}

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+---
+
+<Layout title="Briefings — Aruba Threat Radar" description="Analysis of Dutch Caribbean cyber incidents, adversary tradecraft and the weekly threat brief." active="blog">
+  <section class="hero" style="padding-bottom:0">
+    <div class="wrap">
+      <span class="eyebrow">Briefings</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);max-width:18ch;margin-top:18px">Context for the alerts.</h1>
+      <p class="lede">
+        Incident analysis, tradecraft explainers and the weekly brief for Aruba, Curaçao,
+        Bonaire and Sint Maarten. Every claim links to a public source.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a class="card post-card reveal" href={`/blog/${post.id}/`}>
+            <span class="post-date">
+              {post.data.published.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+              {' · '}{post.data.tags[0] ?? 'Briefing'}
+            </span>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <div class="post-tags">
+              {post.data.tags.slice(0, 4).map((t) => <span class="post-tag">{t}</span>)}
+            </div>
+            <span class="post-more">Read briefing →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

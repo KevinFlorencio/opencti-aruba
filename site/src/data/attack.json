@@ -1,0 +1,58 @@
+{
+  "note": "Regional ATT&CK coverage curated from the July–August 2025 Dutch Caribbean incidents. 'hits' = number of curated incidents where the technique was reported or is directly implied by the described tradecraft. This is an awareness view, not a vendor attribution product.",
+  "tactics": [
+    {
+      "name": "Initial Access",
+      "techniques": [
+        { "id": "T1566", "name": "Phishing", "hits": 3 },
+        { "id": "T1566.002", "name": "Spearphishing Link", "hits": 3 },
+        { "id": "T1078", "name": "Valid Accounts", "hits": 2 },
+        { "id": "T1190", "name": "Exploit Public-Facing App", "hits": 1 }
+      ]
+    },
+    {
+      "name": "Execution",
+      "techniques": [
+        { "id": "T1204.001", "name": "Malicious Link", "hits": 2 },
+        { "id": "T1204.002", "name": "Malicious File", "hits": 1 }
+      ]
+    },
+    {
+      "name": "Persistence",
+      "techniques": [
+        { "id": "T1098", "name": "Account Manipulation", "hits": 2 },
+        { "id": "T1137", "name": "Office App Persistence", "hits": 1 }
+      ]
+    },
+    {
+      "name": "Credential Access",
+      "techniques": [
+        { "id": "T1557", "name": "Adversary-in-the-Middle", "hits": 2 },
+        { "id": "T1539", "name": "Steal Web Session Cookie", "hits": 2 },
+        { "id": "T1621", "name": "MFA Request Generation", "hits": 1 }
+      ]
+    },
+    {
+      "name": "Discovery",
+      "techniques": [
+        { "id": "T1087", "name": "Account Discovery", "hits": 1 },
+        { "id": "T1114", "name": "Email Collection", "hits": 2 }
+      ]
+    },
+    {
+      "name": "Lateral Movement",
+      "techniques": [
+        { "id": "T1586", "name": "Compromise Accounts", "hits": 2 },
+        { "id": "T1021.004", "name": "SSH", "hits": 1 }
+      ]
+    },
+    {
+      "name": "Impact",
+      "techniques": [
+        { "id": "T1486", "name": "Data Encrypted for Impact", "hits": 1 },
+        { "id": "T1490", "name": "Inhibit System Recovery", "hits": 1 },
+        { "id": "T1657", "name": "Financial Theft", "hits": 1 }
+      ]
+    }
+  ]
+}

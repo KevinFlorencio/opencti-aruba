@@ -1,0 +1,119 @@
+[
+  {
+    "name": "MISP (local instance)",
+    "type": "Platform",
+    "url": "https://github.com/MISP/MISP",
+    "license": "AGPL-3.0",
+    "cadence": "Continuous",
+    "desc": "Open-source threat sharing platform. Runs locally, consumes public OSINT feeds, and feeds OpenCTI through the official MISP connector.",
+    "status": "online"
+  },
+  {
+    "name": "CIRCL OSINT Feed",
+    "type": "MISP feed",
+    "url": "https://www.circl.lu/doc/misp/feed-osint/",
+    "license": "Public / TLP:CLEAR",
+    "cadence": "Hourly",
+    "desc": "The Computer Incident Response Center Luxembourg's public MISP feed: a broad, well-curated stream of OSINT events and attributes.",
+    "status": "online"
+  },
+  {
+    "name": "abuse.ch URLhaus",
+    "type": "MISP feed",
+    "url": "https://urlhaus.abuse.ch/",
+    "license": "CC0",
+    "cadence": "Hourly",
+    "desc": "URLs distributing malware, with payload hashes and tags. Strong signal for phishing and initial-access lures.",
+    "status": "online"
+  },
+  {
+    "name": "abuse.ch Feodo Tracker",
+    "type": "MISP feed",
+    "url": "https://feodotracker.abuse.ch/",
+    "license": "CC0",
+    "cadence": "Hourly",
+    "desc": "Botnet command-and-control IP blocklist covering Emotet, Dridex, QakBot and related families.",
+    "status": "online"
+  },
+  {
+    "name": "Botvrij.eu",
+    "type": "MISP feed",
+    "url": "https://www.botvrij.eu/",
+    "license": "CC0",
+    "cadence": "Daily",
+    "desc": "Dutch-curated OSINT MISP feed of indicators and hunting leads.",
+    "status": "online"
+  },
+  {
+    "name": "OpenPhish",
+    "type": "MISP feed",
+    "url": "https://openphish.com/",
+    "license": "Free community feed",
+    "cadence": "Hourly",
+    "desc": "Community phishing URL feed. Complements URLhaus for credential-harvesting pages.",
+    "status": "online"
+  },
+  {
+    "name": "MITRE ATT&CK",
+    "type": "OpenCTI connector",
+    "url": "https://attack.mitre.org/",
+    "license": "Apache-2.0 / CC BY 4.0",
+    "cadence": "Daily",
+    "desc": "Enterprise, Mobile and ICS tactics, techniques and procedures, mapped into OpenCTI's knowledge graph.",
+    "status": "online"
+  },
+  {
+    "name": "MITRE ATLAS",
+    "type": "OpenCTI connector",
+    "url": "https://atlas.mitre.org/",
+    "license": "Apache-2.0",
+    "cadence": "Daily",
+    "desc": "Adversarial tactics and techniques against AI systems — increasingly relevant as local organisations adopt AI tooling.",
+    "status": "online"
+  },
+  {
+    "name": "CISA KEV",
+    "type": "OpenCTI connector",
+    "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+    "license": "Public domain",
+    "cadence": "Every 6 hours",
+    "desc": "The US catalogue of vulnerabilities known to be exploited in the wild. Used as a prioritisation signal, not as an Aruba-specific feed.",
+    "status": "online"
+  },
+  {
+    "name": "OpenCTI Datasets",
+    "type": "OpenCTI connector",
+    "url": "https://github.com/OpenCTI-Platform/datasets",
+    "license": "CC BY-SA 4.0",
+    "cadence": "Daily",
+    "desc": "Reference identities, countries and sectors so reports can be linked to Aruba, Curaçao, Bonaire and local sectors consistently.",
+    "status": "online"
+  },
+  {
+    "name": "AlienVault OTX",
+    "type": "OpenCTI connector",
+    "url": "https://otx.alienvault.com/",
+    "license": "Free API key required",
+    "cadence": "Hourly",
+    "desc": "Community pulses with indicators. Optional: enabled by setting ALIENVAULT_API_KEY and starting the otx profile.",
+    "status": "optional"
+  },
+  {
+    "name": "abuse.ch ThreatFox",
+    "type": "OpenCTI connector",
+    "url": "https://threatfox.abuse.ch/",
+    "license": "CC0 (Auth-Key)",
+    "cadence": "Hourly",
+    "desc": "IOC sharing platform for malware C2 and payloads. Optional: requires an abuse.ch Auth-Key.",
+    "status": "optional"
+  },
+  {
+    "name": "Ransomware.live",
+    "type": "OpenCTI connector",
+    "url": "https://www.ransomware.live/",
+    "license": "Free API key required",
+    "cadence": "Daily",
+    "desc": "Ransomware leak-site tracking. Optional: requires a ransomware.live API key.",
+    "status": "optional"
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "type": "bundle",
+  "id": "bundle--ed157743-3e09-55e1-85dd-4f5a92eb7a9d",
+  "spec_version": "2.1",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--1d1855f8-1a56-5843-b488-af9241779283",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Aruba Threat Radar",
+      "identity_class": "organization",
+      "description": "Independent, non-commercial threat intelligence initiative for Aruba, Curaçao, Bonaire and Sint Maarten. Publishes at TLP:CLEAR.",
+      "external_references": [
+        {
+          "source_name": "github",
+          "url": "https://github.com/KevinFlorencio/opencti-aruba"
+        }
+      ]
+    },
+    {
+      "type": "location",
+      "spec_version": "2.1",
+      "id": "location--26e5cb20-76a9-5def-9ba2-584d8b1340c4",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Aruba",
+      "location_type": "country",
+      "x_opencti_aliases": [
+        "AW"
+      ]
+    },
+    {
+      "type": "location",
+      "spec_version": "2.1",
+      "id": "location--4ada60e7-006f-5265-b728-6ce44b71b312",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Curaçao",
+      "location_type": "country",
+      "x_opencti_aliases": [
+        "CW"
+      ]
+    },
+    {
+      "type": "location",
+      "spec_version": "2.1",
+      "id": "location--49261bc2-ed9d-5aaf-b098-8220ffe0d019",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Bonaire",
+      "location_type": "region",
+      "description": "Special municipality of the Netherlands in the Caribbean."
+    },
+    {
+      "type": "location",
+      "spec_version": "2.1",
+      "id": "location--c2cb2331-1235-5776-ae00-1b39e02e5008",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Sint Maarten",
+      "location_type": "country",
+      "x_opencti_aliases": [
+        "SX"
+      ]
+    },
+    {
+      "type": "campaign",
+      "spec_version": "2.1",
+      "id": "campaign--019fceef-1054-5aa1-a7ab-935de30885c8",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Dutch Caribbean phishing and ransomware wave (Jul-Aug 2025)",
+      "description": "A cluster of incidents across the Dutch Caribbean between 22 July and 13 August 2025: a cyberattack on the Joint Court of Justice serving six islands, ransomware at Curaçao's Tax and Customs Administration, and phishing compromise of an Aruban Parliament email account followed by a national phishing warning from KPA and VDA. Public reporting does not establish a single actor or a single intrusion vector across all three; treat this as an analytical cluster, not an attribution.",
+      "first_seen": "2025-07-22T00:00:00.000Z",
+      "last_seen": "2025-08-13T00:00:00.000Z",
+      "objective": "Credential and mailbox access for follow-on fraud, plus ransomware against government services with weak segmentation and recovery capability.",
+      "confidence": 60,
+      "aliases": [
+        "July 2025 Dutch Caribbean cyber wave"
+      ],
+      "labels": [
+        "aruba",
+        "curaçao",
+        "dutch caribbean",
+        "phishing",
+        "ransomware"
+      ],
+      "created_by_ref": "identity--1d1855f8-1a56-5843-b488-af9241779283"
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--f6eee046-62ec-5481-89d3-dec3913cad49",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Tycoon 2FA",
+      "description": "Adversary-in-the-middle phishing-as-a-service kit first observed in 2023. Proxies the real Microsoft 365 or Google login page, captures the post-MFA session cookie and lets the operator replay the session. Public reporting does not attribute the Aruba incidents to this kit specifically; it is included as the dominant tradecraft pattern in the regional warning period.",
+      "tool_types": [
+        "credential-exploitation"
+      ],
+      "aliases": [
+        "Tycoon2FA",
+        "Tycoon 2FA PhaaS"
+      ],
+      "labels": [
+        "phishing",
+        "aitm",
+        "phaas",
+        "mfa-bypass"
+      ],
+      "created_by_ref": "identity--1d1855f8-1a56-5843-b488-af9241779283"
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--d5125e59-156b-507d-9d17-6e3407dc01d2",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "The July-August 2025 Dutch Caribbean cyber wave",
+      "published": "2025-08-13T00:00:00.000Z",
+      "report_types": [
+        "threat-report"
+      ],
+      "description": "Regional incident report covering the Joint Court of Justice attack (23 July), the Curaçao Tax and Customs Administration ransomware incident (24 July), the Aruba Parliament email compromise (31 July) and the national phishing warning issued by KPA and VDA (13 August). Sources: The Record, NL Times, Aruba.nu, Gobierno di Aruba.",
+      "confidence": 75,
+      "labels": [
+        "aruba",
+        "curaçao",
+        "dutch caribbean",
+        "phishing",
+        "ransomware",
+        "aitm"
+      ],
+      "object_refs": [
+        "campaign--019fceef-1054-5aa1-a7ab-935de30885c8",
+        "tool--f6eee046-62ec-5481-89d3-dec3913cad49",
+        "location--26e5cb20-76a9-5def-9ba2-584d8b1340c4",
+        "location--4ada60e7-006f-5265-b728-6ce44b71b312",
+        "location--49261bc2-ed9d-5aaf-b098-8220ffe0d019",
+        "location--c2cb2331-1235-5776-ae00-1b39e02e5008"
+      ],
+      "created_by_ref": "identity--1d1855f8-1a56-5843-b488-af9241779283"
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--c57a7c03-3a36-572b-a97f-32aaf289822b",
+      "created": "2026-11-05T00:00:00.000Z",
+      "modified": "2026-11-05T00:00:00.000Z",
+      "name": "Aruba Parliament phishing compromise and national warning",
+      "published": "2025-08-13T00:00:00.000Z",
+      "report_types": [
+        "threat-report"
+      ],
+      "description": "On 31 July 2025 the Aruban Parliament warned that one of its official email accounts had been compromised through phishing. On 13 August 2025 the Korps Politie Aruba (KPA) and Veiligheidsdienst Aruba (VDA) issued a national warning describing phishing from known contacts, Adobe/DocuSign/SharePoint lures, and attempts to bypass Microsoft Authenticator. The warning advises password resets, ending all sessions, avoiding Outlook web and reporting to KPA.",
+      "confidence": 80,
+      "labels": [
+        "aruba",
+        "phishing",
+        "mfa-bypass",
+        "government"
+      ],
+      "object_refs": [
+        "campaign--019fceef-1054-5aa1-a7ab-935de30885c8",
+        "tool--f6eee046-62ec-5481-89d3-dec3913cad49",
+        "location--26e5cb20-76a9-5def-9ba2-584d8b1340c4"
+      ],
+      "created_by_ref": "identity--1d1855f8-1a56-5843-b488-af9241779283"
+    }
+  ]
+}

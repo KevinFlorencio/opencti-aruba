@@ -1,0 +1,25 @@
+# secrets
+.env
+misp/.env
+misp/ssl/
+*.pem
+*.key
+
+# node / astro
+site/node_modules/
+site/.astro/
+site/dist/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# local data
+*.tmp
+*.log
+backups/
+.DS_Store
+
+# local TLS
+caddy/certs/

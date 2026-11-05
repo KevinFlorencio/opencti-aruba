@@ -1,0 +1,72 @@
+{
+  "updated": "2026-11-05",
+  "note": "Curated from public reporting. Every entry links to its source. This layer is maintained by hand; the live layer on the radar comes from OpenCTI.",
+  "incidents": [
+    {
+      "date": "2025-07-22",
+      "title": "Dutch Prosecution Service cuts itself off from the internet",
+      "place": "Netherlands (kingdom-wide context)",
+      "lat": 52.1326,
+      "lng": 5.2913,
+      "severity": "context",
+      "summary": "The Dutch Public Prosecution Service disconnected from the internet for several weeks after an NCSC alert about a potential Citrix NetScaler vulnerability used for remote access. The same window precedes the Dutch Caribbean incidents.",
+      "tags": ["citrix", "netscaler", "ncsc"],
+      "source": "https://therecord.media/aruba-curacao-governments-cyberattacks"
+    },
+    {
+      "date": "2025-07-23",
+      "title": "Joint Court of Justice hit across six islands",
+      "place": "Curaçao / Dutch Caribbean",
+      "lat": 12.1696,
+      "lng": -68.99,
+      "severity": "high",
+      "summary": "The Joint Court of Justice serving the six Dutch Caribbean islands suffered a cyberattack that disrupted email systems and court proceedings.",
+      "tags": ["government", "judiciary", "email"],
+      "source": "https://nltimes.nl/2025/08/02/ransomware-attacks-cripple-government-services-across-dutch-caribbean-islands"
+    },
+    {
+      "date": "2025-07-24",
+      "title": "Ransomware encrypts Curaçao Tax and Customs Administration",
+      "place": "Curaçao",
+      "lat": 12.1097,
+      "lng": -68.9335,
+      "severity": "critical",
+      "summary": "Ransomware hit Curaçao's Tax and Customs Administration. Vehicle-tax processing, phone support and in-person service went down; the public filing portal was deliberately kept online. Recovery took close to two weeks with support from Dutch IT security specialists.",
+      "tags": ["ransomware", "government", "finance", "double-extortion"],
+      "source": "https://nltimes.nl/2025/08/02/ransomware-attacks-cripple-government-services-across-dutch-caribbean-islands"
+    },
+    {
+      "date": "2025-07-31",
+      "title": "Aruba Parliament email account compromised",
+      "place": "Aruba",
+      "lat": 12.5211,
+      "lng": -69.9683,
+      "severity": "high",
+      "summary": "One of the Aruban Parliament's official email accounts was compromised through phishing. Parliament warned the public not to open links or attachments in messages that appeared to come from it.",
+      "tags": ["phishing", "government", "email", "account-takeover"],
+      "source": "https://www.aruba.nu/nieuws/algemeen/77709/arubaans-parlement-getroffen-door-cyberaanval"
+    },
+    {
+      "date": "2025-08-05",
+      "title": "Parliament expands phishing warning to local organisations",
+      "place": "Aruba",
+      "lat": 12.5211,
+      "lng": -69.9683,
+      "severity": "medium",
+      "summary": "Follow-up warnings describe a phishing email circulating locally, designed to steal sensitive information, and note that local organisations were affected alongside Parliament.",
+      "tags": ["phishing", "awareness"],
+      "source": "https://therecord.media/aruba-curacao-governments-cyberattacks"
+    },
+    {
+      "date": "2025-08-13",
+      "title": "National phishing warning issued by KPA and VDA",
+      "place": "Aruba",
+      "lat": 12.5211,
+      "lng": -69.9683,
+      "severity": "critical",
+      "summary": "Aruba's police corps (KPA) and security service (VDA) issued a national warning about a persistent phishing wave. Lures impersonated Adobe, DocuSign and SharePoint; messages arrived from known contacts and explicitly aimed to bypass Microsoft Authenticator. The advice: reset passwords, end all sessions, avoid Outlook web, and report to KPA.",
+      "tags": ["phishing", "aitm", "mfa-bypass", "national-warning"],
+      "source": "https://www.gobierno.aw/nl/nationale-waarschuwing-gevaarlijke-phishing-e-mails-in-omloop-op-aruba"
+    }
+  ]
+}

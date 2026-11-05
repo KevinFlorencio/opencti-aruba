@@ -1,0 +1,19 @@
+{
+  "name": "aruba-threat-radar",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public threat radar and blog for the Aruba / Dutch Caribbean threat intelligence initiative",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.12",
+    "astro": "^5.16.0",
+    "echarts": "^6.1.0",
+    "leaflet": "^1.9.4"
+  }
+}

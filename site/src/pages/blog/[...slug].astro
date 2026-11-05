@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const date = post.data.published.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<Layout title={`${post.data.title} — Aruba Threat Radar`} description={post.data.description} active="blog">
+  <article class="wrap">
+    <header class="article-head">
+      <span class="eyebrow">{post.data.tags[0] ?? 'Briefing'}</span>
+      <h1>{post.data.title}</h1>
+      <p class="lede">{post.data.description}</p>
+      <div class="article-meta">
+        <span>{date}</span>
+        <span>Kevin Florencio</span>
+        <span>{post.data.sources.length} sources</span>
+        <span>TLP:CLEAR</span>
+      </div>
+    </header>
+
+    <div class="article prose">
+      <Content />
+    </div>
+
+    {post.data.sources.length > 0 && (
+      <aside class="sources-box">
+        <h3>Sources</h3>
+        <ol>
+          {post.data.sources.map((s) => (
+            <li><a href={s.url} target="_blank" rel="noopener">{s.label}</a></li>
+          ))}
+        </ol>
+      </aside>
+    )}
+
+    <p style="margin-top:34px"><a href="/blog/">← All briefings</a></p>
+  </article>
+</Layout>

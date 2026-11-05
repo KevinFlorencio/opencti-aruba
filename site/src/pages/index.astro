@@ -1,0 +1,587 @@
+---
+import Layout from '../layouts/Layout.astro';
+import incidents from '../data/incidents.json';
+import attack from '../data/attack.json';
+import sources from '../data/sources.json';
+---
+
+<Layout active="radar">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot" style="color:var(--teal)"></span> Live intelligence · TLP:CLEAR</span>
+          <h1>The Caribbean threat picture, in one place.</h1>
+          <p class="lede">
+            A public, OpenCTI-backed threat radar for Aruba, Curaçao, Bonaire and Sint Maarten.
+            Regional incidents, live indicators and the techniques that actually show up in
+            Dutch Caribbean inboxes — without the vendor noise.
+          </p>
+          <div class="hero-meta">
+            <span>PLATFORM <b id="meta-platform">initialising</b></span>
+            <span>LAST SYNC <b id="meta-sync">—</b></span>
+            <span>FEEDS <b id="meta-feeds">—</b></span>
+            <span>CLASSIFICATION <b>TLP:CLEAR</b></span>
+          </div>
+        </div>
+        <aside class="signal-card" aria-label="Platform signal">
+          <div class="signal-head">
+            <span class="signal-title">Signal integrity</span>
+            <span class="live-pill" id="signal-state"><span class="pulse-dot"></span> CONNECTING</span>
+          </div>
+          <div class="signal-bars" aria-hidden="true">
+            {[38, 62, 44, 78, 56, 92, 48, 70, 40, 84, 58, 74, 46, 66, 52, 88].map((h, i) => (
+              <i style={`height:${h}%;animation-delay:${(i * 0.11).toFixed(2)}s`}></i>
+            ))}
+          </div>
+          <div class="signal-row"><span>OpenCTI graph</span><span id="sig-opencti">checking…</span></div>
+          <div class="signal-row"><span>MISP sync</span><span id="sig-misp">checking…</span></div>
+          <div class="signal-row"><span>Last collector run</span><span id="sig-collector">checking…</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Latest intelligence headlines">
+    <div class="ticker-label"><span class="pulse-dot" style="color:var(--red)"></span> WATCH</div>
+    <div class="ticker-track" id="ticker-track">
+      <span class="ticker-item"><b>Loading intelligence feed…</b><span class="tag">SYNC</span></span>
+    </div>
+  </div>
+
+  <section class="section" id="overview">
+    <div class="wrap">
+      <div class="kpi-grid reveal">
+        <div class="kpi cyan"><div class="kpi-label">Reports</div><div class="kpi-value" data-count="reports">0</div><div class="kpi-sub">intelligence products</div></div>
+        <div class="kpi"><div class="kpi-label">Indicators</div><div class="kpi-value" data-count="indicators">0</div><div class="kpi-sub">STIX patterns</div></div>
+        <div class="kpi violet"><div class="kpi-label">Malware</div><div class="kpi-value" data-count="malware">0</div><div class="kpi-sub">families tracked</div></div>
+        <div class="kpi amber"><div class="kpi-label">Threat actors</div><div class="kpi-value" data-count="actors">0</div><div class="kpi-sub">actors &amp; intrusion sets</div></div>
+        <div class="kpi red"><div class="kpi-label">KEV vulns</div><div class="kpi-value" data-count="vulnerabilities">0</div><div class="kpi-sub">known exploited</div></div>
+        <div class="kpi green"><div class="kpi-label">Watchlist hits</div><div class="kpi-value" data-count="watchlist_hits">0</div><div class="kpi-sub">Aruba / .aw mentions</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid-12">
+        <div class="card span-7 reveal">
+          <div class="card-head">
+            <span class="card-title">Regional incident map</span>
+            <span class="card-note">CURATED · PUBLIC REPORTING</span>
+          </div>
+          <div class="map-wrap"><div id="caribbean-map"></div></div>
+          <div class="map-legend">
+            <span><i style="background:var(--red)"></i>Critical / high</span>
+            <span><i style="background:var(--amber)"></i>Medium</span>
+            <span><i style="background:var(--cyan)"></i>Context</span>
+            <span style="margin-left:auto">Click a marker for the source</span>
+          </div>
+        </div>
+
+        <div class="card span-5 reveal">
+          <div class="card-head">
+            <span class="card-title">July–August 2025 · the wave</span>
+            <span class="card-note">5 ENTRIES · JUL–AUG 2025</span>
+          </div>
+          <div class="timeline">
+            {incidents.incidents.slice(1).map((it) => (
+              <div class:list={['tl-item', it.severity === 'critical' ? 'critical' : '']}>
+                <div class="tl-date">{new Date(it.date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} · {it.place}</div>
+                <h4>{it.title}</h4>
+                <p>{it.summary}</p>
+                <a class="tl-tag" href={it.source} target="_blank" rel="noopener">source ↗</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-head"><span class="card-title">Ingestion · 14 days</span><span class="card-note">OBJECTS / DAY</span></div>
+          <div id="chart-ingest" style="height:200px"></div>
+        </div>
+        <div class="card reveal">
+          <div class="card-head"><span class="card-title">Indicator mix</span><span class="card-note">BY OBSERVABLE TYPE</span></div>
+          <div id="chart-mix" style="height:200px"></div>
+        </div>
+        <div class="card reveal">
+          <div class="card-head"><span class="card-title">Graph composition</span><span class="card-note">OBJECTS BY TYPE</span></div>
+          <div id="chart-malware" style="height:200px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="intel" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">From the graph</div>
+          <h2>Latest intelligence</h2>
+          <p>Reports and indicators as they land in OpenCTI. Indicators are defanged in the browser; the raw value stays in the platform.</p>
+        </div>
+        <span class="section-link" id="intel-stamp">AWAITING SYNC</span>
+      </div>
+
+      <div class="grid-12">
+        <div class="card span-7 reveal">
+          <div class="card-head"><span class="card-title">Reports</span><span class="card-note" id="report-count">0 ITEMS</span></div>
+          <div class="report-list" id="report-list">
+            <p style="color:var(--dim);font-size:.85rem;margin:0">Waiting for the first collector run…</p>
+          </div>
+        </div>
+        <div class="card span-5 reveal">
+          <div class="card-head"><span class="card-title">Fresh indicators</span><span class="card-note">DEFANGED</span></div>
+          <div style="overflow-x:auto">
+            <table class="feed-table">
+              <thead><tr><th>Type</th><th>Value</th><th>Score</th></tr></thead>
+              <tbody id="indicator-body">
+                <tr><td colspan="3" style="color:var(--dim)">Awaiting ingestion…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="card-head">
+          <span class="card-title">ATT&amp;CK · regional coverage</span>
+          <span class="card-note">CURATED FROM THE JUL–AUG 2025 INCIDENTS</span>
+        </div>
+        <div class="matrix" id="attack-matrix"></div>
+        <p style="font-family:var(--mono);font-size:9px;color:var(--dim);margin:14px 0 0;letter-spacing:.04em">
+          Heat = number of curated regional incidents in which the technique was reported or directly implied. Awareness view — not attribution.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="grid-12">
+        <div class="card span-5 reveal">
+          <div class="card-head"><span class="card-title">Collection status</span><span class="card-note" id="src-count">—</span></div>
+          <div id="source-list">
+            {sources.slice(0, 9).map((s) => (
+              <div class="src-row">
+                <span class="src-name"><span class:list={['status-dot', s.status === 'optional' ? 'off' : '']}></span>{s.name}</span>
+                <span class="src-type">{s.type}</span>
+                <span class="src-type">{s.cadence}</span>
+                <span class="src-type" style="text-align:right">{s.status}</span>
+              </div>
+            ))}
+          </div>
+          <a class="section-link" href="/sources/" style="display:inline-block;margin-top:14px">Full source catalogue →</a>
+        </div>
+
+        <div class="card span-7 reveal">
+          <div class="card-head"><span class="card-title">If you run an organisation on the island</span><span class="card-note">DO THIS WEEK</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div>
+              <h3 style="font-size:1rem;margin-bottom:8px">Identity</h3>
+              <ul style="margin:0;padding-left:18px;color:var(--muted);font-size:.84rem;line-height:1.7">
+                <li>Phishing-resistant MFA (passkeys / FIDO2) for email and admin accounts.</li>
+                <li>Conditional access: block legacy auth, enforce device compliance.</li>
+                <li>Alert on new inbox rules, OAuth grants and MFA changes.</li>
+                <li>Session revocation runbook for suspected token theft.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="font-size:1rem;margin-bottom:8px">Exposure</h3>
+              <ul style="margin:0;padding-left:18px;color:var(--muted);font-size:.84rem;line-height:1.7">
+                <li>Inventory internet-facing Citrix / VPN / RMM appliances.</li>
+                <li>Patch CISA KEV entries first; verify, don't assume.</li>
+                <li>Offline, tested backups — including domain controllers.</li>
+                <li>Exercise the first hour: who calls whom, who isolates what.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:16px">
+            <strong>Reporting a phishing wave?</strong> Preserve the full headers and the URL. Aruba's KPA runs the public reporting point; the VDA publishes national warnings. Local reports make the next national warning faster.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="briefings" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Briefings</div>
+          <h2>Analysis, not alarm</h2>
+          <p>Long-form context for the incidents on the radar, plus the weekly brief.</p>
+        </div>
+        <a class="section-link" href="/blog/">All briefings →</a>
+      </div>
+      <div class="blog-grid">
+        <a class="card post-card reveal" href="/blog/dutch-caribbean-cyber-wave/">
+          <span class="post-date">31 Jul 2025 · Incident analysis</span>
+          <h3>The week the Dutch Caribbean woke up</h3>
+          <p>Courts, tax offices and Parliament hit within days. What the July 2025 wave reveals about shared exposure — and what to fix first.</p>
+          <span class="post-more">Read briefing →</span>
+        </a>
+        <a class="card post-card reveal" href="/blog/mfa-is-not-a-wall/">
+          <span class="post-date">13 Aug 2025 · Tradecraft</span>
+          <h3>MFA is not a wall</h3>
+          <p>Aruba's national warning described phishing that bypasses Microsoft Authenticator. Here is the adversary-in-the-middle machinery behind it.</p>
+          <span class="post-more">Read briefing →</span>
+        </a>
+        <a class="card post-card reveal" href="/blog/introducing-aruba-threat-radar/">
+          <span class="post-date">05 Nov 2026 · Project</span>
+          <h3>Introducing the Aruba Threat Radar</h3>
+          <p>Why the island needs its own intelligence desk, how the OpenCTI + MISP pipeline works, and what we will publish every week.</p>
+          <span class="post-more">Read briefing →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/json" id="incident-data" set:html={JSON.stringify(incidents.incidents)}></script>
+  <script type="application/json" id="attack-data" set:html={JSON.stringify(attack)}></script>
+
+  <script>
+    import * as echarts from 'echarts';
+    import L from 'leaflet';
+    import 'leaflet/dist/leaflet.css';
+
+    const fmt = new Intl.NumberFormat('en-US');
+    const $ = (sel: string) => document.querySelector(sel) as HTMLElement | null;
+
+    const chartText = '#8194ab';
+    const chartGrid = 'rgba(126,231,220,0.08)';
+    const palette = ['#22d3ee', '#2dd4bf', '#a78bfa', '#fbbf24', '#fb7185', '#60a5fa'];
+
+    function timeAgo(iso: string | null): string {
+      if (!iso) return 'never';
+      const then = new Date(iso).getTime();
+      if (Number.isNaN(then)) return 'unknown';
+      const mins = Math.max(0, Math.round((Date.now() - then) / 60000));
+      if (mins < 1) return 'just now';
+      if (mins < 60) return `${mins}m ago`;
+      const hrs = Math.round(mins / 60);
+      if (hrs < 24) return `${hrs}h ago`;
+      return `${Math.round(hrs / 24)}d ago`;
+    }
+
+    function defang(value: string): string {
+      return value
+        .replace(/^http/i, 'hxxp')
+        .replace(/^https/i, 'hxxps')
+        .replace(/\./g, '[.]');
+    }
+
+    function patternType(pattern: string): { label: string; cls: string } {
+      const p = (pattern || '').toLowerCase();
+      if (p.includes('ipv4') || p.includes('ipv6')) return { label: 'IP', cls: 'ip' };
+      if (p.includes('domain')) return { label: 'DOMAIN', cls: 'domain' };
+      if (p.includes('url')) return { label: 'URL', cls: 'url' };
+      if (p.includes('sha') || p.includes('md5')) return { label: 'HASH', cls: 'hash' };
+      return { label: 'OTHER', cls: 'other' };
+    }
+
+    function scoreClass(score: number): string {
+      if (score >= 70) return 'high';
+      if (score >= 40) return 'med';
+      return 'low';
+    }
+
+    function animateCount(el: HTMLElement, target: number) {
+      const start = performance.now();
+      const from = 0;
+      const dur = 900;
+      const step = (now: number) => {
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = fmt.format(Math.round(from + (target - from) * eased));
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    // ── Map ─────────────────────────────────────────────────
+    const incidents = JSON.parse(($('#incident-data') as HTMLElement).textContent || '[]');
+    const map = L.map('caribbean-map', {
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: true,
+      worldCopyJump: true,
+    });
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
+      attribution: 'Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
+    }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
+      pane: 'overlayPane',
+      attribution: '',
+    }).addTo(map);
+
+    const points: [number, number][] = [];
+    for (const inc of incidents) {
+      if (!inc.lat || !inc.lng || inc.severity === 'context') continue;
+      points.push([inc.lat, inc.lng]);
+      const cls = inc.severity === 'critical' || inc.severity === 'high' ? '' : inc.severity === 'medium' ? 'low' : 'info';
+      const icon = L.divIcon({ className: '', html: `<div class="map-marker ${cls}"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] });
+      const marker = L.marker([inc.lat, inc.lng], { icon }).addTo(map);
+      marker.bindPopup(`
+        <div style="max-width:250px">
+          <div style="color:#2dd4bf;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">${inc.date} · ${inc.place}</div>
+          <div style="color:#e8f2ff;font-weight:600;margin-bottom:6px;font-family:'Space Grotesk',sans-serif">${inc.title}</div>
+          <div style="color:#8194ab;font-size:10.5px;line-height:1.5">${inc.summary}</div>
+          <a href="${inc.source}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;color:#22d3ee;font-size:9.5px">source ↗</a>
+        </div>`);
+    }
+    if (points.length) map.fitBounds(L.latLngBounds([[11.4, -70.9], [18.7, -62.4]]), { padding: [8, 8] });
+    else map.setView([14.5, -67.5], 6);
+    setTimeout(() => map.invalidateSize(), 300);
+
+    // ── ATT&CK matrix ───────────────────────────────────────
+    const attack = JSON.parse(($('#attack-data') as HTMLElement).textContent || '{"tactics":[]}');
+    const matrix = $('#attack-matrix')!;
+    matrix.innerHTML = attack.tactics
+      .map(
+        (col: any) => `<div class="matrix-col">
+          <div class="matrix-tactic">${col.name}</div>
+          ${col.techniques
+            .map(
+              (t: any) =>
+                `<div class="matrix-cell ${t.hits >= 2 ? 'hotter' : t.hits === 1 ? 'hot' : ''}" title="${t.id} · seen in ${t.hits} regional incident(s)">${t.name}<span>${t.id}</span></div>`
+            )
+            .join('')}
+        </div>`
+      )
+      .join('');
+
+    // ── Data load ───────────────────────────────────────────
+    let snapshot: any = null;
+    const charts: Record<string, any> = {};
+
+    function initChart(id: string, option: any) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (!charts[id]) charts[id] = echarts.init(el, undefined, { renderer: 'canvas' });
+      charts[id].setOption(option, true);
+    }
+
+    function renderEmptyCharts() {
+      const base = {
+        textStyle: { color: chartText, fontFamily: 'JetBrains Mono' },
+        grid: { left: 8, right: 8, top: 16, bottom: 18 },
+        xAxis: { type: 'category', show: false },
+        yAxis: { type: 'value', show: false },
+        series: [],
+      };
+      initChart('chart-ingest', base);
+      initChart('chart-mix', { ...base, series: [] });
+      initChart('chart-malware', { ...base, series: [] });
+    }
+
+    function emptyText(text: string) {
+      return [
+        {
+          type: 'text',
+          left: 'center',
+          top: 'middle',
+          style: { text, fill: '#55677d', fontSize: 10, fontFamily: 'JetBrains Mono' },
+        },
+      ];
+    }
+
+    function renderCharts(s: any) {
+      const axis = {
+        axisLine: { lineStyle: { color: chartGrid } },
+        axisLabel: { color: chartText, fontSize: 9, fontFamily: 'JetBrains Mono' },
+        splitLine: { lineStyle: { color: 'rgba(126,231,220,0.05)' } },
+      };
+
+      const series = s.series || [];
+      const total = series.reduce((acc: number, d: any) => acc + (d.count || 0), 0);
+      initChart('chart-ingest', {
+        textStyle: { fontFamily: 'JetBrains Mono' },
+        grid: { left: 38, right: 12, top: 16, bottom: 24 },
+        tooltip: { trigger: 'axis', backgroundColor: '#0a1420', borderColor: 'rgba(126,231,220,.2)', textStyle: { color: '#e8f2ff', fontSize: 11 } },
+        graphic: total === 0 ? emptyText('No objects in window yet') : [],
+        xAxis: {
+          type: 'category',
+          data: series.map((d: any) => d.date.slice(5)),
+          ...axis,
+          splitLine: { show: false },
+        },
+        yAxis: { type: 'value', minInterval: 1, ...axis },
+        series: [
+          {
+            type: 'line',
+            smooth: true,
+            symbol: 'circle',
+            symbolSize: 4,
+            data: series.map((d: any) => d.count),
+            lineStyle: { color: '#22d3ee', width: 2 },
+            itemStyle: { color: '#2dd4bf' },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: 'rgba(34,211,238,.32)' },
+                { offset: 1, color: 'rgba(34,211,238,0)' },
+              ]),
+            },
+          },
+        ],
+      });
+
+      const mix = s.indicator_mix || [];
+      initChart('chart-mix', {
+        textStyle: { fontFamily: 'JetBrains Mono' },
+        tooltip: { trigger: 'item', backgroundColor: '#0a1420', borderColor: 'rgba(126,231,220,.2)', textStyle: { color: '#e8f2ff', fontSize: 11 } },
+        graphic: mix.length === 0 ? emptyText('No indicators ingested yet') : [],
+        legend: { bottom: 0, textStyle: { color: chartText, fontSize: 9 }, itemWidth: 8, itemHeight: 8 },
+        series: [
+          {
+            type: 'pie',
+            radius: ['48%', '72%'],
+            center: ['50%', '44%'],
+            avoidLabelOverlap: true,
+            itemStyle: { borderColor: '#060d16', borderWidth: 2 },
+            label: { show: false },
+            data: mix.length === 0 ? [] : mix.map((m: any, i: number) => ({ name: m.label, value: m.count, itemStyle: { color: palette[i % palette.length] } })),
+            showEmptyCircle: false,
+          },
+        ],
+      });
+
+      const comp = (s.counts_by_type || []).filter((m: any) => m.count > 0).sort((a: any, b: any) => a.count - b.count);
+      initChart('chart-malware', {
+        textStyle: { fontFamily: 'JetBrains Mono' },
+        grid: { left: 8, right: 38, top: 8, bottom: 8 },
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, backgroundColor: '#0a1420', borderColor: 'rgba(126,231,220,.2)', textStyle: { color: '#e8f2ff', fontSize: 11 } },
+        graphic: comp.length === 0 ? emptyText('Graph is empty') : [],
+        xAxis: { type: 'value', show: false },
+        yAxis: {
+          type: 'category',
+          data: comp.map((m: any) => m.name),
+          axisLine: { show: false },
+          axisTick: { show: false },
+          axisLabel: { color: '#a9bccd', fontSize: 10 },
+        },
+        series: [
+          {
+            type: 'bar',
+            data: comp.map((m: any) => m.count),
+            barWidth: 10,
+            itemStyle: { color: '#a78bfa', borderRadius: [0, 4, 4, 0] },
+            label: { show: true, position: 'right', color: '#a9bccd', fontSize: 9, formatter: (p: any) => fmt.format(p.value) },
+          },
+        ],
+      });
+    }
+
+    async function load() {
+      try {
+        const res = await fetch('/data/latest.json?ts=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('snapshot HTTP ' + res.status);
+        snapshot = await res.json();
+      } catch (err) {
+        const state = $('#signal-state');
+        if (state) state.innerHTML = '<span class="pulse-dot" style="color:var(--amber)"></span> SNAPSHOT MISSING';
+        renderEmptyCharts();
+        return;
+      }
+      const s = snapshot;
+      const online = s.platform?.status === 'online';
+
+      const state = $('#signal-state');
+      if (state) state.innerHTML = online
+        ? '<span class="pulse-dot"></span> OPERATIONAL'
+        : '<span class="pulse-dot" style="color:var(--amber)"></span> DEGRADED';
+
+      if ($('#meta-platform')) $('#meta-platform')!.textContent = online ? `OpenCTI ${s.platform.version}` : 'initialising';
+      if ($('#meta-sync')) $('#meta-sync')!.textContent = timeAgo(s.generated_at);
+      if ($('#meta-feeds')) $('#meta-feeds')!.textContent = `${(s.sources || []).filter((x: any) => x.status === 'online').length} online`;
+      if ($('#sig-opencti')) $('#sig-opencti')!.textContent = online ? 'connected' : 'starting';
+      if ($('#sig-misp')) $('#sig-misp')!.textContent = s.platform?.misp_status === 'online' ? 'synced' : 'pending';
+      if ($('#sig-collector')) $('#sig-collector')!.textContent = timeAgo(s.generated_at);
+      if ($('#intel-stamp')) $('#intel-stamp')!.textContent = s.generated_at ? `SYNC ${timeAgo(s.generated_at).toUpperCase()}` : 'AWAITING SYNC';
+
+      document.querySelectorAll('[data-count]').forEach((el) => {
+        const key = (el as HTMLElement).dataset.count!;
+        animateCount(el as HTMLElement, Number(s.kpis?.[key] || 0));
+      });
+
+      // ticker
+      const track = $('#ticker-track');
+      const items = [...(s.reports || []).slice(0, 4).map((r: any) => ({ text: r.name, tag: 'REPORT' })), ...(s.indicators || []).slice(0, 4).map((i: any) => ({ text: i.value, tag: i.type?.toUpperCase() || 'IOC' }))];
+      if (track) {
+        if (!items.length) items.push({ text: 'Feed online — waiting for the first scheduled ingestion', tag: 'SYNC' });
+        const html = items.map((i: any) => `<span class="ticker-item"><b>${escapeHtml(i.text)}</b><span class="tag">${escapeHtml(i.tag)}</span></span>`).join('');
+        track.innerHTML = html + html;
+      }
+
+      // reports
+      const rl = $('#report-list');
+      if (rl) {
+        if (s.reports?.length) {
+          rl.innerHTML = s.reports
+            .map(
+              (r: any) => `<div class="report-row">
+                <span class="report-date">${(r.published || '').slice(0, 10) || '—'}</span>
+                <a class="report-name" href="${s.platform.url}/dashboard/analyses/reports/${r.id}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a>
+                <span class="report-conf">${r.confidence ?? '—'}%</span>
+              </div>`
+            )
+            .join('');
+          if ($('#report-count')) $('#report-count')!.textContent = `${s.reports.length} ITEMS`;
+        }
+      }
+
+      // indicators
+      const ib = $('#indicator-body');
+      if (ib && s.indicators?.length) {
+        ib.innerHTML = s.indicators
+          .map((i: any) => {
+            const cls = ({ IP: 'ip', DOMAIN: 'domain', URL: 'url', HASH: 'hash' } as Record<string, string>)[i.type] || 'other';
+            const t = { label: i.type || 'OTHER', cls };
+            return `<tr>
+              <td><span class="badge ${t.cls}">${t.label}</span></td>
+              <td><span class="feed-value" title="${escapeHtml(i.value)}">${escapeHtml(defang(i.value))}</span></td>
+              <td><span class="score ${scoreClass(i.score ?? 0)}">${i.score ?? 0}</span></td>
+            </tr>`;
+          })
+          .join('');
+      }
+
+      renderCharts(s);
+
+      // source status override
+      const srcList = $('#source-list');
+      if (srcList && s.sources?.length) {
+        const known = new Map(s.sources.map((x: any) => [x.name.toLowerCase(), x]));
+        srcList.querySelectorAll('.src-row').forEach((row) => {
+          const nameEl = row.querySelector('.src-name');
+          const name = (nameEl?.textContent || '').trim().toLowerCase();
+          const match: any = known.get(name);
+          if (match) {
+            const dot = row.querySelector('.status-dot');
+            if (dot && match.status !== 'online') dot.classList.add(match.status === 'optional' ? 'off' : 'off');
+          }
+        });
+      }
+    }
+
+    function escapeHtml(v: string): string {
+      return String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string));
+    }
+
+    renderEmptyCharts();
+    load();
+    window.addEventListener('resize', () => Object.values(charts).forEach((c) => c.resize()));
+  </script>
+</Layout>

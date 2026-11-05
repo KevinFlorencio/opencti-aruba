@@ -1,0 +1,13 @@
+[Unit]
+Description=Aruba Threat Radar refresh (collect snapshot, rebuild site)
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=styx
+WorkingDirectory=/home/styx/aruba-ti
+ExecStart=/home/styx/aruba-ti/scripts/refresh.sh
+TimeoutStartSec=1800
+Nice=10
+IOSchedulingClass=idle
