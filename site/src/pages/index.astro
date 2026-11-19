@@ -128,7 +128,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
         <div>
           <div class="section-kicker">From the graph</div>
           <h2>Latest intelligence</h2>
-          <p>Reports and indicators as they land in OpenCTI. Indicators are defanged in the browser; the raw value stays in the platform.</p>
+          <p>Reports and counts from the latest public snapshot. Individual indicators are shown only when cleared for release.</p>
         </div>
         <span class="section-link" id="intel-stamp">AWAITING SYNC</span>
       </div>
@@ -539,7 +539,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
             .map(
               (r: any) => `<div class="report-row">
                 <span class="report-date">${(r.published || '').slice(0, 10) || '—'}</span>
-                <a class="report-name" href="${s.platform.url}/dashboard/analyses/reports/${r.id}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a>
+                <span class="report-name">${escapeHtml(r.name)}</span>
                 <span class="report-conf">${r.confidence ?? '—'}%</span>
               </div>`
             )
@@ -563,6 +563,8 @@ const u = (p: string) => base + p.replace(/^\//, '');
           })
           .join('');
       }
+
+      if (ib && !s.indicators?.length) { ib.innerHTML = `<tr><td colspan="3">No individual indicators published in this snapshot.</td></tr>`; }
 
       renderCharts(s);
 
