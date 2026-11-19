@@ -11,6 +11,10 @@ test('published pages and feed contain only current-year entries', async () => {
   assert.ok(home.includes(`Regional timeline · ${year}`), 'missing current-year timeline');
   const [, entries] = home.match(/id="incident-data"[^>]*>(.*?)<\/script>/s);
   assert.ok(JSON.parse(entries).every((entry) => entry.date.startsWith(`${year}-`)));
+  assert.ok(home.includes(`ABC security advisories · ${year}`));
+  const advisorySection = home.match(/id="advisories"[^>]*>(.*?)<\/section>/s)[1];
+  const advisoryDates = Array.from(advisorySection.matchAll(/datetime="(\d{4}-\d{2}-\d{2})"/g), ([, date]) => date);
+  assert.ok(advisoryDates.every((date) => date.startsWith(`${year}-`)));
   const rss = await readFile(dist('rss.xml'), 'utf8');
   const dates = Array.from(rss.matchAll(/<pubDate>(.*?)<\/pubDate>/g), ([, date]) => new Date(date));
   assert.ok(dates.every((date) => date.getUTCFullYear() === year));

@@ -4,9 +4,11 @@ import incidents from '../data/incidents.json';
 import { currentYear, isInYear } from '../data/current-year.mjs';
 import { currentBriefings } from '../data/briefings';
 import sources from '../data/sources.json';
+import advisories from '../data/advisories.json';
 const regionalIncidents = incidents.incidents.filter((entry) => isInYear(entry.date));
 const timeline = regionalIncidents.filter((entry) => entry.severity !== 'context');
 const posts = (await currentBriefings()).slice(0, 3);
+const regionalAdvisories = advisories.filter((entry) => isInYear(entry.date)).sort((a, b) => b.date.localeCompare(a.date));
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const u = (p: string) => base + p.replace(/^\//, '');
@@ -189,6 +191,30 @@ const u = (p: string) => base + p.replace(/^\//, '');
             <strong>Reporting a phishing wave?</strong> Preserve the full headers and the URL. Aruba's KPA runs the public reporting point; the VDA publishes national warnings. Local reports make the next national warning faster.
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="advisories" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Official regional sources</div>
+          <h2>ABC security advisories · {currentYear}</h2>
+          <p>Vulnerability notices and security warnings, not reports of confirmed local breaches.</p>
+        </div>
+        <a class="section-link" href={u('/sources/')}>More sources →</a>
+      </div>
+      <div class="grid-3">
+        {regionalAdvisories.length === 0 && <p>No regional advisories have been curated for {currentYear} yet.</p>}
+        {regionalAdvisories.map((entry) => (
+          <article class="card">
+            <div class="post-date"><time datetime={entry.date}>{entry.date}</time> · {entry.place}</div>
+            <h3>{entry.title}</h3>
+            <p>{entry.summary}</p>
+            <a class="section-link" href={entry.url}>{entry.publisher} ↗</a>
+          </article>
+        ))}
       </div>
     </div>
   </section>
