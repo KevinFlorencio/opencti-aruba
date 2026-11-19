@@ -43,6 +43,8 @@ If the site is behind Cloudflare, set SSL/TLS to **Full (strict)** and keep the 
 
 The site has no server dependency. The only runtime data is `site/public/data/latest.json`, which is committed to the repository.
 
+The public build lists dated intelligence and briefings from the current UTC calendar year only. Older source files remain in the repository. The build filters the deployed copy of `latest.json` and omits all-time aggregates; GitHub Pages rebuilds at the start of each year.
+
 A live mirror is deployed at **https://kevinflorencio.github.io/opencti-aruba/**. It uses the project-site subpath, so the build runs with `BASE_PATH=/opencti-aruba` and every internal link is prefixed through the `u()` helper. The workflow is `.github/workflows/pages.yml`; Pages is set to `build_type: workflow`.
 
 The mirror's radar data is the last committed snapshot, not the live OpenCTI graph. Its `generated_at` makes that visible. To refresh it from the VM:

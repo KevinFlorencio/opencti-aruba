@@ -3,6 +3,9 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Rebuild when the UTC calendar year changes.
+    - cron: '23 0 1 1 *'
   workflow_dispatch:
 
 permissions:
@@ -36,6 +39,10 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL || 'https://kevinflorencio.github.io' }}
           BASE_PATH: ${{ vars.BASE_PATH || '/opencti-aruba' }}
+
+      - name: Verify published content
+        working-directory: site
+        run: npm test
 
       - uses: actions/upload-pages-artifact@v3
         with:

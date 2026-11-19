@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import incidents from '../data/incidents.json';
-import attack from '../data/attack.json';
+import { currentYear, isInYear } from '../data/current-year.mjs';
+import { currentBriefings } from '../data/briefings';
 import sources from '../data/sources.json';
-import region from '../data/region.json';
+const regionalIncidents = incidents.incidents.filter((entry) => isInYear(entry.date));
+const timeline = regionalIncidents.filter((entry) => entry.severity !== 'context');
+const posts = (await currentBriefings()).slice(0, 3);
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const u = (p: string) => base + p.replace(/^\//, '');
@@ -18,8 +21,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
           <h1>The ABC threat picture, in one place.</h1>
           <p class="lede">
             A public, OpenCTI-backed threat radar for Aruba, Bonaire and Curaçao.
-            Regional incidents, live indicators and the techniques that actually show up in
-            ABC inboxes — without the vendor noise.
+            Regional incidents, reports and indicators from {currentYear}.
           </p>
           <div class="hero-meta">
             <span>PLATFORM <b id="meta-platform">initialising</b></span>
@@ -55,13 +57,10 @@ const u = (p: string) => base + p.replace(/^\//, '');
 
   <section class="section" id="overview">
     <div class="wrap">
-      <div class="kpi-grid reveal">
-        <div class="kpi cyan"><div class="kpi-label">Reports</div><div class="kpi-value" data-count="reports">0</div><div class="kpi-sub">intelligence products</div></div>
-        <div class="kpi"><div class="kpi-label">Indicators</div><div class="kpi-value" data-count="indicators">0</div><div class="kpi-sub">STIX patterns</div></div>
-        <div class="kpi violet"><div class="kpi-label">Observables</div><div class="kpi-value" data-count="observables">0</div><div class="kpi-sub">raw STIX objects</div></div>
-        <div class="kpi amber"><div class="kpi-label">Campaigns</div><div class="kpi-value" data-count="campaigns">0</div><div class="kpi-sub">tracked campaigns</div></div>
-        <div class="kpi red"><div class="kpi-label">KEV vulns</div><div class="kpi-value" data-count="vulnerabilities">0</div><div class="kpi-sub">known exploited</div></div>
-        <div class="kpi green"><div class="kpi-label">Watchlist hits</div><div class="kpi-value" data-count="watchlist_hits">0</div><div class="kpi-sub">Aruba / Bonaire / Curaçao mentions</div></div>
+      <div class="grid-3 reveal">
+        <div class="kpi cyan"><div class="kpi-label">Reports shown</div><div class="kpi-value" data-count="reports">—</div><div class="kpi-sub">in the public snapshot</div></div>
+        <div class="kpi"><div class="kpi-label">Indicators shown</div><div class="kpi-value" data-count="indicators">—</div><div class="kpi-sub">in the public snapshot</div></div>
+        <div class="kpi violet"><div class="kpi-label">Curated regional incidents</div><div class="kpi-value">{timeline.length}</div><div class="kpi-sub">public reporting · {currentYear}</div></div>
       </div>
     </div>
   </section>
@@ -72,24 +71,25 @@ const u = (p: string) => base + p.replace(/^\//, '');
         <div class="card span-7 reveal">
           <div class="card-head">
             <span class="card-title">Regional incident map</span>
-            <span class="card-note">CURATED · PUBLIC REPORTING</span>
+            <span class="card-note">PUBLIC REPORTING · {currentYear}</span>
           </div>
           <div class="map-wrap"><div id="caribbean-map"></div></div>
-          <div class="map-legend">
+          {timeline.length > 0 && <div class="map-legend">
             <span><i style="background:var(--red)"></i>Critical / high</span>
             <span><i style="background:var(--amber)"></i>Medium</span>
             <span><i style="background:var(--cyan)"></i>Context</span>
             <span style="margin-left:auto">Click a marker for the source</span>
-          </div>
+          </div>}
         </div>
 
         <div class="card span-5 reveal">
           <div class="card-head">
-            <span class="card-title">July–August 2025 · the wave</span>
-            <span class="card-note">5 ENTRIES · JUL–AUG 2025</span>
+            <span class="card-title">Regional timeline · {currentYear}</span>
+            <span class="card-note">{timeline.length} {timeline.length === 1 ? 'ENTRY' : 'ENTRIES'}</span>
           </div>
           <div class="timeline">
-            {incidents.incidents.slice(1).map((it) => (
+            {timeline.length === 0 && <p>No curated regional incidents have been added for {currentYear} yet.</p>}
+            {timeline.map((it) => (
               <div class:list={['tl-item', it.severity === 'critical' ? 'critical' : '']}>
                 <div class="tl-date">{new Date(it.date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} · {it.place}</div>
                 <h4>{it.title}</h4>
@@ -105,19 +105,9 @@ const u = (p: string) => base + p.replace(/^\//, '');
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <div class="grid-3">
-        <div class="card reveal">
-          <div class="card-head"><span class="card-title">Ingestion · 14 days</span><span class="card-note">OBJECTS / DAY</span></div>
-          <div id="chart-ingest" style="height:200px"></div>
-        </div>
-        <div class="card reveal">
-          <div class="card-head"><span class="card-title">Indicator mix</span><span class="card-note">BY OBSERVABLE TYPE</span></div>
-          <div id="chart-mix" style="height:200px"></div>
-        </div>
-        <div class="card reveal">
-          <div class="card-head"><span class="card-title">Graph composition</span><span class="card-note">OBJECTS BY TYPE</span></div>
-          <div id="chart-malware" style="height:200px"></div>
-        </div>
+      <div class="card reveal">
+        <div class="card-head"><span class="card-title">Ingestion · last 14 days</span><span class="card-note">OBJECTS / DAY · {currentYear} ONLY</span></div>
+        <div id="chart-ingest" style="height:200px"></div>
       </div>
     </div>
   </section>
@@ -128,7 +118,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
         <div>
           <div class="section-kicker">From the graph</div>
           <h2>Latest intelligence</h2>
-          <p>Reports and counts from the latest public snapshot. Individual indicators are shown only when cleared for release.</p>
+          <p>Current-year entries from the latest public snapshot. Individual indicators are shown only when cleared for release.</p>
         </div>
         <span class="section-link" id="intel-stamp">AWAITING SYNC</span>
       </div>
@@ -151,21 +141,6 @@ const u = (p: string) => base + p.replace(/^\//, '');
             </table>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="card reveal">
-        <div class="card-head">
-          <span class="card-title">ATT&amp;CK · regional coverage</span>
-          <span class="card-note">CURATED FROM THE JUL–AUG 2025 INCIDENTS</span>
-        </div>
-        <div class="matrix" id="attack-matrix"></div>
-        <p style="font-family:var(--mono);font-size:9px;color:var(--dim);margin:14px 0 0;letter-spacing:.04em">
-          Heat = number of curated regional incidents in which the technique was reported or directly implied. Awareness view — not attribution.
-        </p>
       </div>
     </div>
   </section>
@@ -229,33 +204,24 @@ const u = (p: string) => base + p.replace(/^\//, '');
         <a class="section-link" href={u('/blog/')}>All briefings →</a>
       </div>
       <div class="blog-grid">
-        <a class="card post-card reveal" href={u('/blog/dutch-caribbean-cyber-wave/')}>
-          <span class="post-date">31 Jul 2025 · Incident analysis</span>
-          <h3>The week the ABC islands woke up</h3>
-          <p>Courts, tax offices and Parliament hit within days. What the July 2025 wave reveals about shared exposure — and what to fix first.</p>
-          <span class="post-more">Read briefing →</span>
-        </a>
-        <a class="card post-card reveal" href={u('/blog/mfa-is-not-a-wall/')}>
-          <span class="post-date">13 Aug 2025 · Tradecraft</span>
-          <h3>MFA is not a wall</h3>
-          <p>Aruba's national warning described phishing that bypasses Microsoft Authenticator. Here is the adversary-in-the-middle machinery behind it.</p>
-          <span class="post-more">Read briefing →</span>
-        </a>
-        <a class="card post-card reveal" href={u('/blog/introducing-aruba-threat-radar/')}>
-          <span class="post-date">05 Nov 2026 · Project</span>
-          <h3>Introducing the Aruba Threat Radar</h3>
-          <p>Why the island needs its own intelligence desk, how the OpenCTI + MISP pipeline works, and what we will publish every week.</p>
-          <span class="post-more">Read briefing →</span>
-        </a>
+        {posts.length === 0 && <p>No briefings published yet in {currentYear}.</p>}
+        {posts.map((post) => (
+          <a class="card post-card reveal" href={u(`/blog/${post.id}/`)}>
+            <span class="post-date">{post.data.published.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' })} · {post.data.tags[0] ?? 'Briefing'}</span>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="post-more">Read briefing →</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <script type="application/json" id="incident-data" set:html={JSON.stringify(incidents.incidents)}></script>
-  <script type="application/json" id="attack-data" set:html={JSON.stringify(attack)}></script>
+  <script type="application/json" id="incident-data" data-year={currentYear} set:html={JSON.stringify(regionalIncidents).replace(/</g, '\\u003c')}></script>
 
   <script>
     import region from '../data/region.json';
+    import { yearSnapshot } from '../data/current-year.mjs';
     import * as echarts from 'echarts';
     import L from 'leaflet';
     import 'leaflet/dist/leaflet.css';
@@ -265,8 +231,6 @@ const u = (p: string) => base + p.replace(/^\//, '');
 
     const chartText = '#8194ab';
     const chartGrid = 'rgba(126,231,220,0.08)';
-    const palette = ['#22d3ee', '#2dd4bf', '#a78bfa', '#fbbf24', '#fb7185', '#60a5fa'];
-
     function timeAgo(iso: string | null): string {
       if (!iso) return 'never';
       const then = new Date(iso).getTime();
@@ -284,15 +248,6 @@ const u = (p: string) => base + p.replace(/^\//, '');
         .replace(/^http/i, 'hxxp')
         .replace(/^https/i, 'hxxps')
         .replace(/\./g, '[.]');
-    }
-
-    function patternType(pattern: string): { label: string; cls: string } {
-      const p = (pattern || '').toLowerCase();
-      if (p.includes('ipv4') || p.includes('ipv6')) return { label: 'IP', cls: 'ip' };
-      if (p.includes('domain')) return { label: 'DOMAIN', cls: 'domain' };
-      if (p.includes('url')) return { label: 'URL', cls: 'url' };
-      if (p.includes('sha') || p.includes('md5')) return { label: 'HASH', cls: 'hash' };
-      return { label: 'OTHER', cls: 'other' };
     }
 
     function scoreClass(score: number): string {
@@ -315,7 +270,9 @@ const u = (p: string) => base + p.replace(/^\//, '');
     }
 
     // ── Map ─────────────────────────────────────────────────
-    const incidents = JSON.parse(($('#incident-data') as HTMLElement).textContent || '[]');
+    const incidentData = $('#incident-data')!;
+    const year = Number(incidentData.dataset.year);
+    const incidents = JSON.parse(incidentData.textContent || '[]');
     const map = L.map('caribbean-map', {
       zoomControl: true,
       scrollWheelZoom: false,
@@ -351,25 +308,6 @@ const u = (p: string) => base + p.replace(/^\//, '');
     else map.setView([14.5, -67.5], 6);
     setTimeout(() => map.invalidateSize(), 300);
 
-    // ── ATT&CK matrix ───────────────────────────────────────
-    const attack = JSON.parse(($('#attack-data') as HTMLElement).textContent || '{"tactics":[]}');
-    const matrix = $('#attack-matrix')!;
-    matrix.innerHTML = attack.tactics
-      .map(
-        (col: any) => `<div class="matrix-col">
-          <div class="matrix-tactic">${col.name}</div>
-          ${col.techniques
-            .map(
-              (t: any) =>
-                `<div class="matrix-cell ${t.hits >= 2 ? 'hotter' : t.hits === 1 ? 'hot' : ''}" title="${t.id} · seen in ${t.hits} regional incident(s)">${t.name}<span>${t.id}</span></div>`
-            )
-            .join('')}
-        </div>`
-      )
-      .join('');
-
-    // ── Data load ───────────────────────────────────────────
-    let snapshot: any = null;
     const charts: Record<string, any> = {};
 
     function initChart(id: string, option: any) {
@@ -388,8 +326,6 @@ const u = (p: string) => base + p.replace(/^\//, '');
         series: [],
       };
       initChart('chart-ingest', base);
-      initChart('chart-mix', { ...base, series: [] });
-      initChart('chart-malware', { ...base, series: [] });
     }
 
     function emptyText(text: string) {
@@ -443,65 +379,21 @@ const u = (p: string) => base + p.replace(/^\//, '');
         ],
       });
 
-      const mix = s.indicator_mix || [];
-      initChart('chart-mix', {
-        textStyle: { fontFamily: 'JetBrains Mono' },
-        tooltip: { trigger: 'item', backgroundColor: '#0a1420', borderColor: 'rgba(126,231,220,.2)', textStyle: { color: '#e8f2ff', fontSize: 11 } },
-        graphic: mix.length === 0 ? emptyText('No indicators ingested yet') : [],
-        legend: { bottom: 0, textStyle: { color: chartText, fontSize: 9 }, itemWidth: 8, itemHeight: 8 },
-        series: [
-          {
-            type: 'pie',
-            radius: ['48%', '72%'],
-            center: ['50%', '44%'],
-            avoidLabelOverlap: true,
-            itemStyle: { borderColor: '#060d16', borderWidth: 2 },
-            label: { show: false },
-            data: mix.length === 0 ? [] : mix.map((m: any, i: number) => ({ name: m.label, value: m.count, itemStyle: { color: palette[i % palette.length] } })),
-            showEmptyCircle: false,
-          },
-        ],
-      });
-
-      const comp = (s.counts_by_type || []).filter((m: any) => m.count > 0).sort((a: any, b: any) => a.count - b.count);
-      initChart('chart-malware', {
-        textStyle: { fontFamily: 'JetBrains Mono' },
-        grid: { left: 8, right: 38, top: 8, bottom: 8 },
-        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, backgroundColor: '#0a1420', borderColor: 'rgba(126,231,220,.2)', textStyle: { color: '#e8f2ff', fontSize: 11 } },
-        graphic: comp.length === 0 ? emptyText('Graph is empty') : [],
-        xAxis: { type: 'value', show: false },
-        yAxis: {
-          type: 'category',
-          data: comp.map((m: any) => m.name),
-          axisLine: { show: false },
-          axisTick: { show: false },
-          axisLabel: { color: '#a9bccd', fontSize: 10 },
-        },
-        series: [
-          {
-            type: 'bar',
-            data: comp.map((m: any) => m.count),
-            barWidth: 10,
-            itemStyle: { color: '#a78bfa', borderRadius: [0, 4, 4, 0] },
-            label: { show: true, position: 'right', color: '#a9bccd', fontSize: 9, formatter: (p: any) => fmt.format(p.value) },
-          },
-        ],
-      });
     }
 
     async function load() {
+      let s;
       try {
         const dataUrl = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'data/latest.json';
         const res = await fetch(dataUrl + '?ts=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) throw new Error('snapshot HTTP ' + res.status);
-        snapshot = await res.json();
+        s = yearSnapshot(await res.json(), year);
       } catch (err) {
         const state = $('#signal-state');
         if (state) state.innerHTML = '<span class="pulse-dot" style="color:var(--amber)"></span> SNAPSHOT MISSING';
         renderEmptyCharts();
         return;
       }
-      const s = snapshot;
       const online = s.platform?.status === 'online';
 
       const state = $('#signal-state');
@@ -517,16 +409,16 @@ const u = (p: string) => base + p.replace(/^\//, '');
       if ($('#sig-collector')) $('#sig-collector')!.textContent = timeAgo(s.generated_at);
       if ($('#intel-stamp')) $('#intel-stamp')!.textContent = s.generated_at ? `SYNC ${timeAgo(s.generated_at).toUpperCase()}` : 'AWAITING SYNC';
 
-      document.querySelectorAll('[data-count]').forEach((el) => {
-        const key = (el as HTMLElement).dataset.count!;
-        animateCount(el as HTMLElement, Number(s.kpis?.[key] || 0));
-      });
+      const reportCount = $('[data-count="reports"]');
+      if (reportCount) animateCount(reportCount, s.reports.length);
+      const indicatorCount = $('[data-count="indicators"]');
+      if (indicatorCount) animateCount(indicatorCount, s.indicators.length);
 
       // ticker
       const track = $('#ticker-track');
-      const items = [...(s.reports || []).slice(0, 4).map((r: any) => ({ text: r.name, tag: 'REPORT' })), ...(s.indicators || []).slice(0, 4).map((i: any) => ({ text: i.value, tag: i.type?.toUpperCase() || 'IOC' }))];
+      const items = [...s.reports.slice(0, 4).map((r: any) => ({ text: r.name, tag: 'REPORT' })), ...s.indicators.slice(0, 4).map((i: any) => ({ text: defang(i.value), tag: i.type?.toUpperCase() || 'IOC' }))];
       if (track) {
-        if (!items.length) items.push({ text: 'Feed online — waiting for the first scheduled ingestion', tag: 'SYNC' });
+        if (!items.length) items.push({ text: `No intelligence entries published for ${year}`, tag: 'SYNC' });
         const html = items.map((i: any) => `<span class="ticker-item"><b>${escapeHtml(i.text)}</b><span class="tag">${escapeHtml(i.tag)}</span></span>`).join('');
         track.innerHTML = html + html;
       }
@@ -538,13 +430,15 @@ const u = (p: string) => base + p.replace(/^\//, '');
           rl.innerHTML = s.reports
             .map(
               (r: any) => `<div class="report-row">
-                <span class="report-date">${(r.published || '').slice(0, 10) || '—'}</span>
+                <span class="report-date">${escapeHtml(r.published.slice(0, 10))}</span>
                 <span class="report-name">${escapeHtml(r.name)}</span>
-                <span class="report-conf">${r.confidence ?? '—'}%</span>
+                <span class="report-conf">${escapeHtml(r.confidence ?? '—')}%</span>
               </div>`
             )
             .join('');
           if ($('#report-count')) $('#report-count')!.textContent = `${s.reports.length} ITEMS`;
+        } else {
+          rl.textContent = `No reports in this snapshot for ${year}.`;
         }
       }
 
@@ -556,15 +450,15 @@ const u = (p: string) => base + p.replace(/^\//, '');
             const cls = ({ IP: 'ip', DOMAIN: 'domain', URL: 'url', HASH: 'hash' } as Record<string, string>)[i.type] || 'other';
             const t = { label: i.type || 'OTHER', cls };
             return `<tr>
-              <td><span class="badge ${t.cls}">${t.label}</span></td>
+              <td><span class="badge ${t.cls}">${escapeHtml(t.label)}</span></td>
               <td><span class="feed-value" title="${escapeHtml(i.value)}">${escapeHtml(defang(i.value))}</span></td>
-              <td><span class="score ${scoreClass(i.score ?? 0)}">${i.score ?? 0}</span></td>
+              <td><span class="score ${scoreClass(i.score ?? 0)}">${escapeHtml(i.score ?? 0)}</span></td>
             </tr>`;
           })
           .join('');
       }
 
-      if (ib && !s.indicators?.length) { ib.innerHTML = `<tr><td colspan="3">No individual indicators published in this snapshot.</td></tr>`; }
+      if (ib && !s.indicators?.length) { ib.innerHTML = `<tr><td colspan="3">No individual indicators published in this snapshot for ${year}.</td></tr>`; }
 
       renderCharts(s);
 

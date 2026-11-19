@@ -1,12 +1,10 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
-import { getCollection } from 'astro:content';
+import { currentBriefings } from '../data/briefings';
 
 export async function GET(context: APIContext) {
   const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-  const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
-  );
+  const posts = await currentBriefings();
 
   return rss({
     title: 'Aruba Threat Radar — Briefings',
