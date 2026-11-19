@@ -6,7 +6,8 @@
   "description": "Public threat radar and blog for the Aruba / Dutch Caribbean threat intelligence initiative",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/filter-public-snapshot.mjs",
+    "test": "node --test tests/*.test.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },

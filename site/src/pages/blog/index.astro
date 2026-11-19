@@ -1,8 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { currentBriefings } from '../../data/briefings';
+import { currentYear } from '../../data/current-year.mjs';
 
-const posts = (await getCollection('blog')).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const posts = await currentBriefings();
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const u = (p: string) => base + p.replace(/^\//, '');
 ---
@@ -10,7 +11,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
 <Layout title="Briefings — Aruba Threat Radar" description="Analysis of ABC-island cyber incidents, adversary tradecraft and the weekly threat brief." active="blog">
   <section class="hero" style="padding-bottom:0">
     <div class="wrap">
-      <span class="eyebrow">Briefings</span>
+      <span class="eyebrow">Briefings · {currentYear}</span>
       <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);max-width:18ch;margin-top:18px">Context for the alerts.</h1>
       <p class="lede">
         Incident analysis, tradecraft explainers and the weekly brief for Aruba, Bonaire
@@ -22,6 +23,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
   <section class="section">
     <div class="wrap">
       <div class="blog-grid">
+        {posts.length === 0 && <p>No briefings published yet in {currentYear}.</p>}
         {posts.map((post) => (
           <a class="card post-card reveal" href={u(`/blog/${post.id}/`)}>
             <span class="post-date">
