@@ -1,27 +1,34 @@
 {
-  "generated_at": "2026-11-19T13:00:15.847741Z",
+  "generated_at": "2026-11-19T13:39:54.399979Z",
+  "platform": {
+    "status": "online",
+    "version": "7.261103.0",
+    "misp_status": "online"
+  },
   "kpis": {
-    "reports": 25,
-    "indicators": 4732,
+    "reports": 28,
+    "indicators": 5489,
     "malware": 874,
     "actors": 190,
     "campaigns": 63,
-    "vulnerabilities": 1781,
-    "observables": 7556,
+    "vulnerabilities": 1786,
+    "observables": 8724,
     "watchlist_hits": 19
   },
+  "brief": null,
+  "indicators": [],
   "counts_by_type": [
     {
       "name": "Observables",
-      "count": 7556
+      "count": 8724
     },
     {
       "name": "Indicators",
-      "count": 4732
+      "count": 5489
     },
     {
       "name": "Vulnerabilities",
-      "count": 1781
+      "count": 1786
     },
     {
       "name": "Malware",
@@ -29,7 +36,7 @@
     },
     {
       "name": "Reports",
-      "count": 25
+      "count": 28
     },
     {
       "name": "Actors",
@@ -39,11 +46,11 @@
   "indicator_mix": [
     {
       "label": "Url",
-      "count": 3699
+      "count": 4309
     },
     {
       "label": "Ipv4-Addr",
-      "count": 738
+      "count": 885
     },
     {
       "label": "Stixfile",
@@ -121,72 +128,71 @@
     },
     {
       "date": "2026-11-19",
-      "count": 0
+      "count": 760
     }
   ],
   "reports": [
     {
       "name": "abuse.ch Feodo Tracker feed",
-      "published": "2026-11-12T00:00:00.000Z",
+      "published": "2026-11-19",
       "confidence": 100
     },
     {
       "name": "OpenPhish feed",
-      "published": "2026-11-12T00:00:00.000Z",
+      "published": "2026-11-19",
       "confidence": 100
     },
     {
       "name": "ET Compromised IPs feed",
-      "published": "2026-11-12T00:00:00.000Z",
+      "published": "2026-11-19",
       "confidence": 100
     },
     {
       "name": "abuse.ch Feodo Tracker feed",
-      "published": "2026-11-11T00:00:00.000Z",
+      "published": "2026-11-12",
       "confidence": 100
     },
     {
       "name": "OpenPhish feed",
-      "published": "2026-11-11T00:00:00.000Z",
+      "published": "2026-11-12",
       "confidence": 100
     },
     {
       "name": "ET Compromised IPs feed",
-      "published": "2026-11-11T00:00:00.000Z",
-      "confidence": 100
-    },
-    {
-      "name": "OpenPhish feed",
-      "published": "2026-11-10T00:00:00.000Z",
-      "confidence": 100
-    },
-    {
-      "name": "ET Compromised IPs feed",
-      "published": "2026-11-10T00:00:00.000Z",
+      "published": "2026-11-12",
       "confidence": 100
     },
     {
       "name": "abuse.ch Feodo Tracker feed",
-      "published": "2026-11-10T00:00:00.000Z",
+      "published": "2026-11-11",
       "confidence": 100
     },
     {
       "name": "OpenPhish feed",
-      "published": "2026-11-09T00:00:00.000Z",
+      "published": "2026-11-11",
       "confidence": 100
     },
     {
       "name": "ET Compromised IPs feed",
-      "published": "2026-11-09T00:00:00.000Z",
+      "published": "2026-11-11",
+      "confidence": 100
+    },
+    {
+      "name": "OpenPhish feed",
+      "published": "2026-11-10",
+      "confidence": 100
+    },
+    {
+      "name": "ET Compromised IPs feed",
+      "published": "2026-11-10",
       "confidence": 100
     },
     {
       "name": "abuse.ch Feodo Tracker feed",
-      "published": "2026-11-09T00:00:00.000Z",
+      "published": "2026-11-10",
       "confidence": 100
     }
   ],
-  "indicators": [],
   "sources": [
     {
       "name": "OpenCTI",
@@ -198,15 +204,15 @@
     },
     {
       "name": "MITRE ATT&CK",
-      "status": "offline"
+      "status": "online"
     },
     {
       "name": "MISP",
-      "status": "offline"
+      "status": "online"
     },
     {
       "name": "Phishunt",
-      "status": "offline"
+      "status": "online"
     },
     {
       "name": "Criminal IP C2 Daily",
@@ -214,11 +220,11 @@
     },
     {
       "name": "CISA KEV",
-      "status": "offline"
+      "status": "online"
     },
     {
       "name": "MITRE ATLAS",
-      "status": "offline"
+      "status": "online"
     },
     {
       "name": "RansomLook",
@@ -244,11 +250,5 @@
       "name": "ET Compromised IPs",
       "status": "online"
     }
-  ],
-  "platform": {
-    "status": "online",
-    "version": "7.261103.0",
-    "misp_status": "online"
-  },
-  "brief": null
+  ]
 }
