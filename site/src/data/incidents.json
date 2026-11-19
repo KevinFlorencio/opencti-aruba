@@ -1,7 +1,40 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-19",
   "note": "Curated from public reporting. Every entry links to its source. This layer is maintained by hand; the live layer on the radar comes from OpenCTI.",
   "incidents": [
+    {
+      "date": "2026-09-17",
+      "title": "Curaçao Gaming Authority discloses licensing portal breach",
+      "place": "Curaçao",
+      "lat": 12.1097,
+      "lng": -68.9335,
+      "severity": "high",
+      "summary": "The regulator disclosed unauthorized access to its online licensing portal on September 17. It later confirmed that confidential license-holder information had been accessed and published, and commissioned an independent investigation.",
+      "tags": ["data-breach", "regulator", "licensing"],
+      "source": "https://gamingcontrol.spin-cdn.com/media/general_publications/20261019_pb_databreach_at_cga_20261018.pdf"
+    },
+    {
+      "date": "2026-04-23",
+      "title": "Aruba Tourism Authority email account used for phishing",
+      "place": "Aruba",
+      "lat": 12.5211,
+      "lng": -69.9683,
+      "severity": "medium",
+      "summary": "NoticiaCla reported, citing the tourism authority, that an official email account was compromised and used to send phishing messages. The authority secured the account and opened a forensic investigation.",
+      "tags": ["phishing", "tourism", "account-takeover"],
+      "source": "https://www.noticiacla.com/news/37122"
+    },
+    {
+      "date": "2026-02-17",
+      "title": "Ransomware hits a Scholengemeenschap Bonaire archive server",
+      "place": "Bonaire",
+      "lat": 12.1443,
+      "lng": -68.2655,
+      "severity": "high",
+      "summary": "BES Reporter reported that ransomware compromised a school server and that some archive files were stolen. The school said regular classes were not disrupted; the scope of the stolen data was still under investigation when reported.",
+      "tags": ["ransomware", "education", "data-breach"],
+      "source": "https://bes-reporter.com/news/education/86173/sgb-bonaire-hit-by-ransomware-attack"
+    },
     {
       "date": "2025-07-22",
       "title": "Dutch Prosecution Service cuts itself off from the internet",
