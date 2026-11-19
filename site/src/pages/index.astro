@@ -255,6 +255,7 @@ const u = (p: string) => base + p.replace(/^\//, '');
   <script type="application/json" id="attack-data" set:html={JSON.stringify(attack)}></script>
 
   <script>
+    import region from '../data/region.json';
     import * as echarts from 'echarts';
     import L from 'leaflet';
     import 'leaflet/dist/leaflet.css';
