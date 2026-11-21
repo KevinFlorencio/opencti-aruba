@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T12:18:06.749360Z",
+  "generated_at": "2026-11-21T18:18:20.707497Z",
   "platform": {
     "status": "online",
     "version": "7.261103.0",
@@ -7,12 +7,12 @@
   },
   "kpis": {
     "reports": 31,
-    "indicators": 5925,
+    "indicators": 5928,
     "malware": 874,
     "actors": 190,
     "campaigns": 63,
     "vulnerabilities": 1790,
-    "observables": 9306,
+    "observables": 9314,
     "watchlist_hits": 19
   },
   "brief": null,
@@ -20,11 +20,11 @@
   "counts_by_type": [
     {
       "name": "Observables",
-      "count": 9306
+      "count": 9314
     },
     {
       "name": "Indicators",
-      "count": 5925
+      "count": 5928
     },
     {
       "name": "Vulnerabilities",
@@ -46,7 +46,7 @@
   "indicator_mix": [
     {
       "label": "Url",
-      "count": 4707
+      "count": 4710
     },
     {
       "label": "Ipv4-Addr",
@@ -72,7 +72,7 @@
   "series": [
     {
       "date": "2026-11-07",
-      "count": 37
+      "count": 19
     },
     {
       "date": "2026-11-08",
@@ -128,7 +128,7 @@
     },
     {
       "date": "2026-11-21",
-      "count": 353
+      "count": 356
     }
   ],
   "reports": [
