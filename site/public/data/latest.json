@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-20T18:21:01.991421Z",
+  "generated_at": "2026-11-21T00:20:06.749876Z",
   "platform": {
     "status": "online",
     "version": "7.261103.0",
     "misp_status": "online"
   },
   "kpis": {
-    "reports": 28,
-    "indicators": 5554,
+    "reports": 31,
+    "indicators": 5893,
     "malware": 874,
     "actors": 190,
     "campaigns": 63,
-    "vulnerabilities": 1786,
-    "observables": 8863,
+    "vulnerabilities": 1790,
+    "observables": 9236,
     "watchlist_hits": 19
   },
   "brief": null,
@@ -20,15 +20,15 @@
   "counts_by_type": [
     {
       "name": "Observables",
-      "count": 8863
+      "count": 9236
     },
     {
       "name": "Indicators",
-      "count": 5554
+      "count": 5893
     },
     {
       "name": "Vulnerabilities",
-      "count": 1786
+      "count": 1790
     },
     {
       "name": "Malware",
@@ -36,7 +36,7 @@
     },
     {
       "name": "Reports",
-      "count": 28
+      "count": 31
     },
     {
       "name": "Actors",
@@ -46,11 +46,11 @@
   "indicator_mix": [
     {
       "label": "Url",
-      "count": 4355
+      "count": 4675
     },
     {
       "label": "Ipv4-Addr",
-      "count": 904
+      "count": 923
     },
     {
       "label": "Stixfile",
@@ -71,12 +71,8 @@
   ],
   "series": [
     {
-      "date": "2026-11-06",
-      "count": 16
-    },
-    {
       "date": "2026-11-07",
-      "count": 341
+      "count": 55
     },
     {
       "date": "2026-11-08",
@@ -128,11 +124,30 @@
     },
     {
       "date": "2026-11-20",
-      "count": 44
+      "count": 65
+    },
+    {
+      "date": "2026-11-21",
+      "count": 321
     }
   ],
   "reports": [
     {
+      "name": "ET Compromised IPs feed",
+      "published": "2026-11-20",
+      "confidence": 100
+    },
+    {
+      "name": "OpenPhish feed",
+      "published": "2026-11-20",
+      "confidence": 100
+    },
+    {
+      "name": "abuse.ch Feodo Tracker feed",
+      "published": "2026-11-20",
+      "confidence": 100
+    },
+    {
       "name": "abuse.ch Feodo Tracker feed",
       "published": "2026-11-19",
       "confidence": 100
@@ -175,21 +190,6 @@
     {
       "name": "ET Compromised IPs feed",
       "published": "2026-11-11",
-      "confidence": 100
-    },
-    {
-      "name": "OpenPhish feed",
-      "published": "2026-11-10",
-      "confidence": 100
-    },
-    {
-      "name": "ET Compromised IPs feed",
-      "published": "2026-11-10",
-      "confidence": 100
-    },
-    {
-      "name": "abuse.ch Feodo Tracker feed",
-      "published": "2026-11-10",
       "confidence": 100
     }
   ],
